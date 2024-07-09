@@ -21,6 +21,6 @@ Builds the app for production to the `build` folder.
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 This command will remove the single build dependency from your project.
 
-## Learn More
+## Scrum / Documentation
 
 JIRA / Confluence: https://robinkindler.atlassian.net
