@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import NotFound404 from "./NotFound404";
 
 const Home = lazy(() => import("./Home"));
 const Imprint = lazy(() => import("./legal/Imprint"));
@@ -176,6 +177,7 @@ const PortfolioAppRoutes: React.FC = () => {
           path="projects/music"
           element={<MusicProjects message="music projects" />}
         />
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
     </Suspense>
   );
