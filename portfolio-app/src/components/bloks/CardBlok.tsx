@@ -15,7 +15,8 @@ const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
     <div
       className="card"
       style={{
-        width: blok.width ? blok.width + "rem" : "18rem",
+        maxWidth: blok.width ? blok.width + "rem" : "18rem",
+        minWidth: "4rem",
         textAlign: blok.center_text ? "center" : "start",
       }}
       {...storyblokEditable(blok)}

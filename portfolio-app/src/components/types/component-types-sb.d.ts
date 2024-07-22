@@ -22,9 +22,18 @@ export interface InternalLinkStoryblok {
 }
 
 export interface PageStoryblok {
-  body?: (CardStoryblok | InternalLinkStoryblok | PageStoryblok)[];
+  body?: (CardStoryblok | InternalLinkStoryblok | PageStoryblok | SimpleLayoutStoryblok)[];
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface SimpleLayoutStoryblok {
+  body?: (CardStoryblok | InternalLinkStoryblok | PageStoryblok | SimpleLayoutStoryblok)[];
+  topMargin: string;
+  centerElements?: boolean;
+  _uid: string;
+  component: "SimpleLayout";
   [k: string]: any;
 }
