@@ -1,22 +1,13 @@
 // index.tsx
+import { storyblokInit } from "@storyblok/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { apiPlugin, storyblokInit } from "@storyblok/react";
-import CardStoryblok from "./components/blocks/CardStoryblok";
+import storyblokSetup from "./setupStoryblok";
 
-storyblokInit({
-  accessToken: "u2OrXZ1MorrJDKZKPTExHwtt",
-  use: [apiPlugin],
-  apiOptions: {
-    region: "eu",
-  },
-  components: {
-    card: CardStoryblok,
-  },
-});
+storyblokInit(storyblokSetup);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
