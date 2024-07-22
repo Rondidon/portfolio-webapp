@@ -1,5 +1,5 @@
-import { apiPlugin, useStoryblok } from "@storyblok/react";
-import CardStoryblok from "./components/blocks/CardStoryblok";
+import { apiPlugin } from "@storyblok/react";
+import CardBlok from "./components/bloks/CardBlok";
 
 // setup
 const accessToken = "u2OrXZ1MorrJDKZKPTExHwtt";
@@ -8,7 +8,7 @@ const version: "draft" | "published" = "draft";
 
 // dynamic components
 const components = {
-  card: CardStoryblok,
+  card: CardBlok,
 };
 
 const storyblokSetup = {
