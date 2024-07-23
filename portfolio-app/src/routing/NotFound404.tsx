@@ -22,7 +22,7 @@ const NotFound404: React.FC = () => {
   return (
     <div
       style={{
-        marginTop: content.topMargin + "rem",
+        marginTop: content.topMargin + "vh",
         justifyContent: content.centerElements ? "center" : "flex-start",
         display: "flex",
         width: "100%",

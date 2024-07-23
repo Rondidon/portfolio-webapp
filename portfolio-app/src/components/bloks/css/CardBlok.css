@@ -1,12 +1,47 @@
-.card-blok-img {
-  max-width: 100%;
+.card-default-img {
+  max-width: 192px;
+  max-height: 192px;
   height: auto;
   width: auto;
   display: block;
   margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  border-radius: 1em;
 }
 
-.card-blok-link {
-  display: block;
-  margin: auto;
+.card-default-title {
+  font-weight: 600;
+}
+
+.card-default-footer {
+  background: rgb(244, 244, 244);
+  border-radius: 0 0 0.5em 0.5em;
+  border-top: 1px solid lightgray;
+  padding: 1em 0;
+}
+
+.card-default-body {
+  padding: 1rem; /* Add some padding for better look */
+  overflow-y: auto;
+}
+
+.card-alternate-variant {
+  background-color: #e0dde3;
+  border-style: none;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  min-width: "4rem";
+  min-height: "4rem";
+}
+
+.card-default-variant {
+  background-color: #ffffff;
+  border-radius: 0.5em;
+  border: 2px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  min-width: "4rem";
+  min-height: "4rem";
 }

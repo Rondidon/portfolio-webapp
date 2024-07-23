@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import "./App.css";
+import "./css/app.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <BrowserRouter basename="/portfolio-webapp">
         <Header message="header" />
         <Main />

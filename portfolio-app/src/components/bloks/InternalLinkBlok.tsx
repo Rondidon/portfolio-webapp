@@ -10,7 +10,9 @@ const InternalLinkBlok: React.FC<InternalLinkProps> = ({ blok }) => {
   return (
     <Link
       to={blok.disabled ? "#" : blok.slug}
-      className={blok.disabled ? "btn btn-primary disabled" : "btn btn-primary"}
+      className={
+        blok.disabled ? "btn app-btn-primary disabled" : "btn app-btn-primary"
+      }
     >
       {blok.text}
     </Link>

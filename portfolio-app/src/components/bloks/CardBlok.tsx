@@ -13,26 +13,34 @@ interface CardBlokProps {
 const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
   return (
     <div
-      className="card"
+      className={
+        blok.alternate_design
+          ? "card-alternate-variant"
+          : "card-default-variant"
+      }
       style={{
         maxWidth: blok.width ? blok.width + "rem" : "18rem",
-        minWidth: "4rem",
         textAlign: blok.center_text ? "center" : "start",
       }}
       {...storyblokEditable(blok)}
     >
-      {blok.image && (
-        <img
-          src={toAssetLocation(blok.image, "image")}
-          className="card-img-top card-blok-img"
-          alt={blok.title}
-        />
-      )}
-      <div className="card-body">
-        <h5 className="card-title">{blok.title}</h5>
-        {blok.text && (
-          <SafeHtmlRenderer className="card-text" htmlContent={blok.text} />
+      <div className="card-default-body">
+        {blok.image && (
+          <img
+            src={toAssetLocation(blok.image, "image")}
+            className="card-default-img"
+            alt={blok.title}
+          />
         )}
+        <h5 className="card-default-title">{blok.title}</h5>
+        {blok.text && (
+          <SafeHtmlRenderer
+            className="card-default-text"
+            htmlContent={blok.text}
+          />
+        )}
+      </div>
+      <div className="card-default-footer">
         {blok.internal_link && blok.internal_link?.length > 0 && (
           <InternalLinkBlok blok={blok.internal_link[0]} />
         )}

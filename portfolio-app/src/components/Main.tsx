@@ -6,7 +6,7 @@ import { RouteConfig } from "../routing/types/routeConfig";
 
 const Main: React.FC = () => {
   return (
-    <main className={"App-main"}>
+    <main className={"app-main"}>
       <Suspense fallback={<Loading variant={"base"} />}>
         <Routes>
           {routesConfig.map((route: RouteConfig, index: number) => (

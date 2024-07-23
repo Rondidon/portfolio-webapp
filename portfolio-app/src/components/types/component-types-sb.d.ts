@@ -7,6 +7,7 @@ export interface CardStoryblok {
   internal_link?: InternalLinkStoryblok[];
   width?: string;
   center_text?: boolean;
+  alternate_design?: boolean;
   _uid: string;
   component: "card";
   [k: string]: any;
