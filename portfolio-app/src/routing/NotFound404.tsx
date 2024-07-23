@@ -5,7 +5,7 @@ import { logStoryblokStory } from "../utils/logger";
 import Loading from "../components/Loading";
 import { SimpleLayoutStoryblok } from "../components/types/component-types-sb";
 
-const slug = "notfound404";
+const slug = "not-found-404";
 
 const NotFound404: React.FC = () => {
   const story = useStoryblokStory(slug);

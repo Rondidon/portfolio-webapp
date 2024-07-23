@@ -1,6 +1,6 @@
 import { storyblokEditable } from "@storyblok/react";
 import React from "react";
-import { GlobalHeaderStoryblok } from "./types/component-types-sb";
+import { GlobalHeaderStoryblok } from "../types/component-types-sb";
 
 interface GlobalHeaderStoryblokProps {
   blok: GlobalHeaderStoryblok;
@@ -14,7 +14,7 @@ const HeaderBlok: React.FC<GlobalHeaderStoryblokProps> = ({ blok }) => {
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          {blok.claim}
+          Navbar
         </a>
         <button
           className="navbar-toggler"

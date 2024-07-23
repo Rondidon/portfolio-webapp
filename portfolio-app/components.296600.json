@@ -1,10 +1,55 @@
 {
   "components": [
     {
+      "name": "button",
+      "display_name": null,
+      "created_at": "2024-07-22T16:30:41.608Z",
+      "updated_at": "2024-07-23T17:31:13.036Z",
+      "id": 6078949,
+      "schema": {
+        "text": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "key": "text"
+        },
+        "slug": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "key": "slug"
+        },
+        "disabled": {
+          "type": "boolean",
+          "pos": 2,
+          "key": "disabled"
+        },
+        "useAlternateDesign": {
+          "type": "boolean",
+          "pos": 3,
+          "key": "useGreenDesign"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "button",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": "block-arrow-pointer",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
       "name": "card",
       "display_name": null,
       "created_at": "2024-07-10T21:54:58.901Z",
-      "updated_at": "2024-07-23T15:12:32.925Z",
+      "updated_at": "2024-07-23T17:29:31.038Z",
       "id": 6035609,
       "schema": {
         "title": {
@@ -30,7 +75,7 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "internal_link"
+            "button"
           ],
           "maximum": 1,
           "key": "internal_link"
@@ -76,25 +121,82 @@
       "content_type_asset_preview": null
     },
     {
-      "name": "internal_link",
+      "name": "globalFooter",
       "display_name": null,
-      "created_at": "2024-07-22T16:30:41.608Z",
-      "updated_at": "2024-07-22T18:42:04.479Z",
-      "id": 6078949,
+      "created_at": "2024-07-23T17:26:14.348Z",
+      "updated_at": "2024-07-23T18:38:34.924Z",
+      "id": 6085456,
       "schema": {
-        "text": {
+        "logo": {
+          "type": "bloks",
+          "pos": 0,
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "minimum": 1,
+          "maximum": 1,
+          "component_whitelist": [
+            "image"
+          ]
+        },
+        "claim": {
+          "type": "text",
+          "pos": 1
+        },
+        "description": {
+          "type": "text",
+          "pos": 2,
+          "required": true
+        },
+        "columns": {
+          "type": "bloks",
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "globalFooterColumn"
+          ],
+          "minimum": 1,
+          "maximum": 6
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "globalFooter",
+      "component_group_uuid": null,
+      "color": "#2db47d",
+      "icon": "block-add",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "globalFooterColumn",
+      "display_name": null,
+      "created_at": "2024-07-23T17:34:38.054Z",
+      "updated_at": "2024-07-23T17:42:39.538Z",
+      "id": 6085481,
+      "schema": {
+        "title": {
           "type": "text",
           "pos": 0,
           "required": true
         },
-        "slug": {
-          "type": "text",
+        "links": {
+          "type": "bloks",
           "pos": 1,
-          "required": true
-        },
-        "disabled": {
-          "type": "boolean",
-          "pos": 2
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "textLink"
+          ],
+          "minimum": 1
         }
       },
       "image": null,
@@ -104,10 +206,167 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "internal_link",
+      "real_name": "globalFooterColumn",
       "component_group_uuid": null,
       "color": null,
-      "icon": "block-arrow-pointer",
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "globalHeader",
+      "display_name": null,
+      "created_at": "2024-07-23T16:43:51.820Z",
+      "updated_at": "2024-07-23T17:43:40.584Z",
+      "id": 6085251,
+      "schema": {
+        "logo": {
+          "type": "bloks",
+          "pos": 0,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "image"
+          ],
+          "required": true,
+          "key": "logo"
+        },
+        "claim": {
+          "type": "text",
+          "pos": 1,
+          "key": "claim"
+        },
+        "leftContainer": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "button"
+          ],
+          "required": true,
+          "key": "internalLinks"
+        },
+        "rightContainer": {
+          "type": "bloks",
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "button",
+            "image",
+            "languageDropdown"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "globalHeader",
+      "component_group_uuid": null,
+      "color": "#2db47d",
+      "icon": "block-text-img-t-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "image",
+      "display_name": null,
+      "created_at": "2024-07-23T16:51:25.185Z",
+      "updated_at": "2024-07-23T17:25:16.010Z",
+      "id": 6085319,
+      "schema": {
+        "image": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "key": "image"
+        },
+        "alt": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "key": "alt"
+        },
+        "title": {
+          "type": "text",
+          "pos": 2,
+          "required": false,
+          "key": "title"
+        },
+        "internal_slug": {
+          "type": "text",
+          "pos": 3,
+          "key": "slug"
+        },
+        "size": {
+          "type": "number",
+          "pos": 4,
+          "required": false,
+          "description": "in pixel",
+          "key": "size"
+        },
+        "borderRadius": {
+          "type": "number",
+          "pos": 5,
+          "description": "in em",
+          "key": "borderRadius"
+        },
+        "external_link": {
+          "type": "multilink",
+          "pos": 6
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "image",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": "block-image",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "languageDropdown",
+      "display_name": null,
+      "created_at": "2024-07-23T17:20:25.562Z",
+      "updated_at": "2024-07-23T17:23:22.495Z",
+      "id": 6085449,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0
+        },
+        "languages": {
+          "type": "options",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "languageDropdown",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": "block-block",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null
@@ -116,11 +375,32 @@
       "name": "page",
       "display_name": null,
       "created_at": "2024-07-10T18:42:48.718Z",
-      "updated_at": "2024-07-22T20:18:37.634Z",
+      "updated_at": "2024-07-23T19:02:30.303Z",
       "id": 6035125,
       "schema": {
-        "body": {
-          "type": "bloks"
+        "header": {
+          "type": "bloks",
+          "pos": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "globalHeader"
+          ],
+          "required": true
+        },
+        "footer": {
+          "type": "bloks",
+          "pos": 2,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "globalFooter"
+          ],
+          "required": true
         }
       },
       "image": null,
@@ -178,6 +458,43 @@
       "component_group_uuid": null,
       "color": "#ffac00",
       "icon": "block-1-2block",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "textLink",
+      "display_name": null,
+      "created_at": "2024-07-23T17:35:36.412Z",
+      "updated_at": "2024-07-23T17:37:19.669Z",
+      "id": 6085482,
+      "schema": {
+        "text": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "title": {
+          "type": "text",
+          "pos": 1
+        },
+        "slug": {
+          "type": "text",
+          "pos": 2,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "textLink",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null

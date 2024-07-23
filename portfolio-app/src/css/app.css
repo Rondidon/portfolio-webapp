@@ -26,32 +26,29 @@
   background-color: #1a1d23;
 }
 
-/* Basistyle für den Button */
 .app-btn-primary {
-  background-color: #5de0c6; /* Primäre Hintergrundfarbe */
-  border-width: 1px; /* Konsistente Border-Breite */
-  border-color: #2b303a; /* Border-Farbe */
-  border-radius: 2em; /* Abgerundete Ecken für moderneres Aussehen */
-  font-size: 14px; /* Etwas größere Schriftgröße */
-  font-weight: 500; /* Mittelstarkes Schriftgewicht */
-  padding: 0.75em 1.65em; /* Innenabstand für besseren Klickbereich */
-  cursor: pointer; /* Zeigt an, dass der Button klickbar ist */
+  background-color: #5de0c6;
+  border-width: 1px;
+  border-color: #2b303a;
+  border-radius: 2em;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.75em 1.65em;
+  cursor: pointer;
 }
 
-/* Hover-, Active- und Focus-Zustände */
 .app-btn-primary:hover,
 .app-btn-primary:active,
 .app-bbtn-primary:focus {
-  background-color: #63eed2 !important; /* Dunklerer Hintergrund bei Hover */
-  border-color: #2b303a !important; /* Beibehaltung der Border-Farbe */
-  outline: none; /* Entfernt die Standard-Focus-Rahmen */
+  background-color: #63eed2 !important;
+  border-color: #2b303a !important;
+  outline: none;
 }
 
-/* Optional: Deaktivierter Zustand */
 .app-btn-primary:disabled {
-  background-color: #cccccc; /* Grauer Hintergrund für deaktivierte Buttons */
-  border-color: #aaaaaa; /* Angepasste Border-Farbe */
-  color: #666666; /* Angepasste Schriftfarbe */
-  cursor: not-allowed; /* Zeigt an, dass der Button nicht klickbar ist */
-  transform: none; /* Keine Transformation bei deaktivierten Buttons */
+  background-color: #cccccc;
+  border-color: #aaaaaa;
+  color: #666666;
+  cursor: not-allowed;
+  transform: none;
 }

@@ -3,7 +3,7 @@ import React from "react";
 import toAssetLocation from "../../scripts/imageConverter";
 import { CardStoryblok } from "../types/component-types-sb";
 import SafeHtmlRenderer from "../xss/SafeHtmlRenderer";
-import InternalLinkBlok from "./InternalLinkBlok";
+import InternalLinkBlok from "./ButtonBlok";
 import "./css/CardBlok.css";
 
 interface CardBlokProps {

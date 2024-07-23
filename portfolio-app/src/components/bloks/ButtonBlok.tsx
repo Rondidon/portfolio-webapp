@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { InternalLinkStoryblok } from "../types/component-types-sb";
+import { ButtonStoryblok } from "../types/component-types-sb";
 
-interface InternalLinkProps {
-  blok: InternalLinkStoryblok;
+interface ButtonBlokProps {
+  blok: ButtonStoryblok;
 }
 
-const InternalLinkBlok: React.FC<InternalLinkProps> = ({ blok }) => {
+const ButtonBlok: React.FC<ButtonBlokProps> = ({ blok }) => {
   return (
     <Link
       to={blok.disabled ? "#" : blok.slug}
@@ -19,4 +19,4 @@ const InternalLinkBlok: React.FC<InternalLinkProps> = ({ blok }) => {
   );
 };
 
-export default InternalLinkBlok;
+export default ButtonBlok;

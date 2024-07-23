@@ -1,15 +1,13 @@
 import React from "react";
+import { GlobalFooterStoryblok } from "./types/component-types-sb";
+import { SbBlokData, StoryblokComponent } from "@storyblok/react";
 
 type FooterProps = {
-  message: string;
+  blok: GlobalFooterStoryblok;
 };
 
-const Footer: React.FC<FooterProps> = ({ message }) => {
-  return (
-    <div className="app-footer">
-      <p>{message}</p>
-    </div>
-  );
+const Footer: React.FC<FooterProps> = ({ blok }) => {
+  return <footer>FOOTER</footer>;
 };
 
 export default Footer;
