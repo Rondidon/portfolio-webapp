@@ -52,3 +52,15 @@
   cursor: not-allowed;
   transform: none;
 }
+
+.color-green {
+  color: #5de0c6;
+}
+
+.color-dark-grey {
+  color: #2b303a;
+}
+
+.color-light-grey {
+  color: #cccccc;
+}

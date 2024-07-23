@@ -5,6 +5,7 @@ import CardBlok from "./components/bloks/CardBlok";
 const accessToken = "u2OrXZ1MorrJDKZKPTExHwtt";
 const region = "eu";
 const version: "draft" | "published" = "draft";
+const debugLogs = false;
 
 // dynamic components
 const components = {
@@ -19,6 +20,7 @@ const storyblokSetup = {
   },
   components: components,
   version: version,
+  debugLogs: debugLogs,
 };
 
 export default storyblokSetup;
