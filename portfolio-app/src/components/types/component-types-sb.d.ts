@@ -42,8 +42,7 @@ export interface GlobalFooterColumnStoryblok {
 }
 
 export interface GlobalHeaderStoryblok {
-  logo: ImageStoryblok[];
-  claim?: string;
+  logo: (ImageStoryblok | TextLinkStoryblok)[];
   leftContainer: ButtonStoryblok[];
   rightContainer?: (ButtonStoryblok | ImageStoryblok | LanguageDropdownStoryblok)[];
   _uid: string;
@@ -83,6 +82,7 @@ export interface ImageStoryblok {
   size?: string;
   borderRadius?: string;
   external_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  showBorder?: boolean;
   _uid: string;
   component: "image";
   [k: string]: any;

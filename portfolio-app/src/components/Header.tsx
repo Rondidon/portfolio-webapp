@@ -1,21 +1,37 @@
 import { storyblokEditable } from "@storyblok/react";
 import React from "react";
-import { GlobalHeaderStoryblok } from "./types/component-types-sb";
+import ButtonBlok from "./bloks/ButtonBlok";
+import ImageBlok from "./bloks/ImageBlok";
+import {
+  ButtonStoryblok,
+  GlobalHeaderStoryblok,
+  ImageStoryblok,
+  TextLinkStoryblok,
+} from "./types/component-types-sb";
+import SafeHtmlRenderer from "./xss/SafeHtmlRenderer";
+import TextLinkBlok from "./bloks/TextLinkBlok";
 
 interface GlobalHeaderStoryblokProps {
   blok: GlobalHeaderStoryblok;
 }
 
 const HeaderBlok: React.FC<GlobalHeaderStoryblokProps> = ({ blok }) => {
+  const brandLogoBlok = blok.logo.find(
+    (blok): blok is ImageStoryblok => blok.component === "image"
+  );
+
+  const brandTextBlok = blok.logo.find(
+    (blok): blok is TextLinkStoryblok => blok.component === "textLink"
+  );
+
   return (
     <nav
-      className="navbar navbar-expand-lg bg-body-tertiary"
+      className="navbar navbar-expand-lg app-header"
       {...storyblokEditable(blok)}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          {blok.claim}
-        </a>
+        {brandLogoBlok && <ImageBlok blok={brandLogoBlok} />}
+        {brandTextBlok && <TextLinkBlok blok={brandTextBlok} isBrandText />}
         <button
           className="navbar-toggler"
           type="button"
@@ -27,54 +43,15 @@ const HeaderBlok: React.FC<GlobalHeaderStoryblokProps> = ({ blok }) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto my-lg-0 my-2 mb-lg-0 gap-2 gap-lg-0">
+            {blok.leftContainer.map((value: ButtonStoryblok, index: number) => {
+              return (
+                <li className="nav-item mx-1">
+                  <ButtonBlok blok={value} isNavButton />
                 </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
+              );
+            })}
           </ul>
           <form className="d-flex" role="search">
             <input

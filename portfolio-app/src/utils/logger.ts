@@ -1,6 +1,9 @@
 import storyblokSetup from "../setupStoryblok";
 
-export const logStoryblokStory = (slug: string, story: any) => {
+export const logStoryblokStoryOrBlock = (
+  slugOrBlock: string,
+  storyOrBlock: any
+) => {
   if (!storyblokSetup.debugLogs) return;
-  console.log("Storyblok story (" + slug + ")", story);
+  console.log("Storyblok content (" + slugOrBlock + ")", storyOrBlock);
 };

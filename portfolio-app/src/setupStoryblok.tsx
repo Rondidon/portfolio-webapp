@@ -5,7 +5,7 @@ import CardBlok from "./components/bloks/CardBlok";
 const accessToken = "u2OrXZ1MorrJDKZKPTExHwtt";
 const region = "eu";
 const version: "draft" | "published" = "draft";
-const debugLogs = false;
+const debugLogs = true;
 
 // dynamic components
 const components = {

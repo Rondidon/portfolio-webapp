@@ -8,10 +8,10 @@ import {
   GlobalHeaderStoryblok,
   PageStoryblok,
 } from "./components/types/component-types-sb";
-import { logStoryblokStory } from "./utils/logger";
+import { logStoryblokStoryOrBlock } from "./utils/logger";
 import { useEffect } from "react";
 import Loading from "./components/Loading";
-import "./css/app.css";
+import "./App.css";
 
 const slug = "global-layout";
 
@@ -19,7 +19,7 @@ function App() {
   const story = useStoryblokStory(slug);
 
   useEffect(() => {
-    logStoryblokStory(slug, story);
+    logStoryblokStoryOrBlock(slug, story);
   }, [story]);
 
   if (!story || !story.content) {
