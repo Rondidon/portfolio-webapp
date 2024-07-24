@@ -16,7 +16,7 @@ const NotFound404: React.FC = () => {
   }, [story]);
 
   if (!story || !content) {
-    return <Loading variant="storyblok" />;
+    return <Loading />;
   }
 
   return (

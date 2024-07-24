@@ -1,0 +1,26 @@
+.app-btn-primary {
+  background-color: #63eed2;
+  border-width: 1px;
+  border-color: darkgray;
+  border-radius: 2em;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.75em 1.65em;
+  cursor: pointer;
+}
+
+.app-btn-primary:hover,
+.app-btn-primary:active,
+.app-btn-primary:focus {
+  background-color: #6bffe1 !important;
+  border-color: darkgray !important;
+  outline: none;
+}
+
+.app-btn-primary:disabled {
+  background-color: #cccccc;
+  border-color: #aaaaaa;
+  color: #666666;
+  cursor: not-allowed;
+  transform: none;
+}

@@ -1,28 +1,23 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 type LoadingProps = {
-  variant: "base" | "storyblok";
+  use100vh?: boolean;
 };
 
-const Loading: React.FC<LoadingProps> = ({ variant }): JSX.Element => {
+const Loading: React.FC<LoadingProps> = ({ use100vh }): JSX.Element => {
   return (
     <div
       style={{
         display: "flex",
+        width: "100%",
+        height: use100vh ? "100vh" : "",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
         textAlign: "center",
       }}
     >
       <div className="spinner-border color-light-grey" role="status" />
-      <p className="color-dark-grey" style={{ marginTop: "20px" }}>
-        {variant === "storyblok"
-          ? "Inhalte werden von Storyblok geladen..."
-          : "Inhalte werden geladen..."}
-      </p>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import { BrowserRouter } from "react-router-dom";
-import "./css/app.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -12,6 +11,7 @@ import {
 import { logStoryblokStory } from "./utils/logger";
 import { useEffect } from "react";
 import Loading from "./components/Loading";
+import "./css/app.css";
 
 const slug = "global-layout";
 
@@ -23,7 +23,11 @@ function App() {
   }, [story]);
 
   if (!story || !story.content) {
-    return <Loading variant="storyblok" />;
+    return (
+      <div className="app">
+        <Loading use100vh />
+      </div>
+    );
   }
 
   const content = story.content as PageStoryblok;
