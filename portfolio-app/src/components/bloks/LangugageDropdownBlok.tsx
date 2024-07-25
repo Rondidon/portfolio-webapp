@@ -11,10 +11,6 @@ interface LanguageDropdownProps {
 const LanguageDropdownBlok: React.FC<LanguageDropdownProps> = ({
   blok,
 }): JSX.Element => {
-  useEffect(() => {
-    logStoryblokStoryOrBlock("language dropdown blok: ", blok);
-  }, []);
-
   return (
     <li className="nav-item dropdown">
       <a
@@ -23,6 +19,7 @@ const LanguageDropdownBlok: React.FC<LanguageDropdownProps> = ({
         role="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
+        title={blok.title}
       >
         {blok.title}
       </a>

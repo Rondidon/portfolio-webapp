@@ -56,8 +56,8 @@ const MusicProjects = lazy(() => import("./projects/music/MusicProjects"));
 const NotFound404 = lazy(() => import("./NotFound404"));
 
 const routesConfig: RouteConfig[] = [
-  { path: "/", element: <Home message="Home" /> },
-  { path: "/home", element: <Home message="Home" /> },
+  { path: "/", element: <Home /> },
+  { path: "/home", element: <Home /> },
   { path: "imprint", element: <Imprint message="imprint" /> },
   {
     path: "privacy-policy",

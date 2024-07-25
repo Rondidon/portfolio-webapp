@@ -9,11 +9,15 @@ const LinkedInProfileLinkBlok: React.FC<LinkedInProfileProps> = ({
   blok,
 }): JSX.Element => {
   return (
-    <a href={blok.url} target="_blank" rel="noopener noreferrer">
+    <a
+      title={blok.title}
+      href={blok.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img
         src={toAssetLocation("In-Blue-26.png", "image")}
         alt={blok.alt}
-        title={blok.title}
         style={{ width: "26px", height: "26px" }}
       />
     </a>

@@ -4,7 +4,7 @@
       "name": "button",
       "display_name": null,
       "created_at": "2024-07-22T16:30:41.608Z",
-      "updated_at": "2024-07-23T17:31:13.036Z",
+      "updated_at": "2024-07-25T16:28:17.303Z",
       "id": 6078949,
       "schema": {
         "text": {
@@ -13,20 +13,24 @@
           "required": true,
           "key": "text"
         },
+        "title": {
+          "type": "text",
+          "pos": 1
+        },
         "slug": {
           "type": "text",
-          "pos": 1,
+          "pos": 2,
           "required": true,
           "key": "slug"
         },
         "disabled": {
           "type": "boolean",
-          "pos": 2,
+          "pos": 3,
           "key": "disabled"
         },
         "useAlternateDesign": {
           "type": "boolean",
-          "pos": 3,
+          "pos": 4,
           "key": "useGreenDesign"
         }
       },
@@ -121,6 +125,68 @@
       "content_type_asset_preview": null
     },
     {
+      "name": "cardContainer",
+      "display_name": null,
+      "created_at": "2024-07-25T19:14:07.558Z",
+      "updated_at": "2024-07-25T19:20:40.768Z",
+      "id": 6095551,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0
+        },
+        "columnAmount": {
+          "type": "number",
+          "pos": 1,
+          "required": true,
+          "min_value": 1,
+          "max_value": 5,
+          "steps": 1,
+          "decimals": 0,
+          "default_value": "3"
+        },
+        "gap": {
+          "type": "number",
+          "pos": 2,
+          "description": "in em"
+        },
+        "width": {
+          "type": "number",
+          "pos": 3,
+          "max_value": 100,
+          "min_value": 1,
+          "default_value": "100",
+          "description": "in %",
+          "required": true
+        },
+        "elements": {
+          "type": "bloks",
+          "pos": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "card"
+          ],
+          "required": true,
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "cardContainer",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": "block-table",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
       "name": "globalFooter",
       "display_name": null,
       "created_at": "2024-07-23T17:26:14.348Z",
@@ -179,7 +245,7 @@
       "name": "globalFooterColumn",
       "display_name": null,
       "created_at": "2024-07-23T17:34:38.054Z",
-      "updated_at": "2024-07-23T17:42:39.538Z",
+      "updated_at": "2024-07-25T19:06:23.156Z",
       "id": 6085481,
       "schema": {
         "title": {
@@ -208,8 +274,8 @@
       "preset_id": null,
       "real_name": "globalFooterColumn",
       "component_group_uuid": null,
-      "color": null,
-      "icon": null,
+      "color": "#2db47d",
+      "icon": "block-table-2",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null
@@ -268,6 +334,67 @@
       "real_name": "globalHeader",
       "component_group_uuid": null,
       "color": "#2db47d",
+      "icon": "block-text-img-t-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "hero",
+      "display_name": null,
+      "created_at": "2024-07-25T19:09:50.121Z",
+      "updated_at": "2024-07-25T20:03:26.861Z",
+      "id": 6095549,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0
+        },
+        "text": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        },
+        "cta": {
+          "type": "bloks",
+          "pos": 2,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "button"
+          ]
+        },
+        "variant": {
+          "type": "option",
+          "pos": 3,
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "50098329-db69-4a08-b09b-69d655266200",
+              "name": "primary",
+              "value": "primary"
+            },
+            {
+              "_uid": "418f6df6-b232-4f07-8db1-dfbc87715b3a",
+              "value": "secondary",
+              "name": "secondary"
+            }
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero",
+      "component_group_uuid": null,
+      "color": null,
       "icon": "block-text-img-t-l",
       "internal_tags_list": [],
       "internal_tag_ids": [],
@@ -390,7 +517,7 @@
       "name": "LinkedInProfileLink",
       "display_name": null,
       "created_at": "2024-07-24T21:05:29.088Z",
-      "updated_at": "2024-07-24T21:06:50.074Z",
+      "updated_at": "2024-07-25T19:05:55.510Z",
       "id": 6090956,
       "schema": {
         "alt": {
@@ -419,7 +546,7 @@
       "real_name": "LinkedInProfileLink",
       "component_group_uuid": null,
       "color": null,
-      "icon": null,
+      "icon": "block-arrow-pointer",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null
@@ -472,10 +599,62 @@
       "content_type_asset_preview": null
     },
     {
+      "name": "simpleContainer",
+      "display_name": null,
+      "created_at": "2024-07-25T19:17:55.601Z",
+      "updated_at": "2024-07-25T19:20:27.619Z",
+      "id": 6095552,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0
+        },
+        "flexCol": {
+          "type": "boolean",
+          "pos": 1
+        },
+        "flexWrap": {
+          "type": "boolean",
+          "pos": 2
+        },
+        "width": {
+          "type": "number",
+          "pos": 3,
+          "required": true,
+          "min_value": 1,
+          "max_value": 100,
+          "description": "in %",
+          "default_value": "100",
+          "steps": 1,
+          "decimals": 0
+        },
+        "elements": {
+          "type": "bloks",
+          "pos": 4,
+          "required": true,
+          "description": "child bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "simpleContainer",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": "block-text-img-r-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
       "name": "SimpleLayout",
       "display_name": null,
       "created_at": "2024-07-22T20:28:00.238Z",
-      "updated_at": "2024-07-22T21:16:27.106Z",
+      "updated_at": "2024-07-25T20:02:23.791Z",
       "id": 6079549,
       "schema": {
         "body": {
@@ -488,7 +667,7 @@
           "pos": 1,
           "steps": 2,
           "description": "in rem",
-          "required": true,
+          "required": false,
           "default_value": "0",
           "min_value": 0,
           "tooltip": true,
@@ -519,7 +698,7 @@
       "name": "textLink",
       "display_name": null,
       "created_at": "2024-07-23T17:35:36.412Z",
-      "updated_at": "2024-07-23T17:37:19.669Z",
+      "updated_at": "2024-07-25T19:05:39.029Z",
       "id": 6085482,
       "schema": {
         "text": {
@@ -534,7 +713,11 @@
         "slug": {
           "type": "text",
           "pos": 2,
-          "required": true
+          "required": false
+        },
+        "external_url": {
+          "type": "text",
+          "pos": 3
         }
       },
       "image": null,
@@ -547,7 +730,7 @@
       "real_name": "textLink",
       "component_group_uuid": null,
       "color": null,
-      "icon": null,
+      "icon": "block-arrow-pointer",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null

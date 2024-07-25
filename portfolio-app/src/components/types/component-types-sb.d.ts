@@ -2,6 +2,7 @@ import {StoryblokStory} from 'storyblok-generate-ts'
 
 export interface ButtonStoryblok {
   text: string;
+  title?: string;
   slug: string;
   disabled?: boolean;
   useAlternateDesign?: boolean;
@@ -20,6 +21,17 @@ export interface CardStoryblok {
   alternate_design?: boolean;
   _uid: string;
   component: "card";
+  [k: string]: any;
+}
+
+export interface CardContainerStoryblok {
+  heading?: string;
+  columnAmount: string;
+  gap?: string;
+  width: string;
+  elements: CardStoryblok[];
+  _uid: string;
+  component: "cardContainer";
   [k: string]: any;
 }
 
@@ -47,6 +59,16 @@ export interface GlobalHeaderStoryblok {
   rightContainer?: (ButtonStoryblok | LanguageDropdownStoryblok | LinkedInProfileLinkStoryblok)[];
   _uid: string;
   component: "globalHeader";
+  [k: string]: any;
+}
+
+export interface HeroStoryblok {
+  heading?: string;
+  text: string;
+  cta?: ButtonStoryblok[];
+  variant: "" | "primary" | "secondary";
+  _uid: string;
+  component: "hero";
   [k: string]: any;
 }
 
@@ -114,21 +136,50 @@ export interface PageStoryblok {
   [k: string]: any;
 }
 
-export interface SimpleLayoutStoryblok {
-  body?: (
+export interface SimpleContainerStoryblok {
+  heading?: string;
+  flexCol?: boolean;
+  flexWrap?: boolean;
+  width: string;
+  elements: (
     | ButtonStoryblok
     | CardStoryblok
+    | CardContainerStoryblok
     | GlobalFooterStoryblok
     | GlobalFooterColumnStoryblok
     | GlobalHeaderStoryblok
+    | HeroStoryblok
     | ImageStoryblok
     | LanguageDropdownStoryblok
     | LinkedInProfileLinkStoryblok
     | PageStoryblok
+    | SimpleContainerStoryblok
     | SimpleLayoutStoryblok
     | TextLinkStoryblok
   )[];
-  topMargin: string;
+  _uid: string;
+  component: "simpleContainer";
+  [k: string]: any;
+}
+
+export interface SimpleLayoutStoryblok {
+  body?: (
+    | ButtonStoryblok
+    | CardStoryblok
+    | CardContainerStoryblok
+    | GlobalFooterStoryblok
+    | GlobalFooterColumnStoryblok
+    | GlobalHeaderStoryblok
+    | HeroStoryblok
+    | ImageStoryblok
+    | LanguageDropdownStoryblok
+    | LinkedInProfileLinkStoryblok
+    | PageStoryblok
+    | SimpleContainerStoryblok
+    | SimpleLayoutStoryblok
+    | TextLinkStoryblok
+  )[];
+  topMargin?: string;
   centerElements?: boolean;
   _uid: string;
   component: "SimpleLayout";
@@ -138,7 +189,8 @@ export interface SimpleLayoutStoryblok {
 export interface TextLinkStoryblok {
   text: string;
   title?: string;
-  slug: string;
+  slug?: string;
+  external_url?: string;
   _uid: string;
   component: "textLink";
   [k: string]: any;

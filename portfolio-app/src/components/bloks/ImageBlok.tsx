@@ -10,10 +10,6 @@ interface ImageBlokProps {
 }
 
 const ImageBlok: React.FC<ImageBlokProps> = ({ blok }): JSX.Element => {
-  useEffect(() => {
-    logStoryblokStoryOrBlock("logo image block: ", blok);
-  }, []);
-
   const imageComponent: JSX.Element = (
     <img
       src={toAssetLocation(blok.image, "image")}

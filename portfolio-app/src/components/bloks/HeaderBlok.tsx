@@ -21,10 +21,6 @@ interface GlobalHeaderStoryblokProps {
 }
 
 const HeaderBlok: React.FC<GlobalHeaderStoryblokProps> = ({ blok }) => {
-  useEffect(() => {
-    logStoryblokStoryOrBlock("header", blok);
-  }, []);
-
   const brandLogoBlok = blok.logo.find(
     (blok): blok is ImageStoryblok => blok.component === "image"
   );

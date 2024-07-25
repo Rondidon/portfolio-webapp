@@ -1,16 +1,33 @@
-import { Link } from "react-router-dom";
+import { SbBlokData, StoryblokComponent } from "@storyblok/react";
+import { useEffect } from "react";
+import Loading from "../components/Loading";
+import LayoutWrapper from "../components/content_types/LayoutWrapper";
+import { SimpleLayoutStoryblok } from "../components/types/component-types-sb";
+import useStoryblokStory from "../hooks/useStoryblokStory";
+import { logStoryblokStoryOrBlock } from "../utils/logger";
 
-type HomeProps = {
-  message: string;
-};
+const slug = "home";
 
-const Home: React.FC<HomeProps> = ({ message }) => {
+const Home: React.FC = () => {
+  const story = useStoryblokStory(slug);
+  const content = story?.content as SimpleLayoutStoryblok;
+
+  useEffect(() => {
+    if (story) {
+      logStoryblokStoryOrBlock(slug, story);
+    }
+  }, [story]);
+
+  if (!story || !content) {
+    return <Loading />;
+  }
+
   return (
-    <div>
-      <p>{message}</p>
-      <Link to={"/imprint"}>To Imprint</Link>
-      <Link to={"/privacy-policy"}>To PP</Link>
-    </div>
+    <LayoutWrapper blok={content}>
+      {content.body?.map((blok: SbBlokData) => (
+        <StoryblokComponent blok={blok} key={blok._uid} />
+      ))}
+    </LayoutWrapper>
   );
 };
 

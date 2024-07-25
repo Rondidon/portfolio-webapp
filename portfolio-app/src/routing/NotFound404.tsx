@@ -12,10 +12,6 @@ const NotFound404: React.FC = () => {
   const story = useStoryblokStory(slug);
   const content = story.content as SimpleLayoutStoryblok;
 
-  useEffect(() => {
-    logStoryblokStoryOrBlock(slug, story);
-  }, [story]);
-
   if (!story || !content) {
     return <Loading />;
   }

@@ -32,6 +32,7 @@ const getClassName = (
 const ButtonBlok: React.FC<ButtonBlokProps> = ({ blok, isNavButton }) => {
   return (
     <Link
+      title={blok.title}
       to={blok.disabled ? "#" : blok.slug}
       className={getClassName(
         blok.useAlternateDesign ? blok.useAlternateDesign : false,
