@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
-import { logStoryblokStoryOrBlock } from "../../utils/logger";
-import { LanguageDropdownStoryblok } from "../types/component-types-sb";
+import React from "react";
 import toAssetLocation from "../../scripts/imageConverter";
+import { LanguageDropdownStoryblok } from "../types/component-types-sb";
 import "./css/Dropdown.css";
 
 interface LanguageDropdownProps {
@@ -12,7 +11,7 @@ const LanguageDropdownBlok: React.FC<LanguageDropdownProps> = ({
   blok,
 }): JSX.Element => {
   return (
-    <li className="nav-item dropdown">
+    <div className="nav-item dropdown">
       <a
         className="nav-link dropdown-toggle"
         href="#"
@@ -24,29 +23,25 @@ const LanguageDropdownBlok: React.FC<LanguageDropdownProps> = ({
         {blok.title}
       </a>
       <ul className="dropdown-menu dropdown-fit-content">
-        {blok.languages?.map((value, index) => {
-          return (
-            <li>
-              <a className="dropdown-item dropdown-fit-content" href="#">
-                {
-                  <img
-                    src={
-                      value === "0"
-                        ? toAssetLocation("DE.svg", "image")
-                        : toAssetLocation("GB.svg", "image")
-                    }
-                    style={{ width: "16px", height: "16px" }}
-                  ></img>
-                }
-                <span style={{ marginLeft: "0.2em" }}>
-                  {value === "0" ? "DE" : "EN"}
-                </span>
-              </a>
-            </li>
-          );
-        })}
+        {blok.languages?.map((value, index) => (
+          <li key={index}>
+            <a className="dropdown-item dropdown-fit-content" href="#">
+              <img
+                src={toAssetLocation(
+                  value === "0" ? "DE.svg" : "GB.svg",
+                  "image"
+                )}
+                style={{ width: "16px", height: "16px" }}
+                alt={value === "0" ? "DE" : "EN"}
+              />
+              <span style={{ marginLeft: "0.2em" }}>
+                {value === "0" ? "DE" : "EN"}
+              </span>
+            </a>
+          </li>
+        ))}
       </ul>
-    </li>
+    </div>
   );
 };
 

@@ -1,0 +1,19 @@
+.hero-primary {
+  background-color: #e0dde3;
+  border-style: none;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  min-width: "4rem";
+  min-height: "4rem";
+}
+
+.hero-secondary {
+  background-color: #e0dde3;
+  border-style: none;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  min-width: "4rem";
+  min-height: "4rem";
+}
