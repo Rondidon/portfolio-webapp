@@ -44,7 +44,7 @@ export interface GlobalFooterColumnStoryblok {
 export interface GlobalHeaderStoryblok {
   logo: (ImageStoryblok | TextLinkStoryblok)[];
   leftContainer: ButtonStoryblok[];
-  rightContainer?: (ButtonStoryblok | ImageStoryblok | LanguageDropdownStoryblok)[];
+  rightContainer?: (ButtonStoryblok | LanguageDropdownStoryblok | LinkedInProfileLinkStoryblok)[];
   _uid: string;
   component: "globalHeader";
   [k: string]: any;
@@ -90,9 +90,18 @@ export interface ImageStoryblok {
 
 export interface LanguageDropdownStoryblok {
   title?: string;
-  languages?: any[];
+  languages?: ("" | "0" | "1")[];
   _uid: string;
   component: "languageDropdown";
+  [k: string]: any;
+}
+
+export interface LinkedInProfileLinkStoryblok {
+  alt: string;
+  title: string;
+  url: string;
+  _uid: string;
+  component: "LinkedInProfileLink";
   [k: string]: any;
 }
 
@@ -114,6 +123,7 @@ export interface SimpleLayoutStoryblok {
     | GlobalHeaderStoryblok
     | ImageStoryblok
     | LanguageDropdownStoryblok
+    | LinkedInProfileLinkStoryblok
     | PageStoryblok
     | SimpleLayoutStoryblok
     | TextLinkStoryblok

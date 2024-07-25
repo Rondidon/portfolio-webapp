@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { logStoryblokStoryOrBlock } from "../../utils/logger";
 import { LanguageDropdownStoryblok } from "../types/component-types-sb";
-import "./css/DropdownBlok.css";
+import toAssetLocation from "../../scripts/imageConverter";
+import "./css/Dropdown.css";
 
 interface LanguageDropdownProps {
   blok: LanguageDropdownStoryblok;
@@ -23,27 +24,30 @@ const LanguageDropdownBlok: React.FC<LanguageDropdownProps> = ({
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Dropdown
+        {blok.title}
       </a>
-      <ul className="dropdown-menu">
-        <li>
-          <a className="dropdown-item" href="#">
-            Action
-          </a>
-        </li>
-        <li>
-          <a className="dropdown-item" href="#">
-            Another action
-          </a>
-        </li>
-        <li>
-          <hr className="dropdown-divider" />
-        </li>
-        <li>
-          <a className="dropdown-item" href="#">
-            Something else here
-          </a>
-        </li>
+      <ul className="dropdown-menu dropdown-fit-content">
+        {blok.languages?.map((value, index) => {
+          return (
+            <li>
+              <a className="dropdown-item dropdown-fit-content" href="#">
+                {
+                  <img
+                    src={
+                      value === "0"
+                        ? toAssetLocation("DE.svg", "image")
+                        : toAssetLocation("GB.svg", "image")
+                    }
+                    style={{ width: "16px", height: "16px" }}
+                  ></img>
+                }
+                <span style={{ marginLeft: "0.2em" }}>
+                  {value === "0" ? "DE" : "EN"}
+                </span>
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </li>
   );

@@ -4,6 +4,7 @@ import useStoryblokStory from "../hooks/useStoryblokStory";
 import { logStoryblokStoryOrBlock } from "../utils/logger";
 import Loading from "../components/Loading";
 import { SimpleLayoutStoryblok } from "../components/types/component-types-sb";
+import LayoutWrapper from "../components/content_types/LayoutWrapper";
 
 const slug = "not-found-404";
 
@@ -20,21 +21,11 @@ const NotFound404: React.FC = () => {
   }
 
   return (
-    <div
-      style={{
-        marginTop: content.topMargin + "vh",
-        justifyContent: content.centerElements ? "center" : "flex-start",
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        flexWrap: "wrap",
-        gap: "16px",
-      }}
-    >
+    <LayoutWrapper blok={content}>
       {content.body?.map((blok: SbBlokData) => (
         <StoryblokComponent blok={blok} key={blok._uid} />
       ))}
-    </div>
+    </LayoutWrapper>
   );
 };
 

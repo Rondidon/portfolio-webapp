@@ -1,0 +1,27 @@
+.text-link {
+  text-decoration: none;
+  color: #ddd;
+  font-size: smaller;
+  transition: color 0.3s ease;
+}
+
+.text-link:hover {
+  color: #63eed2;
+}
+
+.text-link-header-brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2b303a;
+  height: 32px;
+  font-size: 1.25em;
+  margin-left: 0.35em;
+  margin-right: 0.35em;
+}
+
+.text-link-header-brand:hover,
+.text-link-header-brand:active {
+  color: #2b303a;
+}

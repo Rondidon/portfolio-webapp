@@ -11,31 +11,14 @@
 .app-main {
   display: flex;
   flex: 1;
+  justify-content: center;
   background-color: #ffffff;
-}
-
-.app-header {
-  background-color: #eeeeee;
 }
 
 .app-footer {
   min-height: 2rem;
   width: 100%;
   background-color: #1a1d23;
-}
-
-.claim-green {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #2b303a;
-  height: 32px;
-  font-size: 1.25em;
-}
-
-.claim-green:hover,
-.claim-green:active {
-  color: #2b303a;
 }
 
 .color-green {

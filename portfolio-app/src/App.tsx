@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Footer from "./components/bloks/FooterBlok";
+import Header from "./components/bloks/HeaderBlok";
 import Main from "./components/Main";
 import useStoryblokStory from "./hooks/useStoryblokStory";
 import {

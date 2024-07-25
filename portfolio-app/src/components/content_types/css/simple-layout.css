@@ -1,0 +1,27 @@
+.simple-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1.5em 0;
+  width: 100%;
+}
+
+.simple-layout-centered {
+  justify-content: center;
+  align-items: center;
+}
+
+/** Bootstrap large lg */
+@media (min-width: 992px) {
+  .simple-layout-centered {
+    margin-top: -10%;
+  }
+}
+
+/**
+  max-width: 1280px;
+  min-height: 100%;
+  border-left: 2px solid rgb(240, 240, 240);
+  border-right: 2px solid rgb(240, 240, 240);
+  background-color: rgb(248, 248, 248);
+  */

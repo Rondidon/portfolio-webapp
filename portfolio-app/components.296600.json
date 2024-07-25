@@ -218,7 +218,7 @@
       "name": "globalHeader",
       "display_name": null,
       "created_at": "2024-07-23T16:43:51.820Z",
-      "updated_at": "2024-07-24T15:40:16.592Z",
+      "updated_at": "2024-07-24T21:07:48.143Z",
       "id": 6085251,
       "schema": {
         "logo": {
@@ -253,8 +253,8 @@
           "restrict_components": true,
           "component_whitelist": [
             "button",
-            "image",
-            "languageDropdown"
+            "languageDropdown",
+            "LinkedInProfileLink"
           ]
         }
       },
@@ -347,7 +347,7 @@
       "name": "languageDropdown",
       "display_name": null,
       "created_at": "2024-07-23T17:20:25.562Z",
-      "updated_at": "2024-07-23T17:23:22.495Z",
+      "updated_at": "2024-07-24T21:42:07.555Z",
       "id": 6085449,
       "schema": {
         "title": {
@@ -356,7 +356,19 @@
         },
         "languages": {
           "type": "options",
-          "pos": 1
+          "pos": 1,
+          "options": [
+            {
+              "_uid": "02aeef4c-6a7f-4054-a122-fc8995c3a25a",
+              "name": "Deutsch",
+              "value": "0"
+            },
+            {
+              "_uid": "11240b7e-c18e-4fc9-8ce3-156fa40252cc",
+              "value": "1",
+              "name": "Englisch"
+            }
+          ]
         }
       },
       "image": null,
@@ -370,6 +382,44 @@
       "component_group_uuid": null,
       "color": null,
       "icon": "block-block",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "LinkedInProfileLink",
+      "display_name": null,
+      "created_at": "2024-07-24T21:05:29.088Z",
+      "updated_at": "2024-07-24T21:06:50.074Z",
+      "id": 6090956,
+      "schema": {
+        "alt": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "title": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        },
+        "url": {
+          "type": "text",
+          "pos": 2,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "LinkedInProfileLink",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null
