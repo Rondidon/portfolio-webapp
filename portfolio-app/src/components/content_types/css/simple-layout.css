@@ -12,7 +12,7 @@
 }
 
 /** Bootstrap large lg */
-@media (min-width: 992px) {
+@media (min-width: 992px) and (min-height: 1024px) {
   .simple-layout-centered {
     margin-top: -10%;
   }
