@@ -9,16 +9,11 @@
 }
 
 .app-main {
+  min-width: 300px;
   display: flex;
   flex: 1;
   justify-content: center;
   background-color: #ffffff;
-}
-
-.app-footer {
-  min-height: 2rem;
-  width: 100%;
-  background-color: #1a1d23;
 }
 
 .color-green {

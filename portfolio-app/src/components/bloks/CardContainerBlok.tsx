@@ -21,7 +21,7 @@ const CardContainerBlok: React.FC<CardContainerBlokProps> = ({ blok }) => {
       {heading && (
         <>
           <h2 style={{ gridColumn: `span ${columnAmount}` }}>{heading}</h2>
-          <td className="td" />
+          <div className="td" />
         </>
       )}
       <div

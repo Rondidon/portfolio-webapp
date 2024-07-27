@@ -53,7 +53,7 @@
       "name": "card",
       "display_name": null,
       "created_at": "2024-07-10T21:54:58.901Z",
-      "updated_at": "2024-07-26T14:06:27.615Z",
+      "updated_at": "2024-07-27T20:57:16.203Z",
       "id": 6035609,
       "schema": {
         "title": {
@@ -65,13 +65,6 @@
           "type": "text",
           "pos": 1,
           "key": "text"
-        },
-        "image": {
-          "type": "text",
-          "pos": 2,
-          "description": "Der Name des Bildes oder leer falls kein Bild gewünscht.",
-          "regex": "[a-zA-Z0-9]*",
-          "key": "image"
         },
         "internal_link": {
           "type": "bloks",
@@ -126,6 +119,16 @@
           ],
           "required": true,
           "default_value": "full"
+        },
+        "image": {
+          "type": "bloks",
+          "pos": 7,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "image"
+          ]
         }
       },
       "image": null,

@@ -6,9 +6,13 @@ import "./css/ImageBlok.css";
 
 interface ImageBlokProps {
   blok: ImageStoryblok;
+  marginBottom?: number;
 }
 
-const ImageBlok: React.FC<ImageBlokProps> = ({ blok }): JSX.Element => {
+const ImageBlok: React.FC<ImageBlokProps> = ({
+  blok,
+  marginBottom,
+}): JSX.Element => {
   const imageComponent: JSX.Element = (
     <img
       src={toAssetLocation(blok.image, "image")}
@@ -16,6 +20,7 @@ const ImageBlok: React.FC<ImageBlokProps> = ({ blok }): JSX.Element => {
       title={blok.title}
       className={blok.withHoverEffect ? "image-blok-with-hover" : ""}
       style={{
+        marginBottom: marginBottom ? marginBottom + "em" : undefined,
         height: blok.size ? blok.size + "px" : undefined,
         width: blok.size ? blok.size + "px" : undefined,
         borderRadius: blok.borderRadius ? blok.borderRadius + "em" : undefined,

@@ -5,6 +5,7 @@ import { CardStoryblok } from "../types/component-types-sb";
 import SafeHtmlRenderer from "../xss/SafeHtmlRenderer";
 import InternalLinkBlok from "./ButtonBlok";
 import "./css/CardBlok.css";
+import ImageBlok from "./ImageBlok";
 
 interface CardBlokProps {
   blok: CardStoryblok;
@@ -12,6 +13,7 @@ interface CardBlokProps {
 
 const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
   const height: "full" | "fit_content" | "" = blok.height;
+  const image = blok.image?.at(0);
 
   return (
     <div
@@ -29,13 +31,7 @@ const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
       {...storyblokEditable(blok)}
     >
       <div className="card-default-body">
-        {blok.image && (
-          <img
-            src={toAssetLocation(blok.image, "image")}
-            className="card-default-img"
-            alt={blok.title}
-          />
-        )}
+        {image && image.image && <ImageBlok blok={image} marginBottom={1} />}
         <h5 className="card-default-title">{blok.title}</h5>
         {blok.text && (
           <SafeHtmlRenderer

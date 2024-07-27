@@ -14,12 +14,12 @@ export interface ButtonStoryblok {
 export interface CardStoryblok {
   title?: string;
   text?: string;
-  image?: string;
   internal_link?: ButtonStoryblok[];
   width?: string;
   center_text?: boolean;
   alternate_design?: boolean;
   height: "" | "fit_content" | "full";
+  image?: ImageStoryblok[];
   _uid: string;
   component: "card";
   [k: string]: any;
