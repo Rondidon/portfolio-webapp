@@ -16,17 +16,18 @@
 }
 
 .footer-column-header {
-  color: #eee;
+  color: #ddd;
   font-size: medium;
+  margin-bottom: 0.8em;
 }
 
 .footer-description-text {
   color: #ddd;
-  font-size: small;
+  font-size: smaller;
 }
 
 .footer-copyright-text {
   margin-top: 1em;
   color: #ccc;
-  font-size: small;
+  font-size: smaller;
 }

@@ -17,9 +17,12 @@ const CardContainerBlok: React.FC<CardContainerBlokProps> = ({ blok }) => {
   const width = blok.width;
 
   return (
-    <div style={{ width: width, padding: gap }}>
+    <div style={{ width: width }}>
       {heading && (
-        <h2 style={{ gridColumn: `span ${columnAmount}` }}>{heading}</h2>
+        <>
+          <h2 style={{ gridColumn: `span ${columnAmount}` }}>{heading}</h2>
+          <td className="td" />
+        </>
       )}
       <div
         style={{

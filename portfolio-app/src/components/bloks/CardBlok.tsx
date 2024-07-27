@@ -11,6 +11,8 @@ interface CardBlokProps {
 }
 
 const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
+  const height: "full" | "fit_content" | "" = blok.height;
+
   return (
     <div
       className={
@@ -21,6 +23,8 @@ const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
       style={{
         maxWidth: blok.width ? blok.width + "rem" : "18rem",
         textAlign: blok.center_text ? "center" : "start",
+        height: height === "full" ? "100%" : "fit-content",
+        justifyContent: height === "full" ? "space-between" : "unset",
       }}
       {...storyblokEditable(blok)}
     >

@@ -19,6 +19,7 @@ export interface CardStoryblok {
   width?: string;
   center_text?: boolean;
   alternate_design?: boolean;
+  height: "" | "fit_content" | "full";
   _uid: string;
   component: "card";
   [k: string]: any;
@@ -67,6 +68,7 @@ export interface HeroStoryblok {
   text: string;
   cta?: ButtonStoryblok[];
   variant: "" | "primary" | "secondary";
+  image?: ImageStoryblok[];
   _uid: string;
   component: "hero";
   [k: string]: any;
@@ -105,6 +107,7 @@ export interface ImageStoryblok {
   borderRadius?: string;
   external_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   showBorder?: boolean;
+  withHoverEffect?: boolean;
   _uid: string;
   component: "image";
   [k: string]: any;

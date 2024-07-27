@@ -53,7 +53,7 @@
       "name": "card",
       "display_name": null,
       "created_at": "2024-07-10T21:54:58.901Z",
-      "updated_at": "2024-07-23T17:29:31.038Z",
+      "updated_at": "2024-07-26T14:06:27.615Z",
       "id": 6035609,
       "schema": {
         "title": {
@@ -107,6 +107,25 @@
           "type": "boolean",
           "pos": 6,
           "key": "use_alternate_design"
+        },
+        "height": {
+          "type": "option",
+          "pos": 7,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "c20531a4-61a8-4c95-b7ec-08880695db49",
+              "name": "fit_content",
+              "value": "fit_content"
+            },
+            {
+              "_uid": "1d8c0b15-cf53-4026-a755-0be0e144ba22",
+              "value": "full",
+              "name": "full"
+            }
+          ],
+          "required": true,
+          "default_value": "full"
         }
       },
       "image": null,
@@ -343,17 +362,19 @@
       "name": "hero",
       "display_name": null,
       "created_at": "2024-07-25T19:09:50.121Z",
-      "updated_at": "2024-07-25T20:03:26.861Z",
+      "updated_at": "2024-07-25T23:25:58.634Z",
       "id": 6095549,
       "schema": {
         "heading": {
           "type": "text",
-          "pos": 0
+          "pos": 0,
+          "key": "heading"
         },
         "text": {
           "type": "text",
           "pos": 1,
-          "required": true
+          "required": true,
+          "key": "text"
         },
         "cta": {
           "type": "bloks",
@@ -364,7 +385,8 @@
           "restrict_components": true,
           "component_whitelist": [
             "button"
-          ]
+          ],
+          "key": "cta"
         },
         "variant": {
           "type": "option",
@@ -382,7 +404,20 @@
               "value": "secondary",
               "name": "secondary"
             }
-          ]
+          ],
+          "key": "variant"
+        },
+        "image": {
+          "type": "bloks",
+          "pos": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "image"
+          ],
+          "minimum": 1,
+          "maximum": 1,
+          "key": "block"
         }
       },
       "image": null,
@@ -404,7 +439,7 @@
       "name": "image",
       "display_name": null,
       "created_at": "2024-07-23T16:51:25.185Z",
-      "updated_at": "2024-07-24T13:40:39.729Z",
+      "updated_at": "2024-07-26T01:12:56.417Z",
       "id": 6085319,
       "schema": {
         "image": {
@@ -453,6 +488,10 @@
           "type": "boolean",
           "pos": 7,
           "default_value": false
+        },
+        "withHoverEffect": {
+          "type": "boolean",
+          "pos": 8
         }
       },
       "image": null,

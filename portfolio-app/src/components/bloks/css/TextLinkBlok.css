@@ -1,7 +1,7 @@
 .text-link {
   text-decoration: none;
   color: #ddd;
-  font-size: smaller;
+  font-size: medium;
   transition: color 0.3s ease;
 }
 

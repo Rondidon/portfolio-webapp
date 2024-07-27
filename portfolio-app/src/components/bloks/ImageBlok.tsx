@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { ImageStoryblok } from "../types/component-types-sb";
-import "./css/ButtonBlok.css";
 import toAssetLocation from "../../scripts/imageConverter";
-import { logStoryblokStoryOrBlock } from "../../utils/logger";
+import { ImageStoryblok } from "../types/component-types-sb";
+import "./css/ImageBlok.css";
 
 interface ImageBlokProps {
   blok: ImageStoryblok;
@@ -15,6 +14,7 @@ const ImageBlok: React.FC<ImageBlokProps> = ({ blok }): JSX.Element => {
       src={toAssetLocation(blok.image, "image")}
       alt={blok.alt}
       title={blok.title}
+      className={blok.withHoverEffect ? "image-blok-with-hover" : ""}
       style={{
         height: blok.size ? blok.size + "px" : undefined,
         width: blok.size ? blok.size + "px" : undefined,
@@ -25,7 +25,11 @@ const ImageBlok: React.FC<ImageBlokProps> = ({ blok }): JSX.Element => {
   );
 
   if (blok.internal_slug) {
-    return <Link to={blok.disabled ? "#" : blok.slug}>{imageComponent}</Link>;
+    return (
+      <Link to={blok.disabled ? "#" : blok.internal_slug}>
+        {imageComponent}
+      </Link>
+    );
   }
 
   if (blok.external_link?.url) {

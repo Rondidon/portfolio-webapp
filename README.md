@@ -1,3 +1,5 @@
+# Portfolio Web App
+
 The portfolio web app highlights several examples of my work.
 
 ## Available Scripts
@@ -18,8 +20,19 @@ Builds the app for production to the `build` folder.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-This command will remove the single build dependency from your project.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!** This command will remove the single build dependency from your project.
+
+### `npm run deploy`
+
+Deploys the app to GitHub Pages.
+
+### `npm run storyblok-pull-components`
+
+Pulls the components from Storyblok using the specified space ID.
+
+### `npm run storyblok-generate-types`
+
+Generates TypeScript types from the Storyblok components JSON file.
 
 ## Scrum / Documentation
 

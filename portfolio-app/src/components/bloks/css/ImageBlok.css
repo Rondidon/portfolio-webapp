@@ -1,0 +1,8 @@
+.image-blok-with-hover {
+  transition: 0.5s ease;
+}
+
+.image-blok-with-hover:hover,
+.image-blok-with-hover:active {
+  transform: scale(1.05);
+}

@@ -32,3 +32,10 @@
 .color-light-grey {
   color: #cccccc;
 }
+
+.td {
+  height: 1px;
+  display: block;
+  margin: 1em 0;
+  background: linear-gradient(to right, #ccc, #ffffff);
+}
