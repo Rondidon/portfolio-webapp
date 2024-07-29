@@ -1,6 +1,5 @@
 import { storyblokEditable } from "@storyblok/react";
 import React from "react";
-import toAssetLocation from "../../scripts/imageConverter";
 import { CardStoryblok } from "../types/component-types-sb";
 import SafeHtmlRenderer from "../xss/SafeHtmlRenderer";
 import InternalLinkBlok from "./ButtonBlok";

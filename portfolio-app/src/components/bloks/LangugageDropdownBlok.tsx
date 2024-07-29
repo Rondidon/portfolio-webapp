@@ -27,16 +27,10 @@ const LanguageDropdownBlok: React.FC<LanguageDropdownProps> = ({
           <li key={index}>
             <a className="dropdown-item dropdown-fit-content" href="#">
               <img
-                src={toAssetLocation(
-                  value === "0" ? "DE.svg" : "GB.svg",
-                  "image"
-                )}
+                src={toAssetLocation(value + ".svg")}
                 style={{ width: "16px", height: "16px" }}
-                alt={value === "0" ? "DE" : "EN"}
               />
-              <span style={{ marginLeft: "0.2em" }}>
-                {value === "0" ? "DE" : "EN"}
-              </span>
+              <span style={{ marginLeft: "0.2em" }}>{value}</span>
             </a>
           </li>
         ))}

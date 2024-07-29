@@ -16,7 +16,7 @@ const LinkedInProfileLinkBlok: React.FC<LinkedInProfileProps> = ({
       rel="noopener noreferrer"
     >
       <img
-        src={toAssetLocation("In-Blue-26.png", "image")}
+        src={toAssetLocation("linked-in-logo.webp")}
         alt={blok.alt}
         style={{ width: "26px", height: "26px" }}
       />

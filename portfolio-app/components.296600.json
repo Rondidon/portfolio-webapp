@@ -442,7 +442,7 @@
       "name": "image",
       "display_name": null,
       "created_at": "2024-07-23T16:51:25.185Z",
-      "updated_at": "2024-07-26T01:12:56.417Z",
+      "updated_at": "2024-07-29T12:46:50.380Z",
       "id": 6085319,
       "schema": {
         "image": {
@@ -466,13 +466,13 @@
         "internal_slug": {
           "type": "text",
           "pos": 3,
-          "key": "slug"
+          "key": "internal_slug"
         },
-        "size": {
+        "height": {
           "type": "number",
           "pos": 4,
           "required": false,
-          "description": "in pixel",
+          "description": "in px.",
           "key": "size"
         },
         "borderRadius": {
@@ -485,16 +485,24 @@
           "type": "multilink",
           "pos": 6,
           "restrict_content_types": false,
-          "component_whitelist": []
+          "component_whitelist": [],
+          "key": "external_link"
         },
         "showBorder": {
           "type": "boolean",
           "pos": 7,
-          "default_value": false
+          "default_value": false,
+          "key": "showBorder"
         },
         "withHoverEffect": {
           "type": "boolean",
-          "pos": 8
+          "pos": 8,
+          "key": "withHoverEffect"
+        },
+        "isSquareImage": {
+          "type": "boolean",
+          "pos": 9,
+          "key": "isSquareImage"
         }
       },
       "image": null,
@@ -516,7 +524,7 @@
       "name": "languageDropdown",
       "display_name": null,
       "created_at": "2024-07-23T17:20:25.562Z",
-      "updated_at": "2024-07-24T21:42:07.555Z",
+      "updated_at": "2024-07-29T12:23:11.596Z",
       "id": 6085449,
       "schema": {
         "title": {
@@ -530,11 +538,11 @@
             {
               "_uid": "02aeef4c-6a7f-4054-a122-fc8995c3a25a",
               "name": "Deutsch",
-              "value": "0"
+              "value": "DE"
             },
             {
               "_uid": "11240b7e-c18e-4fc9-8ce3-156fa40252cc",
-              "value": "1",
+              "value": "EN",
               "name": "Englisch"
             }
           ]

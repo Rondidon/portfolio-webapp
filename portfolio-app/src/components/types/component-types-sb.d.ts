@@ -103,11 +103,12 @@ export interface ImageStoryblok {
   alt: string;
   title?: string;
   internal_slug?: string;
-  size?: string;
+  height?: string;
   borderRadius?: string;
   external_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   showBorder?: boolean;
   withHoverEffect?: boolean;
+  isSquareImage?: boolean;
   _uid: string;
   component: "image";
   [k: string]: any;
@@ -115,7 +116,7 @@ export interface ImageStoryblok {
 
 export interface LanguageDropdownStoryblok {
   title?: string;
-  languages?: ("" | "0" | "1")[];
+  languages?: ("" | "DE" | "EN")[];
   _uid: string;
   component: "languageDropdown";
   [k: string]: any;

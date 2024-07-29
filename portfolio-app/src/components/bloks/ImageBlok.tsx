@@ -13,16 +13,17 @@ const ImageBlok: React.FC<ImageBlokProps> = ({
   blok,
   marginBottom,
 }): JSX.Element => {
+  const height: string | undefined = blok.height + "px";
   const imageComponent: JSX.Element = (
     <img
-      src={toAssetLocation(blok.image, "image")}
+      src={toAssetLocation(blok.image)}
       alt={blok.alt}
       title={blok.title}
       className={blok.withHoverEffect ? "image-blok-with-hover" : ""}
       style={{
         marginBottom: marginBottom ? marginBottom + "em" : undefined,
-        height: blok.size ? blok.size + "px" : undefined,
-        width: blok.size ? blok.size + "px" : undefined,
+        height: height,
+        width: blok.isSquareImage ? height : undefined,
         borderRadius: blok.borderRadius ? blok.borderRadius + "em" : undefined,
         border: blok.showBorder ? "1px solid lightgrey" : undefined,
       }}
