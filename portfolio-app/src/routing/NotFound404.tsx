@@ -1,10 +1,9 @@
 import { SbBlokData, StoryblokComponent } from "@storyblok/react";
-import React, { useEffect } from "react";
-import useStoryblokStory from "../hooks/useStoryblokStory";
-import { logStoryblokStoryOrBlock } from "../utils/logger";
+import React from "react";
+import LayoutWrapper from "../components/content_types/LayoutWrapper";
 import Loading from "../components/Loading";
 import { SimpleLayoutStoryblok } from "../components/types/component-types-sb";
-import LayoutWrapper from "../components/content_types/LayoutWrapper";
+import useStoryblokStory from "../hooks/useStoryblokStory";
 
 const slug = "not-found-404";
 

@@ -652,7 +652,7 @@
       "name": "simpleContainer",
       "display_name": null,
       "created_at": "2024-07-25T19:17:55.601Z",
-      "updated_at": "2024-07-25T19:20:27.619Z",
+      "updated_at": "2024-11-12T15:53:44.804Z",
       "id": 6095552,
       "schema": {
         "heading": {
@@ -682,7 +682,14 @@
           "type": "bloks",
           "pos": 4,
           "required": true,
-          "description": "child bloks"
+          "description": "child bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "textarea",
+            "cardContainer",
+            "hero"
+          ]
         }
       },
       "image": null,
@@ -704,17 +711,34 @@
       "name": "SimpleLayout",
       "display_name": null,
       "created_at": "2024-07-22T20:28:00.238Z",
-      "updated_at": "2024-07-25T20:02:23.791Z",
+      "updated_at": "2024-11-12T16:00:42.574Z",
       "id": 6079549,
       "schema": {
         "body": {
           "type": "bloks",
-          "pos": 0,
-          "key": "body"
+          "pos": 1,
+          "key": "body",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "card",
+            "cardContainer",
+            "hero",
+            "simpleContainer",
+            "textLink",
+            "textarea",
+            "LinkedInProfileLink",
+            "languageDropdown",
+            "image",
+            "globalHeader",
+            "globalFooterColumn",
+            "globalFooter",
+            "button"
+          ]
         },
         "topMargin": {
           "type": "number",
-          "pos": 1,
+          "pos": 2,
           "steps": 2,
           "description": "in rem",
           "required": false,
@@ -725,7 +749,7 @@
         },
         "centerElements": {
           "type": "boolean",
-          "pos": 2,
+          "pos": 3,
           "key": "inlineElements"
         }
       },
@@ -743,6 +767,39 @@
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null
+    },
+    {
+      "name": "textarea",
+      "display_name": null,
+      "created_at": "2024-11-12T13:02:54.299Z",
+      "updated_at": "2024-11-12T13:07:58.940Z",
+      "id": 6545081,
+      "schema": {
+        "text": {
+          "type": "richtext",
+          "pos": 0,
+          "required": true
+        },
+        "isFullWidth": {
+          "type": "boolean",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "textarea",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
     },
     {
       "name": "textLink",

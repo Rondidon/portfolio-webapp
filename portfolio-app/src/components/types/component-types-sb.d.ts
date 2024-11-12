@@ -145,22 +145,7 @@ export interface SimpleContainerStoryblok {
   flexCol?: boolean;
   flexWrap?: boolean;
   width: string;
-  elements: (
-    | ButtonStoryblok
-    | CardStoryblok
-    | CardContainerStoryblok
-    | GlobalFooterStoryblok
-    | GlobalFooterColumnStoryblok
-    | GlobalHeaderStoryblok
-    | HeroStoryblok
-    | ImageStoryblok
-    | LanguageDropdownStoryblok
-    | LinkedInProfileLinkStoryblok
-    | PageStoryblok
-    | SimpleContainerStoryblok
-    | SimpleLayoutStoryblok
-    | TextLinkStoryblok
-  )[];
+  elements: (TextareaStoryblok | CardContainerStoryblok | HeroStoryblok)[];
   _uid: string;
   component: "simpleContainer";
   [k: string]: any;
@@ -168,25 +153,41 @@ export interface SimpleContainerStoryblok {
 
 export interface SimpleLayoutStoryblok {
   body?: (
-    | ButtonStoryblok
     | CardStoryblok
     | CardContainerStoryblok
-    | GlobalFooterStoryblok
-    | GlobalFooterColumnStoryblok
-    | GlobalHeaderStoryblok
     | HeroStoryblok
-    | ImageStoryblok
-    | LanguageDropdownStoryblok
-    | LinkedInProfileLinkStoryblok
-    | PageStoryblok
     | SimpleContainerStoryblok
-    | SimpleLayoutStoryblok
     | TextLinkStoryblok
+    | TextareaStoryblok
+    | LinkedInProfileLinkStoryblok
+    | LanguageDropdownStoryblok
+    | ImageStoryblok
+    | GlobalHeaderStoryblok
+    | GlobalFooterColumnStoryblok
+    | GlobalFooterStoryblok
+    | ButtonStoryblok
   )[];
   topMargin?: string;
   centerElements?: boolean;
   _uid: string;
   component: "SimpleLayout";
+  [k: string]: any;
+}
+
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
+export interface TextareaStoryblok {
+  text: RichtextStoryblok;
+  isFullWidth?: boolean;
+  _uid: string;
+  component: "textarea";
   [k: string]: any;
 }
 
