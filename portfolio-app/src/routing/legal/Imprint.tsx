@@ -8,11 +8,7 @@ import { SbBlokData, StoryblokComponent } from "@storyblok/react";
 
 const slug = "imprint";
 
-type ImprintProps = {
-  message: string;
-};
-
-const Imprint: React.FC<ImprintProps> = ({ message }) => {
+const Imprint: React.FC<{}> = ({}) => {
   const story = useStoryblokStory(slug);
   const content = story?.content as SimpleLayoutStoryblok;
 

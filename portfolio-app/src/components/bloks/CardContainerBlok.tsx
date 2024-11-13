@@ -17,7 +17,7 @@ const CardContainerBlok: React.FC<CardContainerBlokProps> = ({ blok }) => {
   const width = blok.width;
 
   return (
-    <div style={{ width: width }}>
+    <div style={{ minWidth: width, justifyContent: "space-evenly" }}>
       {heading && (
         <>
           <h2 style={{ gridColumn: `span ${columnAmount}` }}>{heading}</h2>
@@ -29,14 +29,17 @@ const CardContainerBlok: React.FC<CardContainerBlokProps> = ({ blok }) => {
           display: "flex",
           flexWrap: "wrap",
           gap: gap,
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
         }}
       >
         {elements.map((element, index) => (
           <div
             key={index}
             style={{
+              display: "flex",
+              width: "100%",
               flex: `1 1 calc(${100 / columnAmount}% - ${gap})`,
+              justifyContent: "center",
               boxSizing: "border-box",
             }}
           >

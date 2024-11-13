@@ -23,7 +23,7 @@ function isTextareaStoryblok(element: any): element is TextareaStoryblok {
 function isCardContainerStoryblok(
   element: any
 ): element is CardContainerStoryblok {
-  return (element as CardContainerStoryblok).title !== undefined;
+  return (element as CardContainerStoryblok).component === "cardContainer";
 }
 
 // Type Guard für HeroStoryblok

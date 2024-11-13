@@ -57,11 +57,11 @@ const NotFound404 = lazy(() => import("./NotFound404"));
 
 const routesConfig: RouteConfig[] = [
   { path: "/", element: <Home /> },
-  { path: "/home", element: <Home /> },
-  { path: "imprint", element: <Imprint message="imprint" /> },
+  { path: "home", element: <Home /> },
+  { path: "imprint", element: <Imprint /> },
   {
     path: "privacy-policy",
-    element: <PrivacyPolicy message="privacy policy" />,
+    element: <PrivacyPolicy />,
   },
   {
     path: "search-results",

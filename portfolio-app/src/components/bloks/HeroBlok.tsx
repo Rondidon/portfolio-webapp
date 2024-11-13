@@ -29,10 +29,15 @@ const HeroBlok: React.FC<HeroBlokProps> = ({ blok, isHeadingH1 }) => {
         style={{ justifyContent: "space-between" }}
       >
         <div
-          className="d-flex flex-column gap-3"
+          className="d-flex flex-column gap-3 text-center text-lg-start"
           style={{ justifyContent: "space-between" }}
         >
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column gap-2 gap-lg-0">
+            {image && (
+              <div className="d-block d-lg-none">
+                <ImageBlok blok={image} />
+              </div>
+            )}
             {blok.heading && isHeadingH1 && (
               <h1 className="hero-heading">{blok.heading}</h1>
             )}

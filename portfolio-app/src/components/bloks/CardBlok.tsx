@@ -22,6 +22,8 @@ const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
           : "card-default-variant"
       }
       style={{
+        display: "flex",
+        width: "100%",
         maxWidth: blok.width ? blok.width + "rem" : "18rem",
         textAlign: blok.center_text ? "center" : "start",
         height: height === "full" ? "100%" : "fit-content",
