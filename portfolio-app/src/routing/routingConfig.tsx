@@ -68,7 +68,7 @@ const routesConfig: RouteConfig[] = [
     element: <SearchResults message="search results" />,
   },
   { path: "contact", element: <Contact message="contact" /> },
-  { path: "about-me", element: <AboutMe message="about me" /> },
+  { path: "about-me", element: <AboutMe /> },
   {
     path: "services-offered",
     element: <ServicesOffered message="services offered" />,

@@ -36,6 +36,17 @@ export interface CardContainerStoryblok {
   [k: string]: any;
 }
 
+export interface ContentSectionStoryblok {
+  callToAction?: ButtonStoryblok[];
+  image?: ImageStoryblok[];
+  isRightAdjusted?: boolean;
+  heading?: string;
+  text?: string;
+  _uid: string;
+  component: "contentSection";
+  [k: string]: any;
+}
+
 export interface GlobalFooterStoryblok {
   logo: ImageStoryblok[];
   claim?: string;
@@ -74,6 +85,16 @@ export interface HeroStoryblok {
   [k: string]: any;
 }
 
+export interface HorizontalLineStoryblok {
+  isAdjustedToRight?: boolean;
+  width: string;
+  marginY?: string;
+  thickness?: string;
+  _uid: string;
+  component: "horizontalLine";
+  [k: string]: any;
+}
+
 export type MultilinkStoryblok =
   | {
       id?: string;
@@ -109,6 +130,7 @@ export interface ImageStoryblok {
   showBorder?: boolean;
   withHoverEffect?: boolean;
   isSquareImage?: boolean;
+  margin?: string;
   _uid: string;
   component: "image";
   [k: string]: any;
@@ -145,7 +167,7 @@ export interface SimpleContainerStoryblok {
   flexCol?: boolean;
   flexWrap?: boolean;
   width: string;
-  elements: (TextareaStoryblok | CardContainerStoryblok | HeroStoryblok)[];
+  elements: (TextareaStoryblok | CardContainerStoryblok | HeroStoryblok | HorizontalLineStoryblok)[];
   _uid: string;
   component: "simpleContainer";
   [k: string]: any;
@@ -166,6 +188,8 @@ export interface SimpleLayoutStoryblok {
     | GlobalFooterColumnStoryblok
     | GlobalFooterStoryblok
     | ButtonStoryblok
+    | ContentSectionStoryblok
+    | HorizontalLineStoryblok
   )[];
   topMargin?: string;
   centerElements?: boolean;

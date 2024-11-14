@@ -209,6 +209,68 @@
       "content_type_asset_preview": null
     },
     {
+      "name": "contentSection",
+      "display_name": null,
+      "created_at": "2024-11-14T13:18:13.862Z",
+      "updated_at": "2024-11-14T17:16:27.756Z",
+      "id": 6560575,
+      "schema": {
+        "callToAction": {
+          "type": "bloks",
+          "pos": 0,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "button"
+          ]
+        },
+        "image": {
+          "type": "bloks",
+          "pos": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "image"
+          ]
+        },
+        "isRightAdjusted": {
+          "type": "boolean",
+          "pos": 2,
+          "default_value": false,
+          "inline_label": true,
+          "description": "Impliziert ob der Text links oder rechtsbündig ist.",
+          "display_name": "isRightAdjusted"
+        },
+        "heading": {
+          "type": "text",
+          "pos": 3,
+          "required": false
+        },
+        "text": {
+          "type": "text",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "contentSection",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "globalFooter",
       "display_name": null,
       "created_at": "2024-07-23T17:26:14.348Z",
@@ -439,10 +501,59 @@
       "content_type_asset_preview": null
     },
     {
+      "name": "horizontalLine",
+      "display_name": null,
+      "created_at": "2024-11-14T18:08:09.706Z",
+      "updated_at": "2024-11-14T18:29:26.236Z",
+      "id": 6562092,
+      "schema": {
+        "isAdjustedToRight": {
+          "type": "boolean",
+          "pos": 0
+        },
+        "width": {
+          "type": "number",
+          "pos": 1,
+          "max_value": 100,
+          "min_value": 10,
+          "steps": 1,
+          "description": "in percent.",
+          "required": true
+        },
+        "marginY": {
+          "type": "number",
+          "pos": 2,
+          "description": "in em"
+        },
+        "thickness": {
+          "type": "number",
+          "pos": 3,
+          "description": "in pixel",
+          "min_value": 1,
+          "required": false
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "horizontalLine",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": "block-block",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "image",
       "display_name": null,
       "created_at": "2024-07-23T16:51:25.185Z",
-      "updated_at": "2024-07-29T12:46:50.380Z",
+      "updated_at": "2024-11-14T16:35:28.175Z",
       "id": 6085319,
       "schema": {
         "image": {
@@ -503,6 +614,16 @@
           "type": "boolean",
           "pos": 9,
           "key": "isSquareImage"
+        },
+        "margin": {
+          "type": "number",
+          "pos": 10,
+          "description": "in em",
+          "min_value": 0,
+          "max_value": 8,
+          "steps": 0.5,
+          "decimals": 1,
+          "default_value": ""
         }
       },
       "image": null,
@@ -652,7 +773,7 @@
       "name": "simpleContainer",
       "display_name": null,
       "created_at": "2024-07-25T19:17:55.601Z",
-      "updated_at": "2024-11-12T15:53:44.804Z",
+      "updated_at": "2024-11-14T18:13:04.306Z",
       "id": 6095552,
       "schema": {
         "heading": {
@@ -688,7 +809,8 @@
           "component_whitelist": [
             "textarea",
             "cardContainer",
-            "hero"
+            "hero",
+            "horizontalLine"
           ]
         }
       },
@@ -711,7 +833,7 @@
       "name": "SimpleLayout",
       "display_name": null,
       "created_at": "2024-07-22T20:28:00.238Z",
-      "updated_at": "2024-11-12T16:00:42.574Z",
+      "updated_at": "2024-11-14T18:14:45.331Z",
       "id": 6079549,
       "schema": {
         "body": {
@@ -733,7 +855,9 @@
             "globalHeader",
             "globalFooterColumn",
             "globalFooter",
-            "button"
+            "button",
+            "contentSection",
+            "horizontalLine"
           ]
         },
         "topMargin": {

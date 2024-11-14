@@ -1,14 +1,17 @@
 import React from "react";
 import {
   CardContainerStoryblok,
-  CardStoryblok,
+  ContentSectionStoryblok,
   HeroStoryblok,
+  HorizontalLineStoryblok,
   SimpleContainerStoryblok,
   TextareaStoryblok,
 } from "../types/component-types-sb";
 import CardContainerBlok from "./CardContainerBlok";
 import HeroBlok from "./HeroBlok";
 import TextAreaBlok from "./TextAreaBlok";
+import ContentSectionBlok from "./ContentSectionBlok";
+import HorizontalLineBlok from "./HorizontalLineBlok";
 
 interface SimpleContainerBlokProps {
   blok: SimpleContainerStoryblok;
@@ -23,14 +26,34 @@ function isTextareaStoryblok(element: any): element is TextareaStoryblok {
 function isCardContainerStoryblok(
   element: any
 ): element is CardContainerStoryblok {
-  return (element as CardContainerStoryblok).component === "cardContainer";
+  return (
+    (element as CardContainerStoryblok).component.toLowerCase() ===
+    "cardcontainer"
+  );
 }
 
 // Type Guard für HeroStoryblok
 function isHeroStoryblok(element: any): element is HeroStoryblok {
+  return (element as HeroStoryblok).component.toLowerCase() === "hero";
+}
+
+// Type Guard für ContentSection
+function isContentSectionStoryblok(
+  element: any
+): element is ContentSectionStoryblok {
   return (
-    (element as HeroStoryblok).title !== undefined &&
-    (element as HeroStoryblok).image !== undefined
+    (element as ContentSectionStoryblok).component.toLowerCase() ===
+    "contentsection"
+  );
+}
+
+// Type Guard für HorizontalLine
+function isHorizontalLineStoryblok(
+  element: any
+): element is HorizontalLineStoryblok {
+  return (
+    (element as HorizontalLineStoryblok).component.toLowerCase() ===
+    "horizontalline"
   );
 }
 
@@ -56,7 +79,11 @@ const SimpleContainerBlok: React.FC<SimpleContainerBlokProps> = ({ blok }) => {
       >
         {elements.map(
           (
-            element: TextareaStoryblok | CardContainerStoryblok | HeroStoryblok,
+            element:
+              | TextareaStoryblok
+              | CardContainerStoryblok
+              | HeroStoryblok
+              | HorizontalLineStoryblok,
             index
           ) => {
             let content;
@@ -68,8 +95,12 @@ const SimpleContainerBlok: React.FC<SimpleContainerBlokProps> = ({ blok }) => {
               content = <CardContainerBlok blok={element} />;
             } else if (isHeroStoryblok(element)) {
               content = <HeroBlok blok={element} isHeadingH1={false} />;
+            } else if (isContentSectionStoryblok(element)) {
+              content = <ContentSectionBlok blok={element} />;
+            } else if (isHorizontalLineStoryblok(element)) {
+              content = <HorizontalLineBlok blok={element} />;
             } else {
-              content = null; // für unbekannte Typen
+              content = undefined;
             }
 
             return (

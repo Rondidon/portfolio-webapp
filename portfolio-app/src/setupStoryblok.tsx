@@ -3,6 +3,8 @@ import CardBlok from "./components/bloks/CardBlok";
 import HeroBlok from "./components/bloks/HeroBlok";
 import CardContainerBlok from "./components/bloks/CardContainerBlok";
 import SimpleContainerBlok from "./components/bloks/SimpleContainerBlok";
+import ContentSectionBlok from "./components/bloks/ContentSectionBlok";
+import HorizontalLineBlok from "./components/bloks/HorizontalLineBlok";
 
 // setup
 const accessToken = "u2OrXZ1MorrJDKZKPTExHwtt";
@@ -14,8 +16,10 @@ const debugLogs = true;
 const componentsWhitelist = {
   card: CardBlok,
   hero: HeroBlok,
+  contentSection: ContentSectionBlok,
   cardContainer: CardContainerBlok,
   simpleContainer: SimpleContainerBlok,
+  horizontalLine: HorizontalLineBlok,
 };
 
 const storyblokSetup = {

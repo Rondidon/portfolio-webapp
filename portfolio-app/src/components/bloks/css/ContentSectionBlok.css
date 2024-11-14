@@ -1,0 +1,27 @@
+.content-section {
+  padding: 1em;
+  flex-direction: row;
+  display: flex;
+  min-width: "4rem";
+  min-height: "4rem";
+  justify-content: space-between;
+}
+
+.content-section-flipped {
+  padding: 1em;
+  flex-direction: row-reverse;
+  display: flex;
+  min-width: "4rem";
+  min-height: "4rem";
+  justify-content: space-between;
+}
+
+.content-section-heading {
+  font-size: 1.75em;
+  color: #111;
+}
+
+.content-section-text {
+  font-size: 1em;
+  color: #333;
+}

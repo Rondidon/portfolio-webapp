@@ -9,11 +9,25 @@ interface ImageBlokProps {
   marginBottom?: number;
 }
 
+const calculateMarginBottom = (
+  m: string | undefined,
+  mb: number | undefined
+): string | undefined => {
+  if (m) {
+    return m + "em";
+  }
+  if (mb) {
+    return mb + "em";
+  }
+  return undefined;
+};
+
 const ImageBlok: React.FC<ImageBlokProps> = ({
   blok,
   marginBottom,
 }): JSX.Element => {
   const height: string | undefined = blok.height + "px";
+  const margin = blok.margin;
   const imageComponent: JSX.Element = (
     <img
       src={toAssetLocation(blok.image)}
@@ -21,11 +35,12 @@ const ImageBlok: React.FC<ImageBlokProps> = ({
       title={blok.title}
       className={blok.withHoverEffect ? "image-blok-with-hover" : ""}
       style={{
-        marginBottom: marginBottom ? marginBottom + "em" : undefined,
+        margin: margin ? margin + "em" : undefined,
+        marginBottom: calculateMarginBottom(margin, marginBottom),
         height: height,
         width: blok.isSquareImage ? height : undefined,
         borderRadius: blok.borderRadius ? blok.borderRadius + "em" : undefined,
-        border: blok.showBorder ? "1px solid lightgrey" : undefined,
+        border: blok.showBorder ? "2px solid lightgrey" : undefined,
       }}
     />
   );

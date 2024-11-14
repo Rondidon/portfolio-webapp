@@ -20,4 +20,9 @@
 
 .hero-heading {
   font-size: xx-large;
+  color: #111;
+}
+
+.hero-text {
+  color: #111;
 }
