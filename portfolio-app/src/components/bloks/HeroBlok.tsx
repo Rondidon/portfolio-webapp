@@ -24,8 +24,14 @@ const HeroBlok: React.FC<HeroBlokProps> = ({ blok, isHeadingH1 }) => {
       className={blok.variant === "primary" ? "hero-primary" : "hero-secondary"}
       {...storyblokEditable(blok)}
     >
-      <div className="card-default-body h-100 d-flex flex-row gap-5 align-items-center">
-        <div className="d-flex flex-column gap-3 text-center text-lg-start justify-content-space-beween">
+      <div
+        className="card-default-body h-100 d-flex flex-row gap-5 align-items-center"
+        style={{ justifyContent: "space-between" }}
+      >
+        <div
+          className="d-flex h-100 flex-column gap-3 text-center text-lg-start"
+          style={{ justifyContent: "space-between" }}
+        >
           <div className="d-flex flex-column gap-2 gap-lg-0">
             {image && (
               <div className="d-block d-lg-none">

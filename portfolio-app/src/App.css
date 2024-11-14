@@ -34,7 +34,3 @@
   margin: 1em 0;
   background: linear-gradient(to right, #ccc, #ffffff);
 }
-
-.justify-content-space-beween {
-  justify-content: space-between;
-}

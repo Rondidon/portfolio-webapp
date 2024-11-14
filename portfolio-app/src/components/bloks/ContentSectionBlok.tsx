@@ -32,8 +32,13 @@ const ContentSectionBlok: React.FC<ContentSectionBlokProps> = ({ blok }) => {
       }
       {...storyblokEditable(blok)}
     >
-      <div className="d-flex flex-column">
+      <div className="d-flex flex-column gap-3">
         <div className="d-flex flex-column gap-3 justify-content-center">
+          {image && (
+            <div className="d-block d-lg-none">
+              <ImageBlok blok={image} />
+            </div>
+          )}
           {blok.heading && (
             <h5 className="content-section-heading">{heading}</h5>
           )}
