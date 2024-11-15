@@ -14,6 +14,8 @@ import Loading from "./components/Loading";
 import "./App.css";
 
 const slug = "global-layout";
+const basename = "/portfolio-webapp";
+export const appPath = `${window.location.origin}${basename}`;
 
 function App() {
   const story = useStoryblokStory(slug);
@@ -37,7 +39,7 @@ function App() {
 
   return (
     <div className="app">
-      <BrowserRouter basename="/portfolio-webapp">
+      <BrowserRouter basename={basename}>
         <Header blok={header} />
         <Main />
         <Footer blok={footer} />

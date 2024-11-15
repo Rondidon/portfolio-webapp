@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { Fragment, lazy } from "react";
 import { RouteConfig } from "./types/routeConfig";
 
 const Home = lazy(() => import("./Home"));

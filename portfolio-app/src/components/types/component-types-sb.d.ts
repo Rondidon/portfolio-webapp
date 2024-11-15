@@ -6,6 +6,7 @@ export interface ButtonStoryblok {
   slug: string;
   disabled?: boolean;
   useAlternateDesign?: boolean;
+  isDownloadLink?: boolean;
   _uid: string;
   component: "button";
   [k: string]: any;
