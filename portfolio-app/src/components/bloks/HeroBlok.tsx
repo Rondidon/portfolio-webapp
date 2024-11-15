@@ -44,13 +44,13 @@ const HeroBlok: React.FC<HeroBlokProps> = ({ blok, isHeadingH1 }) => {
             {blok.heading && !isHeadingH1 && (
               <h5 className="hero-heading">{blok.heading}</h5>
             )}
-            {blok.text && (
-              <SafeHtmlRenderer
-                className="hero-text mb-0"
-                htmlContent={blok.text}
-              />
-            )}
           </div>
+          {blok.text && (
+            <SafeHtmlRenderer
+              className="hero-text mb-0"
+              htmlContent={blok.text}
+            />
+          )}
           {callToAction && (
             <p className="mb-0">
               <ButtonBlok blok={callToAction} />

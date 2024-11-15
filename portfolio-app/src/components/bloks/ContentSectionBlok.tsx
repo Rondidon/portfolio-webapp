@@ -22,6 +22,9 @@ const ContentSectionBlok: React.FC<ContentSectionBlokProps> = ({ blok }) => {
     : false;
   const heading: string | undefined = blok.heading;
   const text: string | undefined = blok.text;
+  const isAlternateHeadingDesign = blok.useAlternateHeadingDesign
+    ? blok.useAlternateHeadingDesign
+    : false;
 
   return (
     <div
@@ -39,8 +42,17 @@ const ContentSectionBlok: React.FC<ContentSectionBlokProps> = ({ blok }) => {
               <ImageBlok blok={image} />
             </div>
           )}
-          {blok.heading && (
-            <h5 className="content-section-heading">{heading}</h5>
+          {heading && (
+            <h5>
+              <SafeHtmlRenderer
+                className={
+                  isAlternateHeadingDesign
+                    ? "content-section-heading-alternate"
+                    : "content-section-heading"
+                }
+                htmlContent={heading}
+              />
+            </h5>
           )}
           {text && (
             <SafeHtmlRenderer

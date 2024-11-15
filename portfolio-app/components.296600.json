@@ -53,7 +53,7 @@
       "name": "card",
       "display_name": null,
       "created_at": "2024-07-10T21:54:58.901Z",
-      "updated_at": "2024-07-27T20:57:16.203Z",
+      "updated_at": "2024-11-14T20:43:42.766Z",
       "id": 6035609,
       "schema": {
         "title": {
@@ -83,7 +83,7 @@
           "default_value": "18",
           "description": "Breite der Card in rem.",
           "min_value": 12,
-          "max_value": 48,
+          "max_value": 128,
           "decimals": 0,
           "steps": 2,
           "tooltip": true,
@@ -212,7 +212,7 @@
       "name": "contentSection",
       "display_name": null,
       "created_at": "2024-11-14T13:18:13.862Z",
-      "updated_at": "2024-11-14T17:16:27.756Z",
+      "updated_at": "2024-11-15T21:25:05.047Z",
       "id": 6560575,
       "schema": {
         "callToAction": {
@@ -249,9 +249,13 @@
           "pos": 3,
           "required": false
         },
+        "useAlternateHeadingDesign": {
+          "type": "boolean",
+          "pos": 4
+        },
         "text": {
           "type": "text",
-          "pos": 4
+          "pos": 5
         }
       },
       "image": null,

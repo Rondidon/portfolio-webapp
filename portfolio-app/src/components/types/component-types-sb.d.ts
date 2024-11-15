@@ -41,6 +41,7 @@ export interface ContentSectionStoryblok {
   image?: ImageStoryblok[];
   isRightAdjusted?: boolean;
   heading?: string;
+  useAlternateHeadingDesign?: boolean;
   text?: string;
   _uid: string;
   component: "contentSection";

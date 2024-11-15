@@ -33,7 +33,14 @@ const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
     >
       <div className="card-default-body">
         {image && image.image && <ImageBlok blok={image} marginBottom={1} />}
-        <h5 className="card-default-title">{blok.title}</h5>
+        {blok.title && (
+          <h5>
+            <SafeHtmlRenderer
+              className="card-default-title"
+              htmlContent={blok.title}
+            />
+          </h5>
+        )}
         {blok.text && (
           <SafeHtmlRenderer
             className="card-default-text"
