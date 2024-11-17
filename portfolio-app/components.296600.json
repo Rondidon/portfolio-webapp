@@ -213,6 +213,111 @@
       "content_type_asset_preview": null
     },
     {
+      "name": "carousel",
+      "display_name": null,
+      "created_at": "2024-11-17T16:21:19.253Z",
+      "updated_at": "2024-11-17T18:06:32.739Z",
+      "id": 6569389,
+      "schema": {
+        "Images": {
+          "type": "bloks",
+          "pos": 0,
+          "minimum": 1,
+          "maximum": 7,
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "CarouselImage"
+          ]
+        },
+        "width": {
+          "type": "number",
+          "pos": 1
+        },
+        "height": {
+          "type": "number",
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "carousel",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
+      "name": "CarouselImage",
+      "display_name": null,
+      "created_at": "2024-11-17T16:32:02.132Z",
+      "updated_at": "2024-11-17T18:08:09.787Z",
+      "id": 6569392,
+      "schema": {
+        "label": {
+          "type": "text",
+          "pos": 0
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "imageFile": {
+          "type": "text",
+          "pos": 2,
+          "description": "zB myImage.webp. Immer mit ending und ohne Path.",
+          "required": true
+        },
+        "scalingMethod": {
+          "type": "option",
+          "pos": 3,
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "13cfcf1d-c44a-428d-8fcc-d9dcac12f25f",
+              "name": "cover",
+              "value": "cover"
+            },
+            {
+              "_uid": "630f12da-46e3-4f9c-807f-e3394fd1dd7f",
+              "value": "contain",
+              "name": "contain"
+            },
+            {
+              "_uid": "11fb366e-33a8-4fb9-b8c6-aa9610783c7d",
+              "value": "fill",
+              "name": "fill"
+            }
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "CarouselImage",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "contentSection",
       "display_name": null,
       "created_at": "2024-11-14T13:18:13.862Z",
@@ -841,7 +946,7 @@
       "name": "SimpleLayout",
       "display_name": null,
       "created_at": "2024-07-22T20:28:00.238Z",
-      "updated_at": "2024-11-14T18:14:45.331Z",
+      "updated_at": "2024-11-17T17:22:09.006Z",
       "id": 6079549,
       "schema": {
         "body": {
@@ -865,8 +970,11 @@
             "globalFooter",
             "button",
             "contentSection",
-            "horizontalLine"
-          ]
+            "horizontalLine",
+            "CarouselImage",
+            "carousel"
+          ],
+          "required": false
         },
         "topMargin": {
           "type": "number",

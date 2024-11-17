@@ -143,7 +143,7 @@ const routesConfig: RouteConfig[] = [
   },
   {
     path: "projects/games/sports-fishing-simulator-2012",
-    element: <SportFishingSimulator2012 message="sportfishingsimulator2012" />,
+    element: <SportFishingSimulator2012 />,
   },
   {
     path: "projects/games/adrenaline",

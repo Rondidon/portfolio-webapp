@@ -37,6 +37,25 @@ export interface CardContainerStoryblok {
   [k: string]: any;
 }
 
+export interface CarouselStoryblok {
+  Images: CarouselImageStoryblok[];
+  width?: string;
+  height?: string;
+  _uid: string;
+  component: "carousel";
+  [k: string]: any;
+}
+
+export interface CarouselImageStoryblok {
+  label?: string;
+  description?: string;
+  imageFile: string;
+  scalingMethod: "" | "cover" | "contain" | "fill";
+  _uid: string;
+  component: "CarouselImage";
+  [k: string]: any;
+}
+
 export interface ContentSectionStoryblok {
   callToAction?: ButtonStoryblok[];
   image?: ImageStoryblok[];
@@ -192,6 +211,8 @@ export interface SimpleLayoutStoryblok {
     | ButtonStoryblok
     | ContentSectionStoryblok
     | HorizontalLineStoryblok
+    | CarouselImageStoryblok
+    | CarouselStoryblok
   )[];
   topMargin?: string;
   centerElements?: boolean;

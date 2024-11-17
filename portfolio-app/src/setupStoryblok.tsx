@@ -5,6 +5,7 @@ import CardContainerBlok from "./components/bloks/CardContainerBlok";
 import SimpleContainerBlok from "./components/bloks/SimpleContainerBlok";
 import ContentSectionBlok from "./components/bloks/ContentSectionBlok";
 import HorizontalLineBlok from "./components/bloks/HorizontalLineBlok";
+import CarouselBlok from "./components/bloks/CarouselBlok";
 
 // setup
 const accessToken = "u2OrXZ1MorrJDKZKPTExHwtt";
@@ -20,6 +21,7 @@ const componentsWhitelist = {
   cardContainer: CardContainerBlok,
   simpleContainer: SimpleContainerBlok,
   horizontalLine: HorizontalLineBlok,
+  carousel: CarouselBlok,
 };
 
 const storyblokSetup = {

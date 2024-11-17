@@ -1,17 +1,34 @@
-import React from "react";
+import { SbBlokData, StoryblokComponent } from "@storyblok/react";
+import { useEffect } from "react";
+import useStoryblokStory from "../../../hooks/useStoryblokStory";
+import { SimpleLayoutStoryblok } from "../../../components/types/component-types-sb";
+import { logStoryblokStoryOrBlock } from "../../../utils/logger";
+import Loading from "../../../components/Loading";
+import LayoutWrapper from "../../../components/content_types/LayoutWrapper";
 
-type SportFishingSimulator2012Props = {
-  message: string;
-};
+const slug = "projects/games/sports-fishing-simulator-2012";
 
-const SportFishingSimulator2012: React.FC<SportFishingSimulator2012Props> = ({
-  message,
-}) => {
+const SportsFishingSimulator2012: React.FC = () => {
+  const story = useStoryblokStory(slug);
+  const content = story?.content as SimpleLayoutStoryblok;
+
+  useEffect(() => {
+    if (story) {
+      logStoryblokStoryOrBlock(slug, story);
+    }
+  }, [story]);
+
+  if (!story || !content) {
+    return <Loading />;
+  }
+
   return (
-    <div>
-      <p>{message}</p>
-    </div>
+    <LayoutWrapper blok={content}>
+      {content.body?.map((blok: SbBlokData) => (
+        <StoryblokComponent blok={blok} key={blok._uid} />
+      ))}
+    </LayoutWrapper>
   );
 };
 
-export default SportFishingSimulator2012;
+export default SportsFishingSimulator2012;
