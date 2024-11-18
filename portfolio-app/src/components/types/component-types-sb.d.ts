@@ -48,9 +48,7 @@ export interface CarouselStoryblok {
 
 export interface CarouselImageStoryblok {
   label?: string;
-  description?: string;
   imageFile: string;
-  scalingMethod: "" | "cover" | "contain" | "fill";
   _uid: string;
   component: "CarouselImage";
   [k: string]: any;
@@ -65,6 +63,21 @@ export interface ContentSectionStoryblok {
   text?: string;
   _uid: string;
   component: "contentSection";
+  [k: string]: any;
+}
+
+export interface FaqStoryblok {
+  elements: FaqElementStoryblok[];
+  _uid: string;
+  component: "faq";
+  [k: string]: any;
+}
+
+export interface FaqElementStoryblok {
+  question: string;
+  answer: string;
+  _uid: string;
+  component: "faqElement";
   [k: string]: any;
 }
 

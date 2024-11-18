@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import toAssetLocation from "../../scripts/imageConverter";
 import {
   CarouselImageStoryblok,
   CarouselStoryblok,
 } from "../types/component-types-sb";
-import toAssetLocation from "../../scripts/imageConverter";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+import "./css/CarouselBlok.css";
 
 interface CarouselBlokProps {
   blok: CarouselStoryblok;
@@ -19,18 +20,7 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
       {imageBloks.map((blok: CarouselImageStoryblok) => (
         <div>
           <img src={toAssetLocation(blok.imageFile)} />
-          <p
-            className="legend"
-            style={{
-              backgroundColor: "#eee",
-              border: "2px solid darkgray",
-              color: "black",
-              fontSize: "16px",
-              borderRadius: "3em",
-            }}
-          >
-            {blok.label}
-          </p>
+          <p className="legend legend-custom">{blok.label}</p>
         </div>
       ))}
     </Carousel>

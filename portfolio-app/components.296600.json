@@ -260,45 +260,18 @@
       "name": "CarouselImage",
       "display_name": null,
       "created_at": "2024-11-17T16:32:02.132Z",
-      "updated_at": "2024-11-17T18:08:09.787Z",
+      "updated_at": "2024-11-17T21:53:09.254Z",
       "id": 6569392,
       "schema": {
         "label": {
           "type": "text",
           "pos": 0
         },
-        "description": {
-          "type": "text",
-          "pos": 1
-        },
         "imageFile": {
           "type": "text",
           "pos": 2,
           "description": "zB myImage.webp. Immer mit ending und ohne Path.",
           "required": true
-        },
-        "scalingMethod": {
-          "type": "option",
-          "pos": 3,
-          "use_uuid": true,
-          "required": true,
-          "options": [
-            {
-              "_uid": "13cfcf1d-c44a-428d-8fcc-d9dcac12f25f",
-              "name": "cover",
-              "value": "cover"
-            },
-            {
-              "_uid": "630f12da-46e3-4f9c-807f-e3394fd1dd7f",
-              "value": "contain",
-              "name": "contain"
-            },
-            {
-              "_uid": "11fb366e-33a8-4fb9-b8c6-aa9610783c7d",
-              "value": "fill",
-              "name": "fill"
-            }
-          ]
         }
       },
       "image": null,
@@ -375,6 +348,76 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "contentSection",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
+      "name": "faq",
+      "display_name": null,
+      "created_at": "2024-11-18T14:48:47.455Z",
+      "updated_at": "2024-11-18T14:53:23.186Z",
+      "id": 6575291,
+      "schema": {
+        "elements": {
+          "type": "bloks",
+          "pos": 0,
+          "required": true,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "default_value": "",
+          "component_whitelist": [
+            "faqElement"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "faq",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
+      "name": "faqElement",
+      "display_name": null,
+      "created_at": "2024-11-18T14:51:15.277Z",
+      "updated_at": "2024-11-18T14:52:20.912Z",
+      "id": 6575524,
+      "schema": {
+        "question": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "answer": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "faqElement",
       "component_group_uuid": "all",
       "color": null,
       "icon": null,
