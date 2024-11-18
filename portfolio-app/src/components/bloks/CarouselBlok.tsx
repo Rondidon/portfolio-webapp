@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { CarouselStoryblok } from "../types/component-types-sb";
+import {
+  CarouselImageStoryblok,
+  CarouselStoryblok,
+} from "../types/component-types-sb";
 import toAssetLocation from "../../scripts/imageConverter";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
@@ -9,22 +12,27 @@ interface CarouselBlokProps {
 }
 
 const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
-  const { Images: imageBloks } = blok;
+  const imageBloks = blok.Images;
 
   return (
-    <Carousel>
-      <div>
-        <img src={toAssetLocation("sportangeln-2012-1.webp")} />
-        <p className="legend">Legend 1</p>
-      </div>
-      <div>
-        <img src={toAssetLocation("sportangeln-2012-1.webp")} />
-        <p className="legend">Legend 2</p>
-      </div>
-      <div>
-        <img src={toAssetLocation("sportangeln-2012-1.webp")} />
-        <p className="legend">Legend 3</p>
-      </div>
+    <Carousel width={blok.width} dynamicHeight showStatus={false}>
+      {imageBloks.map((blok: CarouselImageStoryblok) => (
+        <div>
+          <img src={toAssetLocation(blok.imageFile)} />
+          <p
+            className="legend"
+            style={{
+              backgroundColor: "#eee",
+              border: "2px solid darkgray",
+              color: "black",
+              fontSize: "16px",
+              borderRadius: "3em",
+            }}
+          >
+            {blok.label}
+          </p>
+        </div>
+      ))}
     </Carousel>
   );
 };
