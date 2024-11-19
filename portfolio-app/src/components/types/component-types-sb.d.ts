@@ -7,6 +7,7 @@ export interface ButtonStoryblok {
   disabled?: boolean;
   useAlternateDesign?: boolean;
   isDownloadLink?: boolean;
+  isExternalLink?: boolean;
   _uid: string;
   component: "button";
   [k: string]: any;
@@ -226,6 +227,7 @@ export interface SimpleLayoutStoryblok {
     | HorizontalLineStoryblok
     | CarouselImageStoryblok
     | CarouselStoryblok
+    | FaqStoryblok
   )[];
   topMargin?: string;
   centerElements?: boolean;

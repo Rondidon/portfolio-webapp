@@ -16,7 +16,7 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
   const imageBloks = blok.Images;
 
   return (
-    <Carousel width={blok.width} dynamicHeight showStatus={false}>
+    <Carousel dynamicHeight showStatus={false} autoPlay infiniteLoop>
       {imageBloks.map((blok: CarouselImageStoryblok) => (
         <div>
           <img src={toAssetLocation(blok.imageFile)} />

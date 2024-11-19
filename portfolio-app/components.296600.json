@@ -4,7 +4,7 @@
       "name": "button",
       "display_name": null,
       "created_at": "2024-07-22T16:30:41.608Z",
-      "updated_at": "2024-11-15T23:07:22.708Z",
+      "updated_at": "2024-11-18T18:10:36.886Z",
       "id": 6078949,
       "schema": {
         "text": {
@@ -36,6 +36,10 @@
         "isDownloadLink": {
           "type": "boolean",
           "pos": 5
+        },
+        "isExternalLink": {
+          "type": "boolean",
+          "pos": 6
         }
       },
       "image": null,
@@ -216,7 +220,7 @@
       "name": "carousel",
       "display_name": null,
       "created_at": "2024-11-17T16:21:19.253Z",
-      "updated_at": "2024-11-17T18:06:32.739Z",
+      "updated_at": "2024-11-18T19:39:35.879Z",
       "id": 6569389,
       "schema": {
         "Images": {
@@ -233,11 +237,15 @@
         },
         "width": {
           "type": "number",
-          "pos": 1
+          "pos": 1,
+          "description": "in px",
+          "default_value": "640"
         },
         "height": {
           "type": "number",
-          "pos": 2
+          "pos": 2,
+          "default_value": "400",
+          "description": "in px"
         }
       },
       "image": null,
@@ -660,7 +668,7 @@
       "name": "horizontalLine",
       "display_name": null,
       "created_at": "2024-11-14T18:08:09.706Z",
-      "updated_at": "2024-11-14T18:29:26.236Z",
+      "updated_at": "2024-11-18T18:44:15.923Z",
       "id": 6562092,
       "schema": {
         "isAdjustedToRight": {
@@ -674,19 +682,22 @@
           "min_value": 10,
           "steps": 1,
           "description": "in percent.",
-          "required": true
+          "required": true,
+          "default_value": "100"
         },
         "marginY": {
           "type": "number",
           "pos": 2,
-          "description": "in em"
+          "description": "in em",
+          "default_value": "1"
         },
         "thickness": {
           "type": "number",
           "pos": 3,
           "description": "in pixel",
           "min_value": 1,
-          "required": false
+          "required": false,
+          "default_value": "2"
         }
       },
       "image": null,
@@ -989,7 +1000,7 @@
       "name": "SimpleLayout",
       "display_name": null,
       "created_at": "2024-07-22T20:28:00.238Z",
-      "updated_at": "2024-11-17T17:22:09.006Z",
+      "updated_at": "2024-11-18T15:14:23.326Z",
       "id": 6079549,
       "schema": {
         "body": {
@@ -1015,7 +1026,8 @@
             "contentSection",
             "horizontalLine",
             "CarouselImage",
-            "carousel"
+            "carousel",
+            "faq"
           ],
           "required": false
         },

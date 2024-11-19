@@ -38,6 +38,19 @@ const ButtonBlok: React.FC<ButtonBlokProps> = ({ blok, isNavButton }) => {
     isNavButton ? isNavButton : false
   );
 
+  if (blok.isExternalLink) {
+    return (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={blok.slug}
+        className={styleClass}
+      >
+        {blok.text}
+      </a>
+    );
+  }
+
   if (blok.isDownloadLink) {
     return (
       <a
