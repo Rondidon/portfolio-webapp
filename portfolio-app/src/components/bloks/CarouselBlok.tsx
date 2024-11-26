@@ -20,7 +20,7 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
       {imageBloks.map((blok: CarouselImageStoryblok) => (
         <div>
           <img src={toAssetLocation(blok.imageFile)} />
-          <p className="legend legend-custom">{blok.label}</p>
+          {blok.label && <p className="legend legend-custom">{blok.label}</p>}
         </div>
       ))}
     </Carousel>
