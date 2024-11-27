@@ -1,20 +1,22 @@
-import { SbBlokData, StoryblokComponent } from "@storyblok/react";
 import { useEffect } from "react";
-import Loading from "../components/Loading";
-import LayoutWrapper from "../components/content_types/LayoutWrapper";
 import { SimpleLayoutStoryblok } from "../components/types/component-types-sb";
 import useStoryblokStory from "../hooks/useStoryblokStory";
 import { logStoryblokStoryOrBlock } from "../utils/logger";
+import Loading from "../components/Loading";
+import LayoutWrapper from "../components/content_types/LayoutWrapper";
+import { SbBlokData, StoryblokComponent } from "@storyblok/react";
 
-const slug = "home";
+interface StoryLoaderProps {
+  slug: string;
+}
 
-const Home: React.FC = () => {
-  const story = useStoryblokStory(slug);
+const SimpleLayoutLoader = (props: StoryLoaderProps) => {
+  const story = useStoryblokStory(props.slug);
   const content = story?.content as SimpleLayoutStoryblok;
 
   useEffect(() => {
     if (story) {
-      logStoryblokStoryOrBlock(slug, story);
+      logStoryblokStoryOrBlock(props.slug, story);
     }
   }, [story]);
 
@@ -31,4 +33,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default SimpleLayoutLoader;
