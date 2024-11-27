@@ -9,7 +9,7 @@ import {
   PageStoryblok,
 } from "./components/types/component-types-sb";
 import { logStoryblokStoryOrBlock } from "./utils/logger";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import Loading from "./components/Loading";
 import "./App.css";
 
@@ -39,11 +39,13 @@ function App() {
 
   return (
     <div className="app">
-      <BrowserRouter basename={basename}>
-        <Header blok={header} />
-        <Main />
-        <Footer blok={footer} />
-      </BrowserRouter>
+      <Suspense fallback={<Loading />}>
+        <BrowserRouter basename={basename}>
+          <Header blok={header} />
+          <Main />
+          <Footer blok={footer} />
+        </BrowserRouter>
+      </Suspense>
     </div>
   );
 }

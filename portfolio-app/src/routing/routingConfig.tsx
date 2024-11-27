@@ -119,7 +119,7 @@ const routesConfig: RouteConfig[] = [
   },
   {
     path: "projects/video",
-    element: <SimpleLayoutLoader slug="projects/video" />,
+    element: <SimpleLayoutLoader slug="projects/video-projects" />,
   },
   {
     path: "projects/music",
