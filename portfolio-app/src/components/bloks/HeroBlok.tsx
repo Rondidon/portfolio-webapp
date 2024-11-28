@@ -56,6 +56,7 @@ const HeroBlok: React.FC<HeroBlokProps> = ({ blok, isHeadingH1 }) => {
               <ButtonBlok blok={callToAction} />
             </p>
           )}
+          {!callToAction && <div />}
         </div>
         {image && (
           <div className="d-none d-lg-block">
