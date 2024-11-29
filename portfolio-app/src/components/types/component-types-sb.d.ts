@@ -29,6 +29,7 @@ export interface CardStoryblok {
 
 export interface CardContainerStoryblok {
   heading?: string;
+  anchorId?: string;
   columnAmount: string;
   gap?: string;
   width: string;

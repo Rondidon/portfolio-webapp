@@ -15,9 +15,10 @@ const CardContainerBlok: React.FC<CardContainerBlokProps> = ({ blok }) => {
   const heading: string | undefined = blok.heading;
   const gap: string | undefined = blok.gap ? blok.gap + "em" : undefined;
   const width = blok.width;
+  const id = blok.anchorId;
 
   return (
-    <div style={{ minWidth: width, justifyContent: "space-evenly" }}>
+    <div style={{ minWidth: width, justifyContent: "space-evenly" }} id={id}>
       {heading && (
         <>
           <h2 style={{ gridColumn: `span ${columnAmount}` }}>{heading}</h2>
