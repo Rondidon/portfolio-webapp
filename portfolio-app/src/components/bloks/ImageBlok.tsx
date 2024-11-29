@@ -7,6 +7,7 @@ import "./css/ImageBlok.css";
 interface ImageBlokProps {
   blok: ImageStoryblok;
   marginBottom?: number;
+  onCallback?: () => void;
 }
 
 const calculateMarginBottom = (
@@ -25,7 +26,14 @@ const calculateMarginBottom = (
 const ImageBlok: React.FC<ImageBlokProps> = ({
   blok,
   marginBottom,
+  onCallback,
 }): JSX.Element => {
+  const maybeTriggerCallback = () => {
+    if (blok.triggerCallbackFunctionOnClick && onCallback) {
+      onCallback();
+    }
+  };
+
   const height: string | undefined = blok.height + "px";
   const margin = blok.margin;
   const imageComponent: JSX.Element = (
@@ -42,6 +50,7 @@ const ImageBlok: React.FC<ImageBlokProps> = ({
         borderRadius: blok.borderRadius ? blok.borderRadius + "em" : undefined,
         border: blok.showBorder ? "2px solid lightgrey" : undefined,
       }}
+      onClick={maybeTriggerCallback}
     />
   );
 

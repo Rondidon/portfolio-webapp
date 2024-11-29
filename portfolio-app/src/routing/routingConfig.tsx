@@ -74,10 +74,6 @@ const routesConfig: RouteConfig[] = [
     element: <SimpleLayoutLoader slug="projects/apps/quiz-game-maker" />,
   },
   {
-    path: "projects/games",
-    element: <SimpleLayoutLoader slug="projects/games" />,
-  },
-  {
     path: "projects/games/inland-shipping-simulator-prototype",
     element: (
       <SimpleLayoutLoader slug="projects/games/inland-shipping-simulator-prototype" />

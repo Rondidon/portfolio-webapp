@@ -167,6 +167,7 @@ export interface ImageStoryblok {
   withHoverEffect?: boolean;
   isSquareImage?: boolean;
   margin?: string;
+  triggerCallbackFunctionOnClick?: boolean;
   _uid: string;
   component: "image";
   [k: string]: any;
@@ -192,6 +193,7 @@ export interface LinkedInProfileLinkStoryblok {
 export interface PageStoryblok {
   header: GlobalHeaderStoryblok[];
   footer: GlobalFooterStoryblok[];
+  scrollToTop?: ImageStoryblok[];
   _uid: string;
   component: "page";
   uuid?: string;

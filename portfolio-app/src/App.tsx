@@ -6,6 +6,7 @@ import useStoryblokStory from "./hooks/useStoryblokStory";
 import {
   GlobalFooterStoryblok,
   GlobalHeaderStoryblok,
+  ImageStoryblok,
   PageStoryblok,
 } from "./components/types/component-types-sb";
 import { logStoryblokStoryOrBlock } from "./utils/logger";
@@ -36,13 +37,16 @@ function App() {
 
   const header = content.header[0] as GlobalHeaderStoryblok;
   const footer = content.footer[0] as GlobalFooterStoryblok;
+  const scrollToTopImage: ImageStoryblok | undefined = content.scrollToTop
+    ? content.scrollToTop[0]
+    : undefined;
 
   return (
     <div className="app">
       <Suspense fallback={<Loading />}>
         <BrowserRouter basename={basename}>
           <Header blok={header} />
-          <Main />
+          <Main scrollToTopBlok={scrollToTopImage} />
           <Footer blok={footer} />
         </BrowserRouter>
       </Suspense>

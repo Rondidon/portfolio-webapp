@@ -161,7 +161,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-25T19:14:07.558Z",
-      "updated_at": "2024-11-29T11:02:08.614Z",
+      "updated_at": "2024-11-29T11:15:23.561Z",
       "id": 6095551,
       "schema": {
         "heading": {
@@ -171,7 +171,7 @@
         "anchorId": {
           "type": "text",
           "pos": 1,
-          "description": "anchor tag, i.e. #gamesection"
+          "description": "anchor tag, i.e. \"game-projects\"\n-> Linkable via /slug/page#game-projects"
         },
         "columnAmount": {
           "type": "number",
@@ -738,7 +738,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-23T16:51:25.185Z",
-      "updated_at": "2024-11-14T16:35:28.175Z",
+      "updated_at": "2024-11-29T19:20:39.543Z",
       "id": 6085319,
       "schema": {
         "image": {
@@ -809,6 +809,10 @@
           "steps": 0.5,
           "decimals": 1,
           "default_value": ""
+        },
+        "triggerCallbackFunctionOnClick": {
+          "type": "boolean",
+          "pos": 11
         }
       },
       "image": null,
@@ -914,7 +918,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-10T18:42:48.718Z",
-      "updated_at": "2024-07-23T19:02:30.303Z",
+      "updated_at": "2024-11-29T14:25:23.488Z",
       "id": 6035125,
       "schema": {
         "header": {
@@ -940,6 +944,16 @@
             "globalFooter"
           ],
           "required": true
+        },
+        "scrollToTop": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "maximum": 1,
+          "component_whitelist": [
+            "image"
+          ]
         }
       },
       "image": null,
