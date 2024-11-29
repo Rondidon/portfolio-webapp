@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 import ImageBlok from "./bloks/ImageBlok";
 import { ImageStoryblok } from "./types/component-types-sb";
+import "./bloks/css/ScrollToTop.css";
 
 interface ScrollToTopProps {
   scrollToTopBlok: ImageStoryblok;
 }
 
+const bottom = 15; // px
+const right = 15; // px
+
 const ScrollToTop = (props: ScrollToTopProps) => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const [scrollToTopBottomOffset, setScrollToTopBottomOffset] = useState(20);
+  const [scrollToTopBottomOffset, setScrollToTopBottomOffset] =
+    useState(bottom);
 
   // ScrollToTop visibility.
   useEffect(() => {
@@ -28,11 +33,11 @@ const ScrollToTop = (props: ScrollToTopProps) => {
         if (footerRect.top < window.innerHeight && footerRect.bottom > 0) {
           // Footer ist teilweise im sichtbaren Bereich
           setScrollToTopBottomOffset(
-            Math.max(window.innerHeight - footerRect.top + 40, 20)
+            Math.max(window.innerHeight - footerRect.top + bottom, bottom)
           );
         } else {
           // Standardposition, wenn Footer nicht sichtbar ist
-          setScrollToTopBottomOffset(20);
+          setScrollToTopBottomOffset(bottom);
         }
       }
     };
@@ -59,6 +64,7 @@ const ScrollToTop = (props: ScrollToTopProps) => {
           ? `${props.scrollToTopBlok.borderRadius}em`
           : "0em",
         bottom: `${scrollToTopBottomOffset}px`,
+        right: right + "px",
       }}
     >
       <ImageBlok blok={props.scrollToTopBlok} onCallback={scrollToTop} />

@@ -1,0 +1,14 @@
+.scrollToTopContainer {
+  position: fixed; /* Fixiert relativ zum Viewport */
+  z-index: 100;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.scrollToTopContainer.visible {
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+}

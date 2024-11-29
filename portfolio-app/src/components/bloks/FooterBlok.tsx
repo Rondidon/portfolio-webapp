@@ -19,8 +19,8 @@ const Footer: React.FC<FooterProps> = ({ blok }) => {
   const logoBlok = blok.logo[0] as ImageStoryblok;
 
   return (
-    <div className="footer-container">
-      <footer className="container">
+    <footer className="footer-container">
+      <div className="container">
         <div className="row">
           <div className="col-12 col-md-4 mb-3">
             <div className="d-flex align-items-center gap-2 mb-3">
@@ -61,8 +61,8 @@ const Footer: React.FC<FooterProps> = ({ blok }) => {
             )
           )}
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 };
 
