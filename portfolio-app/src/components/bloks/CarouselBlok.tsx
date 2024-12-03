@@ -19,11 +19,11 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
 
   const getThumbWidth = (imageAmount: number) => {
     const widths: Record<Breakpoint, number> = {
-      XS: 36,
+      XS: 32,
       SM: 42,
-      MD: 56,
+      MD: 54,
       LG: 64,
-      XL: 72,
+      XL: 74,
       XXL: 84,
     };
     if (imageAmount > 4) {
