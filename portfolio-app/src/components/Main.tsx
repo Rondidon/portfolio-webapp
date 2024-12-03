@@ -11,19 +11,6 @@ interface MainProps {
 }
 
 const Main = (props: MainProps): JSX.Element => {
-  const [loading, setLoading] = useState(false);
-
-  const location = useLocation();
-
-  // show loading screen on switching routes.
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location]);
-
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
     <main className="app-main container">
       <Suspense fallback={<Loading />}>

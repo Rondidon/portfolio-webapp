@@ -18,23 +18,34 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   );
   const routeLocation = useLocation();
 
+  // Effekt, um den Content zu laden
   useEffect(() => {
     if (story) {
       setContent(story.content as SimpleLayoutStoryblok);
       logStoryblokStoryOrBlock(slug, story); // Log Story
-
-      // Scrollen zu Anker, falls vorhanden
-      const hash = routeLocation.hash;
-      if (hash) {
-        const element = document.getElementById(hash.replace("#", ""));
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
     } else {
       setContent(undefined);
     }
-  }, [story, slug, routeLocation]);
+  }, [story, slug]);
+
+  // Effekt, um das Scrollen nach dem Laden des Contents zu handhaben
+  useEffect(() => {
+    if (content) {
+      const hash = routeLocation.hash;
+
+      // Scrollen zu einem Anker, falls vorhanden
+      if (hash) {
+        const elementId = hash.replace("#", "");
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Scrollen zum Anfang der Seite
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }
+    }
+  }, [content]);
 
   if (!content) {
     return <Loading />;
