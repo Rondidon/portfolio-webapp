@@ -17,9 +17,7 @@ const Main = (props: MainProps): JSX.Element => {
 
   // show loading screen on switching routes.
   useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 100); // Simuliere eine Ladezeit
-    return () => clearTimeout(timer);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location]);
 
   if (loading) {

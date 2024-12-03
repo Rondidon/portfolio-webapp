@@ -28,7 +28,7 @@ function App() {
   if (!story || !story.content) {
     return (
       <div className="app">
-        <Loading use100vh />
+        <Loading />
       </div>
     );
   }

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import useBreakpoints, { Breakpoint } from "../../hooks/useBreakpoints";
 import toAssetLocation from "../../scripts/imageConverter";
 import {
   CarouselImageStoryblok,
@@ -13,10 +14,43 @@ interface CarouselBlokProps {
 }
 
 const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
-  const imageBloks = blok.Images;
+  const imageBloks: CarouselImageStoryblok[] = blok.Images;
+  const breakpoint: Breakpoint = useBreakpoints();
+
+  const getThumbWidth = (imageAmount: number) => {
+    const widths: Record<Breakpoint, number> = {
+      XS: 36,
+      SM: 42,
+      MD: 56,
+      LG: 64,
+      XL: 72,
+      XXL: 84,
+    };
+    if (imageAmount > 4) {
+      return widths[breakpoint];
+    } else {
+      return widths[breakpoint] * 1.25;
+    }
+  };
+
+  const [thumbWidth, setThumbWidth] = useState(
+    getThumbWidth(imageBloks.length)
+  );
+
+  useEffect(() => {
+    const width = getThumbWidth(imageBloks.length);
+    setThumbWidth(width);
+  }, [breakpoint, imageBloks.length]);
 
   return (
-    <Carousel dynamicHeight showStatus={false} autoPlay infiniteLoop>
+    <Carousel
+      dynamicHeight
+      showStatus={false}
+      autoPlay
+      infiniteLoop
+      showThumbs
+      thumbWidth={thumbWidth} // Breite der Vorschaubilder
+    >
       {imageBloks.map((blok: CarouselImageStoryblok) => (
         <div>
           <img src={toAssetLocation(blok.imageFile)} />
