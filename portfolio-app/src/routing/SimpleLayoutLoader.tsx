@@ -18,6 +18,17 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   );
   const routeLocation = useLocation();
 
+  const maybeScrollToAnchor = () => {
+    const hash = routeLocation.hash;
+    if (hash) {
+      const elementId = hash.replace("#", "");
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   // Effekt, um den Content zu laden
   useEffect(() => {
     if (story) {
@@ -31,19 +42,8 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   // Effekt, um das Scrollen nach dem Laden des Contents zu handhaben
   useEffect(() => {
     if (content) {
-      const hash = routeLocation.hash;
-
-      // Scrollen zu einem Anker, falls vorhanden
-      if (hash) {
-        const elementId = hash.replace("#", "");
-        const element = document.getElementById(elementId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        // Scrollen zum Anfang der Seite
-        window.scrollTo({ top: 0, behavior: "auto" });
-      }
+      window.scrollTo({ top: 0, behavior: "auto" });
+      maybeScrollToAnchor();
     }
   }, [content]);
 
