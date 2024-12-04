@@ -7,6 +7,7 @@ import ContentSectionBlok from "./components/bloks/ContentSectionBlok";
 import HorizontalLineBlok from "./components/bloks/HorizontalLineBlok";
 import CarouselBlok from "./components/bloks/CarouselBlok";
 import FaqBlok from "./components/bloks/FaqBlok";
+import ButtonBlok from "./components/bloks/ButtonBlok";
 
 // setup
 const accessToken = "u2OrXZ1MorrJDKZKPTExHwtt";
@@ -18,6 +19,7 @@ const debugLogs = true;
 const componentsWhitelist = {
   card: CardBlok,
   hero: HeroBlok,
+  button: ButtonBlok,
   contentSection: ContentSectionBlok,
   cardContainer: CardContainerBlok,
   simpleContainer: SimpleContainerBlok,
