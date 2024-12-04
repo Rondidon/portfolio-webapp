@@ -58,12 +58,6 @@ const routesConfig: RouteConfig[] = [
     element: <SimpleLayoutLoader slug="projects/apps/voxie-voxel-viewer" />,
   },
   {
-    path: "projects/apps/digital-volume-correlation",
-    element: (
-      <SimpleLayoutLoader slug="projects/apps/digital-volume-correlation" />
-    ),
-  },
-  {
     path: "projects/apps/tournaware-tabletop-tournament-software",
     element: (
       <SimpleLayoutLoader slug="projects/apps/tournaware-tabletop-tournament-software" />
