@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { SimpleLayoutStoryblok } from "../components/types/component-types-sb";
 import useStoryblokStory from "../hooks/useStoryblokStory";
 import { logStoryblokStoryOrBlock } from "../utils/logger";
@@ -16,7 +16,10 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   const [content, setContent] = useState<SimpleLayoutStoryblok | undefined>(
     undefined
   );
+  const [isContentReady, setIsContentReady] = useState(false);
   const routeLocation = useLocation();
+  const isBackNavigation = useRef(false);
+  const [loading, setLoading] = useState(false);
 
   const maybeScrollToAnchor = () => {
     const hash = routeLocation.hash;
@@ -29,25 +32,43 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
     }
   };
 
-  // Effekt, um den Content zu laden
+  useEffect(() => {
+    const handlePopState = () => {
+      isBackNavigation.current = true;
+      setLoading(true);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
   useEffect(() => {
     if (story) {
+      logStoryblokStoryOrBlock(slug, story);
       setContent(story.content as SimpleLayoutStoryblok);
-      logStoryblokStoryOrBlock(slug, story); // Log Story
+      setIsContentReady(true);
+      setLoading(false);
     } else {
       setContent(undefined);
+      setIsContentReady(false);
     }
-  }, [story, slug]);
+  }, [story]);
 
-  // Effekt, um das Scrollen nach dem Laden des Contents zu handhaben
   useEffect(() => {
-    if (content) {
-      window.scrollTo({ top: 0, behavior: "auto" });
-      maybeScrollToAnchor();
+    if (isContentReady && content?.body) {
+      if (!isBackNavigation.current) {
+        window.scrollTo({ top: 0, behavior: "auto" });
+        maybeScrollToAnchor();
+      } else {
+        isBackNavigation.current = false;
+      }
     }
-  }, [content]);
+  }, [isContentReady, content]);
 
-  if (!content) {
+  if (!content || loading) {
     return <Loading />;
   }
 

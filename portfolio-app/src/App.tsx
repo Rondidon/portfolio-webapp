@@ -34,7 +34,6 @@ function App() {
   }
 
   const content = story.content as PageStoryblok;
-
   const header = content.header[0] as GlobalHeaderStoryblok;
   const footer = content.footer[0] as GlobalFooterStoryblok;
   const scrollToTopImage: ImageStoryblok | undefined = content.scrollToTop

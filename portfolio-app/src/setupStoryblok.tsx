@@ -13,7 +13,7 @@ import ButtonBlok from "./components/bloks/ButtonBlok";
 const accessToken = "u2OrXZ1MorrJDKZKPTExHwtt";
 const region = "eu";
 const version: "draft" | "published" = "draft";
-const debugLogs = true;
+const debugLogs = false;
 
 // dynamic components
 const componentsWhitelist = {
