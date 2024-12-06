@@ -1,4 +1,4 @@
-.simple-layout {
+.basic-layout {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -7,14 +7,14 @@
   width: 100%;
 }
 
-.simple-layout-centered {
+.basic-layout-centered {
   justify-content: center;
   align-items: center;
 }
 
 /** Bootstrap large lg */
 @media (min-width: 992px) and (min-height: 1024px) {
-  .simple-layout-centered {
+  .basic-layout-centered {
     margin-top: -10%;
   }
 }

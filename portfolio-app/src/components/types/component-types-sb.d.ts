@@ -1,5 +1,33 @@
 import {StoryblokStory} from 'storyblok-generate-ts'
 
+export interface BasicLayoutStoryblok {
+  body?: (
+    | CardStoryblok
+    | CardContainerStoryblok
+    | HeroStoryblok
+    | SimpleContainerStoryblok
+    | TextLinkStoryblok
+    | TextareaStoryblok
+    | LinkedInProfileLinkStoryblok
+    | LanguageDropdownStoryblok
+    | ImageStoryblok
+    | GlobalHeaderStoryblok
+    | GlobalFooterColumnStoryblok
+    | GlobalFooterStoryblok
+    | ButtonStoryblok
+    | ContentSectionStoryblok
+    | HorizontalLineStoryblok
+    | CarouselImageStoryblok
+    | CarouselStoryblok
+    | FaqStoryblok
+  )[];
+  topMargin?: string;
+  centerElements?: boolean;
+  _uid: string;
+  component: "BasicLayout";
+  [k: string]: any;
+}
+
 export interface ButtonStoryblok {
   text: string;
   title?: string;
@@ -209,34 +237,6 @@ export interface SimpleContainerStoryblok {
   elements: (TextareaStoryblok | CardContainerStoryblok | HeroStoryblok | HorizontalLineStoryblok)[];
   _uid: string;
   component: "simpleContainer";
-  [k: string]: any;
-}
-
-export interface SimpleLayoutStoryblok {
-  body?: (
-    | CardStoryblok
-    | CardContainerStoryblok
-    | HeroStoryblok
-    | SimpleContainerStoryblok
-    | TextLinkStoryblok
-    | TextareaStoryblok
-    | LinkedInProfileLinkStoryblok
-    | LanguageDropdownStoryblok
-    | ImageStoryblok
-    | GlobalHeaderStoryblok
-    | GlobalFooterColumnStoryblok
-    | GlobalFooterStoryblok
-    | ButtonStoryblok
-    | ContentSectionStoryblok
-    | HorizontalLineStoryblok
-    | CarouselImageStoryblok
-    | CarouselStoryblok
-    | FaqStoryblok
-  )[];
-  topMargin?: string;
-  centerElements?: boolean;
-  _uid: string;
-  component: "SimpleLayout";
   [k: string]: any;
 }
 

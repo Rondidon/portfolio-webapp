@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { BrowserRouter, ScrollRestoration } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/bloks/FooterBlok";
 import Header from "./components/bloks/HeaderBlok";

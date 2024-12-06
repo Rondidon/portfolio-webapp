@@ -1,34 +1,23 @@
 import { SbBlokData, StoryblokComponent } from "@storyblok/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import LayoutWrapper from "../components/content_types/LayoutWrapper";
 import Loading from "../components/Loading";
-import { SimpleLayoutStoryblok } from "../components/types/component-types-sb";
+import { BasicLayoutStoryblok } from "../components/types/component-types-sb";
 import useStoryblokStory from "../hooks/useStoryblokStory";
 import { logStoryblokStoryOrBlock } from "../utils/logger";
 
-interface StoryLoaderProps {
+interface BasicLayoutLoaderProps {
   slug: string;
 }
 
-const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
+const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
   const story = useStoryblokStory(slug);
-  const [content, setContent] = useState<SimpleLayoutStoryblok | undefined>(
+  const [content, setContent] = useState<BasicLayoutStoryblok | undefined>(
     undefined
   );
   const location = useLocation();
   const [loading, setLoading] = useState(false);
-
-  const maybeScrollToAnchor = () => {
-    const hash = location.hash;
-    if (hash) {
-      const elementId = hash.replace("#", "");
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
 
   useEffect(() => {
     setLoading(true);
@@ -40,7 +29,7 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
 
   useEffect(() => {
     if (story) {
-      setContent(story.content as SimpleLayoutStoryblok);
+      setContent(story.content as BasicLayoutStoryblok);
       setLoading(false);
     } else {
       setContent(undefined);
@@ -49,11 +38,22 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   }, [story]);
 
   useEffect(() => {
+    const maybeScrollToAnchor = () => {
+      const hash = location.hash;
+      if (hash) {
+        const elementId = hash.replace("#", "");
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
     if (!loading && content?.body) {
       window.scrollTo({ top: 0, behavior: "auto" });
       maybeScrollToAnchor();
     }
-  }, [loading, content]);
+  }, [loading, content, location.hash]);
 
   if (!content || loading) {
     return <Loading />;
@@ -69,4 +69,4 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   );
 };
 
-export default SimpleLayoutLoader;
+export default BasicLayoutLoader;

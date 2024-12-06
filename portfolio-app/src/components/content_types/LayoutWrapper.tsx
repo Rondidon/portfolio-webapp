@@ -1,30 +1,28 @@
 import React from "react";
 import {
-  SimpleLayoutStoryblok,
+  BasicLayoutStoryblok,
   PageStoryblok,
 } from "../types/component-types-sb";
-import "./css/simple-layout.css";
+import "./css/basic-layout.css";
 
 type LayoutWrapperProps = {
-  blok: SimpleLayoutStoryblok | PageStoryblok;
+  blok: BasicLayoutStoryblok | PageStoryblok;
   children: React.ReactNode;
 };
 
 const LayoutWrapper: React.FC<LayoutWrapperProps> = ({ blok, children }) => {
   if ("component" in blok) {
     switch (blok.component) {
-      case "SimpleLayout":
+      case "BasicLayout":
         return (
           <div
-            className={`simple-layout ${
-              blok.centerElements ? "simple-layout-centered" : ""
+            className={`basic-layout ${
+              blok.centerElements ? "basic-layout-centered" : ""
             }`}
           >
             {children}
           </div>
         );
-      case "page":
-        return <div>{children}</div>;
       default:
         return null;
     }
