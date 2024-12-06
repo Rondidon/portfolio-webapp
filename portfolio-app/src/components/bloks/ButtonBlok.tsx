@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { appPath } from "../../App";
 import { ButtonStoryblok } from "../types/component-types-sb";
 import "./css/ButtonBlok.css";
-import { link } from "fs";
-import { appPath } from "../../App";
 
 interface ButtonBlokProps {
   blok: ButtonStoryblok;

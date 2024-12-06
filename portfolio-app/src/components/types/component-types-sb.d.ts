@@ -51,6 +51,7 @@ export interface CarouselStoryblok {
 export interface CarouselImageStoryblok {
   label?: string;
   imageFile: string;
+  alt: string;
   _uid: string;
   component: "CarouselImage";
   [k: string]: any;

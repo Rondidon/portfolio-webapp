@@ -1,5 +1,5 @@
-import { Suspense, useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
 import routesConfig from "../routing/routingConfig";
 import { RouteConfig } from "../routing/types/routeConfig";
 import Loading from "./Loading";

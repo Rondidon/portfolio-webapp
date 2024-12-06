@@ -13,32 +13,32 @@ interface CarouselBlokProps {
   blok: CarouselStoryblok;
 }
 
+const getThumbWidth = (imageAmount: number, breakpoint: Breakpoint) => {
+  const widths: Record<Breakpoint, number> = {
+    XS: 32,
+    SM: 42,
+    MD: 54,
+    LG: 64,
+    XL: 74,
+    XXL: 84,
+  };
+  if (imageAmount > 4) {
+    return widths[breakpoint];
+  } else {
+    return widths[breakpoint] * 1.25;
+  }
+};
+
 const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
   const imageBloks: CarouselImageStoryblok[] = blok.Images;
   const breakpoint: Breakpoint = useBreakpoints();
 
-  const getThumbWidth = (imageAmount: number) => {
-    const widths: Record<Breakpoint, number> = {
-      XS: 32,
-      SM: 42,
-      MD: 54,
-      LG: 64,
-      XL: 74,
-      XXL: 84,
-    };
-    if (imageAmount > 4) {
-      return widths[breakpoint];
-    } else {
-      return widths[breakpoint] * 1.25;
-    }
-  };
-
   const [thumbWidth, setThumbWidth] = useState(
-    getThumbWidth(imageBloks.length)
+    getThumbWidth(imageBloks.length, breakpoint)
   );
 
   useEffect(() => {
-    const width = getThumbWidth(imageBloks.length);
+    const width = getThumbWidth(imageBloks.length, breakpoint);
     setThumbWidth(width);
   }, [breakpoint, imageBloks.length]);
 
@@ -53,7 +53,7 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
     >
       {imageBloks.map((blok: CarouselImageStoryblok) => (
         <div>
-          <img src={toAssetLocation(blok.imageFile)} />
+          <img src={toAssetLocation(blok.imageFile)} alt={blok.alt} />
           {blok.label && <p className="legend legend-custom">{blok.label}</p>}
         </div>
       ))}

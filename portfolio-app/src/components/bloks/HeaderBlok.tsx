@@ -1,5 +1,5 @@
 import { storyblokEditable } from "@storyblok/react";
-import React, { useEffect } from "react";
+import React from "react";
 import {
   ButtonStoryblok,
   GlobalHeaderStoryblok,
@@ -9,12 +9,11 @@ import {
   TextLinkStoryblok,
 } from "../types/component-types-sb";
 import ButtonBlok from "./ButtonBlok";
-import ImageBlok from "./ImageBlok";
-import TextLinkBlok from "./TextLinkBlok";
 import "./css/HeaderBlok.css";
+import ImageBlok from "./ImageBlok";
 import LanguageDropdownBlok from "./LangugageDropdownBlok";
 import LinkedInProfileLinkBlok from "./LinkedInProfileLinkBlok";
-import { logStoryblokStoryOrBlock } from "../../utils/logger";
+import TextLinkBlok from "./TextLinkBlok";
 
 interface GlobalHeaderStoryblokProps {
   blok: GlobalHeaderStoryblok;

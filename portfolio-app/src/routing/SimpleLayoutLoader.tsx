@@ -46,8 +46,11 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   }, []);
 
   useEffect(() => {
+    logStoryblokStoryOrBlock(slug, story);
+  }, [story, slug]);
+
+  useEffect(() => {
     if (story) {
-      logStoryblokStoryOrBlock(slug, story);
       setContent(story.content as SimpleLayoutStoryblok);
       setIsContentReady(true);
       setLoading(false);
@@ -66,7 +69,7 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
         isBackNavigation.current = false;
       }
     }
-  }, [isContentReady, content]);
+  }, [isContentReady, content, maybeScrollToAnchor]);
 
   if (!content || loading) {
     return <Loading />;

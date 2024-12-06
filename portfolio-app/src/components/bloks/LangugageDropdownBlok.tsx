@@ -12,26 +12,29 @@ const LanguageDropdownBlok: React.FC<LanguageDropdownProps> = ({
 }): JSX.Element => {
   return (
     <div className="nav-item dropdown">
-      <a
+      <button
         className="nav-link dropdown-toggle"
-        href="#"
-        role="button"
+        type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
         title={blok.title}
       >
         {blok.title}
-      </a>
+      </button>
       <ul className="dropdown-menu dropdown-fit-content">
         {blok.languages?.map((value, index) => (
           <li key={index}>
-            <a className="dropdown-item dropdown-fit-content" href="#">
+            <button
+              className="dropdown-item dropdown-fit-content"
+              type="button"
+            >
               <img
                 src={toAssetLocation(value + ".svg")}
                 style={{ width: "16px", height: "16px" }}
+                alt={blok.title}
               />
               <span style={{ marginLeft: "0.2em" }}>{value}</span>
-            </a>
+            </button>
           </li>
         ))}
       </ul>
