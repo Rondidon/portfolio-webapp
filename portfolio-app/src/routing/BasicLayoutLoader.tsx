@@ -21,6 +21,7 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
 
   useEffect(() => {
     setLoading(true);
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [location]);
 
   useEffect(() => {
@@ -50,7 +51,6 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
     };
 
     if (!loading && content?.body) {
-      window.scrollTo({ top: 0, behavior: "auto" });
       maybeScrollToAnchor();
     }
   }, [loading, content, location.hash]);

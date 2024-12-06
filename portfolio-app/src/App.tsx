@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/bloks/FooterBlok";
@@ -19,6 +19,13 @@ export const appPath = `${window.location.origin}${basename}`;
 
 function App() {
   const story = useStoryblokStory(slug);
+
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+    return () => {
+      window.history.scrollRestoration = "auto";
+    };
+  }, []);
 
   if (!story || !story.content) {
     return (
