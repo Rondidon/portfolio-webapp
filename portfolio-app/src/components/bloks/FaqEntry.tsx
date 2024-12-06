@@ -8,19 +8,19 @@ interface FAQEntryBlokProps {
   toggleFAQ: (index: number) => void;
   index: number;
   faq: FAQElement;
-  key: string;
+  customKey: string; // Ersetzt das 'key'-Prop
 }
 
 const FAQEntry: React.FC<FAQEntryBlokProps> = ({
   toggleFAQ,
   index,
   faq,
-  key,
+  customKey,
 }) => {
   return (
     <div
       className={"faq " + (faq.open ? "open" : "")}
-      key={index}
+      key={customKey} // React verwendet 'key' hier nicht mehr
       onClick={() => toggleFAQ(index)}
     >
       <div className="faq-question">

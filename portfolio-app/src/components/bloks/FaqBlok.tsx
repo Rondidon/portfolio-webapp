@@ -46,6 +46,7 @@ const FaqBlok: React.FC<FaqBlokProps> = ({ blok }) => {
           index={index}
           key={"faq-entry-" + index}
           toggleFAQ={toggleFAQ}
+          customKey={"faq-entry-" + index}
         />
       ))}
     </div>

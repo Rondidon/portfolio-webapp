@@ -52,7 +52,7 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
       thumbWidth={thumbWidth} // Breite der Vorschaubilder
     >
       {imageBloks.map((blok: CarouselImageStoryblok) => (
-        <div>
+        <div key={blok.imageFile}>
           <img src={toAssetLocation(blok.imageFile)} alt={blok.alt} />
           {blok.label && <p className="legend legend-custom">{blok.label}</p>}
         </div>

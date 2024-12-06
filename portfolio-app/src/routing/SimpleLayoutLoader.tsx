@@ -1,11 +1,11 @@
-import { useEffect, useState, useRef } from "react";
+import { SbBlokData, StoryblokComponent } from "@storyblok/react";
+import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import LayoutWrapper from "../components/content_types/LayoutWrapper";
+import Loading from "../components/Loading";
 import { SimpleLayoutStoryblok } from "../components/types/component-types-sb";
 import useStoryblokStory from "../hooks/useStoryblokStory";
 import { logStoryblokStoryOrBlock } from "../utils/logger";
-import LayoutWrapper from "../components/content_types/LayoutWrapper";
-import { SbBlokData, StoryblokComponent } from "@storyblok/react";
-import Loading from "../components/Loading";
-import { useLocation } from "react-router-dom";
 
 interface StoryLoaderProps {
   slug: string;
@@ -16,13 +16,11 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   const [content, setContent] = useState<SimpleLayoutStoryblok | undefined>(
     undefined
   );
-  const [isContentReady, setIsContentReady] = useState(false);
-  const routeLocation = useLocation();
-  const isBackNavigation = useRef(false);
+  const location = useLocation();
   const [loading, setLoading] = useState(false);
 
   const maybeScrollToAnchor = () => {
-    const hash = routeLocation.hash;
+    const hash = location.hash;
     if (hash) {
       const elementId = hash.replace("#", "");
       const element = document.getElementById(elementId);
@@ -33,17 +31,8 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   };
 
   useEffect(() => {
-    const handlePopState = () => {
-      isBackNavigation.current = true;
-      setLoading(true);
-    };
-
-    window.addEventListener("popstate", handlePopState);
-
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, []);
+    setLoading(true);
+  }, [location]);
 
   useEffect(() => {
     logStoryblokStoryOrBlock(slug, story);
@@ -52,24 +41,19 @@ const SimpleLayoutLoader = ({ slug }: StoryLoaderProps) => {
   useEffect(() => {
     if (story) {
       setContent(story.content as SimpleLayoutStoryblok);
-      setIsContentReady(true);
       setLoading(false);
     } else {
       setContent(undefined);
-      setIsContentReady(false);
+      setLoading(true);
     }
   }, [story]);
 
   useEffect(() => {
-    if (isContentReady && content?.body) {
-      if (!isBackNavigation.current) {
-        window.scrollTo({ top: 0, behavior: "auto" });
-        maybeScrollToAnchor();
-      } else {
-        isBackNavigation.current = false;
-      }
+    if (!loading && content?.body) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+      maybeScrollToAnchor();
     }
-  }, [isContentReady, content, maybeScrollToAnchor]);
+  }, [loading, content]);
 
   if (!content || loading) {
     return <Loading />;

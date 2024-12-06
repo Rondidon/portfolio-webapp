@@ -1,18 +1,17 @@
-import { BrowserRouter } from "react-router-dom";
+import { Suspense } from "react";
+import { BrowserRouter, ScrollRestoration } from "react-router-dom";
+import "./App.css";
 import Footer from "./components/bloks/FooterBlok";
 import Header from "./components/bloks/HeaderBlok";
+import Loading from "./components/Loading";
 import Main from "./components/Main";
-import useStoryblokStory from "./hooks/useStoryblokStory";
 import {
   GlobalFooterStoryblok,
   GlobalHeaderStoryblok,
   ImageStoryblok,
   PageStoryblok,
 } from "./components/types/component-types-sb";
-import { logStoryblokStoryOrBlock } from "./utils/logger";
-import { Suspense, useEffect } from "react";
-import Loading from "./components/Loading";
-import "./App.css";
+import useStoryblokStory from "./hooks/useStoryblokStory";
 
 const slug = "global-layout";
 const basename = "/portfolio-webapp";
@@ -20,10 +19,6 @@ export const appPath = `${window.location.origin}${basename}`;
 
 function App() {
   const story = useStoryblokStory(slug);
-
-  useEffect(() => {
-    logStoryblokStoryOrBlock(slug, story);
-  }, [story]);
 
   if (!story || !story.content) {
     return (
