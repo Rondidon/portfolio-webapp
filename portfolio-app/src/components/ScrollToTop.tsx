@@ -10,10 +10,8 @@ interface ScrollToTopProps {
 const ScrollToTop = (props: ScrollToTopProps) => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
-  // ScrollToTop visibility.
   useEffect(() => {
     const handleScroll = () => {
-      // Sichtbarkeit des ScrollToTop-Buttons
       if (window.scrollY > 200) {
         setShowScrollToTop(true);
       } else {

@@ -5,7 +5,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-22T20:28:00.238Z",
-      "updated_at": "2024-12-06T16:39:31.933Z",
+      "updated_at": "2024-12-06T23:05:49.841Z",
       "id": 6079549,
       "schema": {
         "body": {
@@ -32,7 +32,8 @@
             "horizontalLine",
             "CarouselImage",
             "carousel",
-            "faq"
+            "faq",
+            "contactForm"
           ],
           "required": false
         },
@@ -377,6 +378,183 @@
       "component_group_uuid": "all",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
+      "name": "contactForm",
+      "display_name": null,
+      "description": "Kontaktformular",
+      "created_at": "2024-12-06T21:22:07.972Z",
+      "updated_at": "2024-12-06T23:35:46.401Z",
+      "id": 6661163,
+      "schema": {
+        "header": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "nameInput": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "ContactFormEntry"
+          ],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true
+        },
+        "emailAddressInput": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "ContactFormEntry"
+          ],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true
+        },
+        "telInput": {
+          "type": "bloks",
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "ContactFormEntry"
+          ],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true
+        },
+        "subject": {
+          "type": "option",
+          "pos": 4,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "69c37578-37e9-4603-89c8-ef5e4e543243",
+              "name": "general",
+              "value": "Allgemein / Sonstiges"
+            },
+            {
+              "_uid": "e2a36717-cb45-4b4a-876b-007dec0e3b5b",
+              "value": "Web Design",
+              "name": "webdesign"
+            },
+            {
+              "_uid": "e1004f55-3001-49ca-a247-e0e3d6187fbc",
+              "value": "Online Shop",
+              "name": "onlineshop"
+            },
+            {
+              "_uid": "f2a81e22-1727-4356-acd0-e15f7d4d7071",
+              "value": "Custom Web Application",
+              "name": "web-application"
+            },
+            {
+              "_uid": "cc23cc6e-a3ca-40cc-80ab-32a6b60879b4",
+              "value": "3D Design",
+              "name": "3d-design"
+            },
+            {
+              "_uid": "c8fc60e4-ad45-4e68-b6a5-1a6dbba6a5b1",
+              "value": "Beratung",
+              "name": "consulting"
+            },
+            {
+              "_uid": "8730c565-4e95-43a2-bc55-1576e8199fdc",
+              "value": "Wartung und Weiterentwicklung",
+              "name": "maintance"
+            },
+            {
+              "_uid": "a95d02d5-738a-4109-8d06-d3b1df0fdad8",
+              "value": "Kooperation / Teammitgliedsanfrage",
+              "name": "cooperation"
+            }
+          ],
+          "required": true
+        },
+        "messageInput": {
+          "type": "bloks",
+          "pos": 5,
+          "restrict_type": "",
+          "restrict_components": true,
+          "default_value": "",
+          "component_whitelist": [
+            "ContactFormEntry"
+          ],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true
+        },
+        "submitButtonText": {
+          "type": "text",
+          "pos": 6,
+          "required": true
+        },
+        "submitButtonTitle": {
+          "type": "text",
+          "pos": 7,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "contactForm",
+      "component_group_uuid": "all",
+      "color": "#2DB47D",
+      "icon": "block-@",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
+      "name": "ContactFormEntry",
+      "display_name": null,
+      "description": "Eintrag für das Kontaktformular (ContactForm)",
+      "created_at": "2024-12-06T21:36:02.791Z",
+      "updated_at": "2024-12-06T21:40:38.509Z",
+      "id": 6661227,
+      "schema": {
+        "placeholder": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "maxLength": {
+          "type": "number",
+          "pos": 1,
+          "required": true,
+          "default_value": "100"
+        },
+        "isRequired": {
+          "type": "boolean",
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "ContactFormEntry",
+      "component_group_uuid": "all",
+      "color": "#2DB47D",
+      "icon": "block-@",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,

@@ -20,6 +20,7 @@ export interface BasicLayoutStoryblok {
     | CarouselImageStoryblok
     | CarouselStoryblok
     | FaqStoryblok
+    | ContactFormStoryblok
   )[];
   topMargin?: string;
   centerElements?: boolean;
@@ -82,6 +83,38 @@ export interface CarouselImageStoryblok {
   alt: string;
   _uid: string;
   component: "CarouselImage";
+  [k: string]: any;
+}
+
+export interface ContactFormStoryblok {
+  header: string;
+  nameInput: ContactFormEntryStoryblok[];
+  emailAddressInput: ContactFormEntryStoryblok[];
+  telInput: ContactFormEntryStoryblok[];
+  subject:
+    | ""
+    | "Allgemein / Sonstiges"
+    | "Web Design"
+    | "Online Shop"
+    | "Custom Web Application"
+    | "3D Design"
+    | "Beratung"
+    | "Wartung und Weiterentwicklung"
+    | "Kooperation / Teammitgliedsanfrage";
+  messageInput: ContactFormEntryStoryblok[];
+  submitButtonText: string;
+  submitButtonTitle: string;
+  _uid: string;
+  component: "contactForm";
+  [k: string]: any;
+}
+
+export interface ContactFormEntryStoryblok {
+  placeholder: string;
+  maxLength: string;
+  isRequired?: boolean;
+  _uid: string;
+  component: "ContactFormEntry";
   [k: string]: any;
 }
 

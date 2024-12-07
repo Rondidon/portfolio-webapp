@@ -8,6 +8,7 @@ import HorizontalLineBlok from "./components/bloks/HorizontalLineBlok";
 import CarouselBlok from "./components/bloks/CarouselBlok";
 import FaqBlok from "./components/bloks/FaqBlok";
 import ButtonBlok from "./components/bloks/ButtonBlok";
+import ContactFormBlok from "./components/bloks/ContactFormBlok";
 
 // setup
 const accessToken = "u2OrXZ1MorrJDKZKPTExHwtt";
@@ -26,6 +27,7 @@ const componentsWhitelist = {
   horizontalLine: HorizontalLineBlok,
   carousel: CarouselBlok,
   faq: FaqBlok,
+  contactForm: ContactFormBlok,
 };
 
 const storyblokSetup = {
