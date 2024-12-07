@@ -1,20 +1,23 @@
 .app-btn-primary {
   background-color: #63eed2;
-  border-width: 1px;
-  border-color: darkgray;
+  border: 1px solid darkgray;
   border-radius: 2em;
   font-size: 14px;
   font-weight: 500;
-  padding: 0.5em 1.5em;
+  padding: 0.75em 2em;
   cursor: pointer;
+  color: #111;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .app-btn-primary:hover,
 .app-btn-primary:active,
 .app-btn-primary:focus {
-  background-color: #6bffe1 !important;
-  border-color: darkgray !important;
+  background-color: #6bffe1;
+  border-color: darkgray;
   outline: none;
+  transform: scale(1.01);
 }
 
 .app-btn-primary:disabled {
@@ -25,23 +28,26 @@
   transform: none;
 }
 
+/* Secondary Button */
 .app-btn-secondary {
-  height: 2.5em;
+  height: auto;
   background-color: #ffffff;
-  border-width: 1px;
-  border-color: lightgray;
+  border: 1px solid lightgray;
   border-radius: 2em;
   font-size: 14px;
   font-weight: 500;
-  padding: 0.5em 1.5em;
+  padding: 0.8em 2em;
   cursor: pointer;
+  color: #111;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .app-btn-secondary:hover,
 .app-btn-secondary:active,
 .app-btn-secondary:focus {
-  background-color: #63eed2 !important;
-  border-color: darkgray !important;
+  background-color: #63eed2;
+  border-color: darkgray;
   outline: none;
 }
 
@@ -50,5 +56,4 @@
   border-color: #aaaaaa;
   color: #666666;
   cursor: not-allowed;
-  transform: none;
 }

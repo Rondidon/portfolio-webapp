@@ -1,28 +1,23 @@
-.hero-primary {
-  background-color: #e0dde3;
-  border-style: none;
-  border-radius: 0.5em;
-  display: flex;
-  flex-direction: column;
-  min-width: "4rem";
-  min-height: "4rem";
-}
-
+.hero-primary,
 .hero-secondary {
-  background-color: #e0dde3;
-  border-style: none;
-  border-radius: 0.5em;
+  background: linear-gradient(135deg, #f7f7f7, #e0dde3);
+  border: none;
+  border-radius: 1em;
   display: flex;
   flex-direction: column;
-  min-width: "4rem";
-  min-height: "4rem";
+  padding: 2em;
+  text-align: center;
 }
 
 .hero-heading {
-  font-size: xx-large;
-  color: #111;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
 .hero-text {
-  color: #111;
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.1rem;
 }

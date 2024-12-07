@@ -36,16 +36,13 @@ const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
         {blok.title && (
           <h5>
             <SafeHtmlRenderer
-              className="card-default-title"
+              className="card-header"
               htmlContent={blok.title}
             />
           </h5>
         )}
         {blok.text && (
-          <SafeHtmlRenderer
-            className="card-default-text"
-            htmlContent={blok.text}
-          />
+          <SafeHtmlRenderer className="card-text" htmlContent={blok.text} />
         )}
       </div>
       <div className="card-default-footer">
