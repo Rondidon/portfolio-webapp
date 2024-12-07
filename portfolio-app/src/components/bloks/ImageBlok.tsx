@@ -48,7 +48,7 @@ const ImageBlok: React.FC<ImageBlokProps> = ({
         height: height,
         width: blok.isSquareImage ? height : undefined,
         borderRadius: blok.borderRadius ? blok.borderRadius + "em" : undefined,
-        border: blok.showBorder ? "2px solid lightgrey" : undefined,
+        border: blok.showBorder ? "1px solid lightgrey" : undefined,
       }}
       onClick={maybeTriggerCallback}
     />
