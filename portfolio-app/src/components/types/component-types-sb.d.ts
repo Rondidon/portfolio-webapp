@@ -96,6 +96,8 @@ export interface ContactFormStoryblok {
   submitButtonText: string;
   submitButtonTitle: string;
   requiredNotice: string;
+  successMessage: string;
+  errorMessage: string;
   _uid: string;
   component: "contactForm";
   [k: string]: any;
@@ -103,6 +105,7 @@ export interface ContactFormStoryblok {
 
 export interface ContactFormEntryStoryblok {
   placeholder: string;
+  title: string;
   maxLength: string;
   isRequired?: boolean;
   _uid: string;

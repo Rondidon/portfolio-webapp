@@ -239,9 +239,9 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
                   required={subjectInput.isRequired}
                   title={subjectInput.title}
                 />
-                <span className="text-length-notice">
+                <p className="text-length-notice">
                   {subjectLength + "/" + subjectInput.maxLength}
-                </span>
+                </p>
               </div>
               <PhoneInput
                 placeholder={formatPlaceholder(
@@ -282,11 +282,10 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
                   rows={5}
                   title={messageArea.title}
                 />
-                <span className="text-length-notice">
+                <p className="text-length-notice">
                   {textAreaLength + "/" + messageArea.maxLength}
-                </span>
+                </p>
               </div>
-              <span className="required-notice">{blok.requiredNotice}</span>
             </div>
           </div>
           <div className="card-default-footer p-3">
@@ -301,12 +300,22 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
           </div>
         </form>
       </div>
-      {formStatus === "success" && (
-        <p className="form-status success">Nachricht erfolgreich gesendet!</p>
-      )}
-      {formStatus === "error" && (
-        <p className="form-status error">Fehler beim Senden der Nachricht.</p>
-      )}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: formStatus !== null ? "space-between" : "flex-end",
+          width: "100%",
+          paddingTop: "0.5rem",
+        }}
+      >
+        {formStatus === "success" && (
+          <span className="form-status success">{blok.successMessage}</span>
+        )}
+        {formStatus === "error" && (
+          <span className="form-status error">{blok.errorMessage}</span>
+        )}
+        <span className="required-notice">{blok.requiredNotice}</span>
+      </div>
     </div>
   );
 };
