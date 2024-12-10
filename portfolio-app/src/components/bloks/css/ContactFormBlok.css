@@ -155,3 +155,16 @@
 .text-length-notice {
   margin-top: 5px;
 }
+
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.form-status.success {
+  color: rgb(53, 131, 114);
+}
+
+.form-status.error {
+  color: red;
+}

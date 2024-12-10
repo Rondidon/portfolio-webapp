@@ -87,6 +87,9 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
   );
   const [textAreaLength, setTextAreaLength] = useState<number | undefined>(0);
   const [subjectLength, setSubjectLength] = useState<number | undefined>(0);
+  const [formStatus, setFormStatus] = useState<"success" | "error" | null>(
+    null
+  );
 
   const formatPlaceholder = (
     placeholderText: string,
@@ -99,6 +102,17 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
       return placeholderText;
     }
     return placeholderText.concat(" *");
+  };
+
+  const resetForm = () => {
+    if (formRef.current) {
+      formRef.current.reset(); // Setzt alle Eingabewerte zurück
+    }
+    setPhoneNumber(undefined);
+    setTextAreaLength(0);
+    setSubjectLength(0);
+    setIsValid(false);
+    setFormStatus(null);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -128,6 +142,8 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
     console.log("Form Data:", formData);
 
     // TODO: send to backend
+    resetForm();
+    setFormStatus("success");
   };
 
   useEffect(() => {
@@ -143,6 +159,9 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
         telInput.isRequired ? telInput.isRequired : false
       );
       setIsValid(form?.checkValidity() && isTelNumberValid);
+      if (formStatus === "error" || formStatus === "success") {
+        setFormStatus(null);
+      }
     };
 
     const updateTextAreaLength = () => {
@@ -165,121 +184,129 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
   }, [phoneNumber, telInput.isRequired]);
 
   return (
-    <div className={"contact-form"} {...storyblokEditable(blok)}>
-      <form
-        onSubmit={handleSubmit}
-        className="d-flex w-100 flex-column"
-        ref={formRef}
-      >
-        <div className="contact-form-body">
-          {blok && blok.header && (
-            <h5 className="contact-form-header">
-              <SafeHtmlRenderer htmlContent={blok.header} />
-            </h5>
-          )}
-          <div className="d-flex flex-column gap-3">
-            <input
-              type="text"
-              id="nameInput"
-              name="nameInput"
-              className="form-control contact-form-input"
-              placeholder={formatPlaceholder(
-                nameInput.placeholder,
-                nameInput.isRequired
-              )}
-              maxLength={parseInt(nameInput.maxLength)}
-              required={nameInput.isRequired}
-              title={nameInput.title}
-            />
-            <input
-              type="email"
-              id="emailInput"
-              name="email"
-              className="form-control contact-form-input"
-              placeholder={formatPlaceholder(
-                emailAddressInput.placeholder,
-                emailAddressInput.isRequired
-              )}
-              maxLength={parseInt(emailAddressInput.maxLength)}
-              required={emailAddressInput.isRequired}
-              title={emailAddressInput.title}
-            />
-            <div className="d-flex flex-column">
+    <div className="d-flex flex-column">
+      <div className={"contact-form"} {...storyblokEditable(blok)}>
+        <form
+          onSubmit={handleSubmit}
+          className="d-flex w-100 flex-column"
+          ref={formRef}
+        >
+          <div className="contact-form-body">
+            {blok && blok.header && (
+              <h5 className="contact-form-header">
+                <SafeHtmlRenderer htmlContent={blok.header} />
+              </h5>
+            )}
+            <div className="d-flex flex-column gap-3">
               <input
-                ref={subjectInputRef}
                 type="text"
-                id="subjectInput"
-                name="subjectInput"
+                id="nameInput"
+                name="nameInput"
                 className="form-control contact-form-input"
                 placeholder={formatPlaceholder(
-                  subjectInput.placeholder,
-                  subjectInput.isRequired
+                  nameInput.placeholder,
+                  nameInput.isRequired
                 )}
-                maxLength={parseInt(subjectInput.maxLength)}
-                required={subjectInput.isRequired}
-                title={subjectInput.title}
+                maxLength={parseInt(nameInput.maxLength)}
+                required={nameInput.isRequired}
+                title={nameInput.title}
               />
-              <span className="text-length-notice">
-                {subjectLength + "/" + subjectInput.maxLength}
-              </span>
-            </div>
-            <PhoneInput
-              placeholder={formatPlaceholder(
-                telInput.placeholder,
-                telInput.isRequired
-              )}
-              className="form-control react-phone-number-input"
-              value={phoneNumber}
-              onChange={(value) => {
-                setPhoneNumber(value);
-                const isTelNumberValid: boolean = checkTelNumberValidity(
-                  value,
-                  telInput.isRequired ? telInput.isRequired : true
-                );
-                setIsValid(
-                  formRef.current
-                    ? formRef.current?.checkValidity() && isTelNumberValid
-                    : false
-                );
-              }}
-              defaultCountry="DE"
-              countries={telInputCountries}
-              title={telInput.title}
-            />
-            <div className="d-flex flex-column">
-              <textarea
-                ref={textAreaRef}
-                id="-input"
-                name="messageArea"
+              <input
+                type="email"
+                id="emailInput"
+                name="email"
                 className="form-control contact-form-input"
                 placeholder={formatPlaceholder(
-                  messageArea.placeholder,
-                  messageArea.isRequired
+                  emailAddressInput.placeholder,
+                  emailAddressInput.isRequired
                 )}
-                maxLength={parseInt(messageArea.maxLength)}
-                required={messageArea.isRequired}
-                aria-multiline={true}
-                rows={5}
-                title={messageArea.title}
+                maxLength={parseInt(emailAddressInput.maxLength)}
+                required={emailAddressInput.isRequired}
+                title={emailAddressInput.title}
               />
-              <span className="text-length-notice">
-                {textAreaLength + "/" + messageArea.maxLength}
-              </span>
+              <div className="d-flex flex-column">
+                <input
+                  ref={subjectInputRef}
+                  type="text"
+                  id="subjectInput"
+                  name="subjectInput"
+                  className="form-control contact-form-input"
+                  placeholder={formatPlaceholder(
+                    subjectInput.placeholder,
+                    subjectInput.isRequired
+                  )}
+                  maxLength={parseInt(subjectInput.maxLength)}
+                  required={subjectInput.isRequired}
+                  title={subjectInput.title}
+                />
+                <span className="text-length-notice">
+                  {subjectLength + "/" + subjectInput.maxLength}
+                </span>
+              </div>
+              <PhoneInput
+                placeholder={formatPlaceholder(
+                  telInput.placeholder,
+                  telInput.isRequired
+                )}
+                className="form-control react-phone-number-input"
+                value={phoneNumber}
+                onChange={(value) => {
+                  setPhoneNumber(value);
+                  const isTelNumberValid: boolean = checkTelNumberValidity(
+                    value,
+                    telInput.isRequired ? telInput.isRequired : true
+                  );
+                  setIsValid(
+                    formRef.current
+                      ? formRef.current?.checkValidity() && isTelNumberValid
+                      : false
+                  );
+                }}
+                defaultCountry="DE"
+                countries={telInputCountries}
+                title={telInput.title}
+              />
+              <div className="d-flex flex-column">
+                <textarea
+                  ref={textAreaRef}
+                  id="-input"
+                  name="messageArea"
+                  className="form-control contact-form-input"
+                  placeholder={formatPlaceholder(
+                    messageArea.placeholder,
+                    messageArea.isRequired
+                  )}
+                  maxLength={parseInt(messageArea.maxLength)}
+                  required={messageArea.isRequired}
+                  aria-multiline={true}
+                  rows={5}
+                  title={messageArea.title}
+                />
+                <span className="text-length-notice">
+                  {textAreaLength + "/" + messageArea.maxLength}
+                </span>
+              </div>
+              <span className="required-notice">{blok.requiredNotice}</span>
             </div>
-            <span className="required-notice">{blok.requiredNotice}</span>
           </div>
-        </div>
-        <div className="card-default-footer p-3">
-          <button
-            type="submit"
-            className={"btn app-btn-primary w-100 w-lg-0"}
-            disabled={!isValid}
-            title={blok.submitButtonTitle}
-          >
-            {blok.submitButtonText}
-          </button>
-        </div>
-      </form>
+          <div className="card-default-footer p-3">
+            <button
+              type="submit"
+              className={"btn app-btn-primary w-100 w-lg-0"}
+              disabled={!isValid}
+              title={blok.submitButtonTitle}
+            >
+              {blok.submitButtonText}
+            </button>
+          </div>
+        </form>
+      </div>
+      {formStatus === "success" && (
+        <p className="form-status success">Nachricht erfolgreich gesendet!</p>
+      )}
+      {formStatus === "error" && (
+        <p className="form-status error">Fehler beim Senden der Nachricht.</p>
+      )}
     </div>
   );
 };

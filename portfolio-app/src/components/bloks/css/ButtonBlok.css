@@ -17,7 +17,6 @@
   background-color: #6bffe1;
   border-color: darkgray;
   outline: none;
-  transform: scale(1.01);
 }
 
 .app-btn-primary:disabled {
