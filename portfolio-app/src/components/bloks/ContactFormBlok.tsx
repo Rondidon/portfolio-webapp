@@ -7,6 +7,8 @@ import "react-phone-number-input/style.css";
 import PhoneInput, {
   type Value as E164Number,
   Country,
+  formatPhoneNumber,
+  isValidPhoneNumber,
 } from "react-phone-number-input";
 
 interface ContactFormProps {
@@ -49,6 +51,22 @@ const telInputCountries: Country[] = [
   "CA", // Canada
 ];
 
+const checkTelNumberValidity = (
+  phoneNumber: E164Number | undefined,
+  isRequired: boolean
+): boolean => {
+  if (!isRequired && (!phoneNumber || phoneNumber?.length === 0)) {
+    return true;
+  }
+  if (isRequired && (!phoneNumber || phoneNumber?.length === 0)) {
+    return false;
+  }
+  if (!phoneNumber) {
+    return false;
+  }
+  return isValidPhoneNumber(phoneNumber);
+};
+
 const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
   const nameInput = blok.nameInput[0];
   const emailAddressInput = blok.emailAddressInput[0];
@@ -84,18 +102,29 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
     if (!form) {
       return;
     }
+
     const validateForm = () => {
-      setIsValid(form.checkValidity());
+      const isTelNumberValid: boolean = checkTelNumberValidity(
+        phoneNumber,
+        telInput.isRequired ? telInput.isRequired : false
+      );
+      console.log("validateTelNumber: ", isTelNumberValid);
+      console.log("validateRest: ", formRef.current?.checkValidity());
+      setIsValid(
+        formRef.current
+          ? formRef.current?.checkValidity() && isTelNumberValid
+          : true
+      );
     };
+    validateForm();
 
     form.addEventListener("input", validateForm);
-
     return () => {
       if (form) {
         form.removeEventListener("input", validateForm);
       }
     };
-  }, []);
+  }, [phoneNumber, telInput.isRequired, formRef.current]);
 
   return (
     <div className={"card-default-variant"} {...storyblokEditable(blok)}>
@@ -142,7 +171,18 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
               )}
               className="form-control react-phone-number-input"
               value={phoneNumber}
-              onChange={setPhoneNumber}
+              onChange={(value) => {
+                setPhoneNumber(value);
+                const isTelNumberValid: boolean = checkTelNumberValidity(
+                  value,
+                  telInput.isRequired ? telInput.isRequired : true
+                );
+                setIsValid(
+                  formRef.current
+                    ? formRef.current?.checkValidity() && isTelNumberValid
+                    : false
+                );
+              }}
               defaultCountry="DE"
               countries={telInputCountries}
             />
@@ -159,7 +199,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
               aria-multiline={true}
               rows={5}
             />
-            <span className="required-notice">* Pflichtfelder</span>
+            <span className="required-notice">{blok.requiredNotice}</span>
           </div>
         </div>
         <div className="card-default-footer p-3">

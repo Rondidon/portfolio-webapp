@@ -104,6 +104,7 @@ export interface ContactFormStoryblok {
   messageInput: ContactFormEntryStoryblok[];
   submitButtonText: string;
   submitButtonTitle: string;
+  requiredNotice: string;
   _uid: string;
   component: "contactForm";
   [k: string]: any;
