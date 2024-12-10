@@ -1,5 +1,5 @@
 import { SbBlokData, StoryblokComponent } from "@storyblok/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import LayoutWrapper from "../components/content_types/LayoutWrapper";
 import Loading from "../components/Loading";
@@ -19,9 +19,20 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
+  const prevLocation = useRef(location);
+
   useEffect(() => {
-    setLoading(true);
+    const isSameLocation =
+      prevLocation.current.pathname === location.pathname &&
+      prevLocation.current.hash === location.hash &&
+      prevLocation.current.search === location.search;
+
+    if (!isSameLocation) {
+      setLoading(true);
+    }
     window.scrollTo({ top: 0, behavior: "auto" });
+
+    prevLocation.current = location;
   }, [location]);
 
   useEffect(() => {
