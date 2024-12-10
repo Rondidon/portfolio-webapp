@@ -189,6 +189,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
               )}
               maxLength={parseInt(nameInput.maxLength)}
               required={nameInput.isRequired}
+              title={nameInput.title}
             />
             <input
               type="email"
@@ -201,6 +202,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
               )}
               maxLength={parseInt(emailAddressInput.maxLength)}
               required={emailAddressInput.isRequired}
+              title={emailAddressInput.title}
             />
             <div className="d-flex flex-column">
               <input
@@ -215,6 +217,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
                 )}
                 maxLength={parseInt(subjectInput.maxLength)}
                 required={subjectInput.isRequired}
+                title={subjectInput.title}
               />
               <span className="text-length-notice">
                 {subjectLength + "/" + subjectInput.maxLength}
@@ -241,6 +244,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
               }}
               defaultCountry="DE"
               countries={telInputCountries}
+              title={telInput.title}
             />
             <div className="d-flex flex-column">
               <textarea
@@ -256,6 +260,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
                 required={messageArea.isRequired}
                 aria-multiline={true}
                 rows={5}
+                title={messageArea.title}
               />
               <span className="text-length-notice">
                 {textAreaLength + "/" + messageArea.maxLength}
