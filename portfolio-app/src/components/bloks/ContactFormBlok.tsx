@@ -1,21 +1,26 @@
 import { storyblokEditable } from "@storyblok/react";
 import React, { useEffect, useRef, useState } from "react";
-import { ContactFormStoryblok } from "../types/component-types-sb";
-import SafeHtmlRenderer from "../xss/SafeHtmlRenderer";
-import "./css/ContactFormBlok.css";
-import "react-phone-number-input/style.css";
 import PhoneInput, {
   type Value as E164Number,
   Country,
-  formatPhoneNumber,
   isValidPhoneNumber,
 } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import { ContactFormStoryblok } from "../types/component-types-sb";
+import SafeHtmlRenderer from "../xss/SafeHtmlRenderer";
+import "./css/ContactFormBlok.css";
 
 interface ContactFormProps {
   blok: ContactFormStoryblok;
 }
 
-type SubjectOptions = ContactFormStoryblok["subject"];
+interface FormData {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  subject: string;
+  message: string;
+}
 
 const telInputCountries: Country[] = [
   "AT", // Austria
@@ -71,13 +76,17 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
   const nameInput = blok.nameInput[0];
   const emailAddressInput = blok.emailAddressInput[0];
   const telInput = blok.telInput[0];
+  const subjectInput = blok.subjectInput[0];
   const messageArea = blok.messageInput[0];
-  const subject: SubjectOptions = blok.subject;
   const [isValid, setIsValid] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const subjectInputRef = useRef<HTMLInputElement>(null);
   const [phoneNumber, setPhoneNumber] = useState<E164Number | undefined>(
     undefined
   );
+  const [textAreaLength, setTextAreaLength] = useState<number | undefined>(0);
+  const [subjectLength, setSubjectLength] = useState<number | undefined>(0);
 
   const formatPlaceholder = (
     placeholderText: string,
@@ -94,46 +103,75 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // prevents standard reload og the site
-    console.log("Form submitted");
+    if (!isValid) {
+      return;
+    }
+
+    const formData: FormData = {
+      name: (
+        formRef.current?.elements.namedItem("nameInput") as HTMLInputElement
+      ).value,
+      email: (formRef.current?.elements.namedItem("email") as HTMLInputElement)
+        .value,
+      phoneNumber: phoneNumber || "",
+      subject: (
+        formRef.current?.elements.namedItem("subjectInput") as HTMLInputElement
+      ).value,
+      message: (
+        formRef.current?.elements.namedItem(
+          "messageArea"
+        ) as HTMLTextAreaElement
+      ).value,
+    };
+
+    // Debugging
+    console.log("Form Data:", formData);
+
+    // TODO: send to backend
   };
 
   useEffect(() => {
     const form = formRef.current;
-    if (!form) {
-      return;
-    }
+    const textArea = textAreaRef.current;
+    const subjectInput = subjectInputRef.current;
+
+    if (!form) return;
 
     const validateForm = () => {
       const isTelNumberValid: boolean = checkTelNumberValidity(
         phoneNumber,
         telInput.isRequired ? telInput.isRequired : false
       );
-      console.log("validateTelNumber: ", isTelNumberValid);
-      console.log("validateRest: ", formRef.current?.checkValidity());
-      setIsValid(
-        formRef.current
-          ? formRef.current?.checkValidity() && isTelNumberValid
-          : true
-      );
+      setIsValid(form?.checkValidity() && isTelNumberValid);
     };
-    validateForm();
 
-    form.addEventListener("input", validateForm);
-    return () => {
-      if (form) {
-        form.removeEventListener("input", validateForm);
-      }
+    const updateTextAreaLength = () => {
+      setTextAreaLength(textArea?.textLength);
     };
-  }, [phoneNumber, telInput.isRequired, formRef.current]);
+
+    const updateSubjectLength = () => {
+      setSubjectLength(subjectInput?.value.length);
+    };
+
+    textArea?.addEventListener("input", updateTextAreaLength);
+    subjectInput?.addEventListener("input", updateSubjectLength);
+    form.addEventListener("input", validateForm);
+
+    return () => {
+      textArea?.removeEventListener("input", updateTextAreaLength);
+      subjectInput?.removeEventListener("input", updateSubjectLength);
+      form.removeEventListener("input", validateForm);
+    };
+  }, [phoneNumber, telInput.isRequired]);
 
   return (
-    <div className={"card-default-variant"} {...storyblokEditable(blok)}>
+    <div className={"contact-form"} {...storyblokEditable(blok)}>
       <form
         onSubmit={handleSubmit}
         className="d-flex w-100 flex-column"
         ref={formRef}
       >
-        <div className="card-default-body">
+        <div className="contact-form-body">
           {blok && blok.header && (
             <h5 className="contact-form-header">
               <SafeHtmlRenderer htmlContent={blok.header} />
@@ -142,7 +180,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
           <div className="d-flex flex-column gap-3">
             <input
               type="text"
-              id="contact-input"
+              id="nameInput"
               name="nameInput"
               className="form-control contact-form-input"
               placeholder={formatPlaceholder(
@@ -164,6 +202,24 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
               maxLength={parseInt(emailAddressInput.maxLength)}
               required={emailAddressInput.isRequired}
             />
+            <div className="d-flex flex-column">
+              <input
+                ref={subjectInputRef}
+                type="text"
+                id="subjectInput"
+                name="subjectInput"
+                className="form-control contact-form-input"
+                placeholder={formatPlaceholder(
+                  subjectInput.placeholder,
+                  subjectInput.isRequired
+                )}
+                maxLength={parseInt(subjectInput.maxLength)}
+                required={subjectInput.isRequired}
+              />
+              <span className="text-length-notice">
+                {subjectLength + "/" + subjectInput.maxLength}
+              </span>
+            </div>
             <PhoneInput
               placeholder={formatPlaceholder(
                 telInput.placeholder,
@@ -186,19 +242,25 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
               defaultCountry="DE"
               countries={telInputCountries}
             />
-            <textarea
-              id="-input"
-              name="messageArea"
-              className="form-control contact-form-input"
-              placeholder={formatPlaceholder(
-                messageArea.placeholder,
-                messageArea.isRequired
-              )}
-              maxLength={parseInt(messageArea.maxLength)}
-              required={messageArea.isRequired}
-              aria-multiline={true}
-              rows={5}
-            />
+            <div className="d-flex flex-column">
+              <textarea
+                ref={textAreaRef}
+                id="-input"
+                name="messageArea"
+                className="form-control contact-form-input"
+                placeholder={formatPlaceholder(
+                  messageArea.placeholder,
+                  messageArea.isRequired
+                )}
+                maxLength={parseInt(messageArea.maxLength)}
+                required={messageArea.isRequired}
+                aria-multiline={true}
+                rows={5}
+              />
+              <span className="text-length-notice">
+                {textAreaLength + "/" + messageArea.maxLength}
+              </span>
+            </div>
             <span className="required-notice">{blok.requiredNotice}</span>
           </div>
         </div>

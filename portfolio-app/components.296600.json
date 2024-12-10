@@ -388,7 +388,7 @@
       "display_name": null,
       "description": "Kontaktformular",
       "created_at": "2024-12-06T21:22:07.972Z",
-      "updated_at": "2024-12-10T13:48:55.603Z",
+      "updated_at": "2024-12-10T19:29:49.960Z",
       "id": 6661163,
       "schema": {
         "header": {
@@ -432,53 +432,15 @@
           "maximum": 1,
           "required": true
         },
-        "subject": {
-          "type": "option",
+        "subjectInput": {
+          "type": "bloks",
           "pos": 4,
-          "use_uuid": true,
-          "options": [
-            {
-              "_uid": "69c37578-37e9-4603-89c8-ef5e4e543243",
-              "name": "general",
-              "value": "Allgemein / Sonstiges"
-            },
-            {
-              "_uid": "e2a36717-cb45-4b4a-876b-007dec0e3b5b",
-              "value": "Web Design",
-              "name": "webdesign"
-            },
-            {
-              "_uid": "e1004f55-3001-49ca-a247-e0e3d6187fbc",
-              "value": "Online Shop",
-              "name": "onlineshop"
-            },
-            {
-              "_uid": "f2a81e22-1727-4356-acd0-e15f7d4d7071",
-              "value": "Custom Web Application",
-              "name": "web-application"
-            },
-            {
-              "_uid": "cc23cc6e-a3ca-40cc-80ab-32a6b60879b4",
-              "value": "3D Design",
-              "name": "3d-design"
-            },
-            {
-              "_uid": "c8fc60e4-ad45-4e68-b6a5-1a6dbba6a5b1",
-              "value": "Beratung",
-              "name": "consulting"
-            },
-            {
-              "_uid": "8730c565-4e95-43a2-bc55-1576e8199fdc",
-              "value": "Wartung und Weiterentwicklung",
-              "name": "maintance"
-            },
-            {
-              "_uid": "a95d02d5-738a-4109-8d06-d3b1df0fdad8",
-              "value": "Kooperation / Teammitgliedsanfrage",
-              "name": "cooperation"
-            }
-          ],
-          "required": true
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "ContactFormEntry"
+          ]
         },
         "messageInput": {
           "type": "bloks",

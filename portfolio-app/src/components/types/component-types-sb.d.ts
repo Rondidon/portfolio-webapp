@@ -91,16 +91,7 @@ export interface ContactFormStoryblok {
   nameInput: ContactFormEntryStoryblok[];
   emailAddressInput: ContactFormEntryStoryblok[];
   telInput: ContactFormEntryStoryblok[];
-  subject:
-    | ""
-    | "Allgemein / Sonstiges"
-    | "Web Design"
-    | "Online Shop"
-    | "Custom Web Application"
-    | "3D Design"
-    | "Beratung"
-    | "Wartung und Weiterentwicklung"
-    | "Kooperation / Teammitgliedsanfrage";
+  subjectInput: ContactFormEntryStoryblok[];
   messageInput: ContactFormEntryStoryblok[];
   submitButtonText: string;
   submitButtonTitle: string;

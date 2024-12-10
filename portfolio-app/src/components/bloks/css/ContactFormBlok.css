@@ -1,15 +1,20 @@
 .contact-form {
   background-color: #ffffff;
-  border-radius: 0.5em;
-  border: 2px solid lightgray;
+  border-radius: 1em;
+  border: 1px solid lightgray;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-width: 17em;
   min-height: 4rem;
   height: fit-content;
+}
+
+.contact-form-body {
+  padding: 1rem;
+  overflow-y: auto;
   width: 100%;
-  justify-content: flex-start;
+  color: #333;
 }
 
 .contact-form-footer {
@@ -47,7 +52,7 @@
 }
 
 .contact-form-input::placeholder {
-  color: #bbb;
+  color: #888;
   font-style: italic;
 }
 
@@ -79,7 +84,7 @@
 }
 
 .PhoneInputInput::placeholder {
-  color: #bbb;
+  color: #888;
   font-style: italic;
 }
 
@@ -114,7 +119,7 @@
 
 /* Platzhalter */
 .react-phone-number-input__input::placeholder {
-  color: #bbb;
+  color: #888;
   font-style: italic;
 }
 
@@ -132,9 +137,20 @@
   height: 20px;
 }
 
-.required-notice {
+.required-notice,
+.text-length-notice {
   align-self: flex-end;
-  color: #666;
+  color: #444;
   font-style: normal;
   font-size: 0.875rem;
+}
+
+.required-notice {
+  font-style: italic;
+  color: #888;
+  font-size: 0.925rem;
+}
+
+.text-length-notice {
+  margin-top: 5px;
 }
