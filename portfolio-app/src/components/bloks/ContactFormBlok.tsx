@@ -3,6 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { ContactFormStoryblok } from "../types/component-types-sb";
 import SafeHtmlRenderer from "../xss/SafeHtmlRenderer";
 import "./css/ContactFormBlok.css";
+import "react-phone-number-input/style.css";
+import PhoneInput, {
+  type Value as E164Number,
+  Country,
+} from "react-phone-number-input";
 
 interface ContactFormProps {
   blok: ContactFormStoryblok;
@@ -10,13 +15,64 @@ interface ContactFormProps {
 
 type SubjectOptions = ContactFormStoryblok["subject"];
 
+const telInputCountries: Country[] = [
+  "AT", // Austria
+  "BE", // Belgium
+  "BG", // Bulgaria
+  "HR", // Croatia
+  "CY", // Cyprus
+  "CZ", // Czech Republic
+  "DK", // Denmark
+  "EE", // Estonia
+  "FI", // Finland
+  "FR", // France
+  "DE", // Germany
+  "GR", // Greece
+  "HU", // Hungary
+  "IE", // Ireland
+  "IT", // Italy
+  "LV", // Latvia
+  "LT", // Lithuania
+  "LU", // Luxembourg
+  "MT", // Malta
+  "NL", // Netherlands
+  "PL", // Poland
+  "PT", // Portugal
+  "RO", // Romania
+  "SK", // Slovakia
+  "SI", // Slovenia
+  "ES", // Spain
+  "SE", // Sweden
+  "GB", // United Kingdom
+  "CH", // Switzerland
+  "US", // United States
+  "CA", // Canada
+];
+
 const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
   const nameInput = blok.nameInput[0];
   const emailAddressInput = blok.emailAddressInput[0];
   const telInput = blok.telInput[0];
+  const messageArea = blok.messageInput[0];
   const subject: SubjectOptions = blok.subject;
   const [isValid, setIsValid] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const [phoneNumber, setPhoneNumber] = useState<E164Number | undefined>(
+    undefined
+  );
+
+  const formatPlaceholder = (
+    placeholderText: string,
+    isRequired: boolean | undefined
+  ) => {
+    if (!isRequired) {
+      return placeholderText;
+    }
+    if (placeholderText.endsWith("*")) {
+      return placeholderText;
+    }
+    return placeholderText.concat(" *");
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // prevents standard reload og the site
@@ -58,25 +114,52 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
             <input
               type="text"
               id="contact-input"
-              name="message"
+              name="nameInput"
               className="form-control contact-form-input"
-              placeholder={nameInput.placeholder.concat(
-                nameInput.isRequired ? " *" : ""
+              placeholder={formatPlaceholder(
+                nameInput.placeholder,
+                nameInput.isRequired
               )}
               maxLength={parseInt(nameInput.maxLength)}
               required={nameInput.isRequired}
             />
             <input
               type="email"
-              id="email-input"
-              name="message"
+              id="emailInput"
+              name="email"
               className="form-control contact-form-input"
-              placeholder={emailAddressInput.placeholder.concat(
-                emailAddressInput.isRequired ? " *" : ""
+              placeholder={formatPlaceholder(
+                emailAddressInput.placeholder,
+                emailAddressInput.isRequired
               )}
               maxLength={parseInt(emailAddressInput.maxLength)}
               required={emailAddressInput.isRequired}
             />
+            <PhoneInput
+              placeholder={formatPlaceholder(
+                telInput.placeholder,
+                telInput.isRequired
+              )}
+              className="form-control react-phone-number-input"
+              value={phoneNumber}
+              onChange={setPhoneNumber}
+              defaultCountry="DE"
+              countries={telInputCountries}
+            />
+            <textarea
+              id="-input"
+              name="messageArea"
+              className="form-control contact-form-input"
+              placeholder={formatPlaceholder(
+                messageArea.placeholder,
+                messageArea.isRequired
+              )}
+              maxLength={parseInt(messageArea.maxLength)}
+              required={messageArea.isRequired}
+              aria-multiline={true}
+              rows={5}
+            />
+            <span className="required-notice">* Pflichtfelder</span>
           </div>
         </div>
         <div className="card-default-footer p-3">

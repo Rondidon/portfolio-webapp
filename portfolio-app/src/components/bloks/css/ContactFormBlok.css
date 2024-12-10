@@ -60,3 +60,81 @@
     transform: scale(1.005);
   }
 }
+
+.react-phone-number-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid lightgray;
+  background-color: #f9fdfc;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  padding: 10px 15px;
+}
+
+.PhoneInputInput {
+  outline: none;
+  border: none;
+}
+
+.PhoneInputInput::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+.PhoneInputInput:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.react-phone-number-input:focus-within {
+  border-color: #63eed2;
+  box-shadow: 0 0 8px rgba(99, 238, 210, 0.8);
+  background-color: #ffffff;
+  transform: scale(1.01);
+}
+
+/* Eingabefeld */
+.react-phone-number-input__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #333;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/* Eingabefeld beim Hover */
+.react-phone-number-input:hover {
+  border-color: #89e5c7;
+}
+
+/* Platzhalter */
+.react-phone-number-input__input::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+/* Länder-Flagge Dropdown */
+.react-phone-number-input__country {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.react-phone-number-input__icon {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+}
+
+.required-notice {
+  align-self: flex-end;
+  color: #666;
+  font-style: normal;
+  font-size: 0.875rem;
+}

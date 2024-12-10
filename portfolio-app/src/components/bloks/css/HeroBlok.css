@@ -1,7 +1,6 @@
 .hero-primary,
 .hero-secondary {
   background: linear-gradient(135deg, #f7f7f7, #e0dde3);
-  border: none;
   border-radius: 1em;
   display: flex;
   flex-direction: column;
