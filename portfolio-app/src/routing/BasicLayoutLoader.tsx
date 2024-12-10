@@ -22,12 +22,9 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
   const prevLocation = useRef(location);
 
   useEffect(() => {
-    const isSameLocation =
-      prevLocation.current.pathname === location.pathname &&
-      prevLocation.current.hash === location.hash &&
-      prevLocation.current.search === location.search;
+    const isSamePath = prevLocation.current.pathname === location.pathname;
 
-    if (!isSameLocation) {
+    if (!isSamePath) {
       setLoading(true);
     }
     window.scrollTo({ top: 0, behavior: "auto" });
