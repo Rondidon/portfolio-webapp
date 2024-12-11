@@ -5,7 +5,8 @@
   display: flex;
   flex-direction: column;
   padding: 2em;
-  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid lightgrey;
 }
 
 .hero-heading {
@@ -13,10 +14,26 @@
   font-weight: bold;
   color: #333;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .hero-text {
   color: #555;
   line-height: 1.6;
   font-size: 1.1rem;
+}
+
+.hero-cta-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  margin-bottom: 0px;
+}
+
+/* Anpassungen für den Breakpoint "lg" (ab 992px Breite) */
+@media (min-width: 992px) {
+  .hero-cta-button-container {
+    justify-content: flex-start; /* Ändert die Ausrichtung der Buttons für größere Bildschirme */
+  }
 }

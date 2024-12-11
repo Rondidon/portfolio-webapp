@@ -30,8 +30,8 @@ const ContentSectionBlok: React.FC<ContentSectionBlokProps> = ({ blok }) => {
     <div
       className={
         isRightAdjusted
-          ? "content-section-flipped text-center text-lg-end"
-          : "content-section text-center text-lg-start"
+          ? "content-section-flipped text-lg-end"
+          : "content-section text-lg-start"
       }
       {...storyblokEditable(blok)}
     >

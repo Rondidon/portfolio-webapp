@@ -8,6 +8,7 @@
   min-width: 17em;
   min-height: 4rem;
   height: fit-content;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form-body {

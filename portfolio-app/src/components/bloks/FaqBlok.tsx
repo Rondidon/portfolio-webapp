@@ -39,7 +39,7 @@ const FaqBlok: React.FC<FaqBlokProps> = ({ blok }) => {
   };
 
   return (
-    <div className="faqs">
+    <div className="faqs px-0">
       {faqs.map((faq: FAQElement, index: number) => (
         <FAQEntry
           faq={faq}

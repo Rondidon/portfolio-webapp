@@ -8,6 +8,7 @@ import {
   CarouselStoryblok,
 } from "../types/component-types-sb";
 import "./css/CarouselBlok.css";
+import CardBlok from "./CardBlok";
 
 interface CarouselBlokProps {
   blok: CarouselStoryblok;
@@ -43,21 +44,27 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
   }, [breakpoint, imageBloks.length]);
 
   return (
-    <Carousel
-      dynamicHeight
-      showStatus={false}
-      autoPlay
-      infiniteLoop
-      showThumbs
-      thumbWidth={thumbWidth} // Breite der Vorschaubilder
-    >
-      {imageBloks.map((blok: CarouselImageStoryblok) => (
-        <div key={blok.imageFile}>
-          <img src={toAssetLocation(blok.imageFile)} alt={blok.alt} />
-          {blok.label && <p className="legend legend-custom">{blok.label}</p>}
-        </div>
-      ))}
-    </Carousel>
+    <div className="card-default-variant">
+      <div className="card-default-body p-5">
+        <Carousel
+          dynamicHeight
+          showStatus={false}
+          autoPlay
+          infiniteLoop
+          showThumbs
+          thumbWidth={thumbWidth} // Breite der Vorschaubilder
+        >
+          {imageBloks.map((blok: CarouselImageStoryblok) => (
+            <div key={blok.imageFile}>
+              <img src={toAssetLocation(blok.imageFile)} alt={blok.alt} />
+              {blok.label && (
+                <p className="legend legend-custom">{blok.label}</p>
+              )}
+            </div>
+          ))}
+        </Carousel>
+      </div>
+    </div>
   );
 };
 

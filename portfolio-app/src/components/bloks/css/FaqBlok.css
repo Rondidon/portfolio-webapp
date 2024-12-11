@@ -5,12 +5,14 @@
 }
 
 .faqs .faq {
-  margin: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 1em;
   background: #fff;
   border-radius: 1em;
-  border: 2px solid lightgrey;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Dezenter Schatten */
+  border: 1px solid lightgrey;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .faqs .faq .faq-question {

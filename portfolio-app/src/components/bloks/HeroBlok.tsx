@@ -29,30 +29,34 @@ const HeroBlok: React.FC<HeroBlokProps> = ({ blok, isHeadingH1 }) => {
         style={{ justifyContent: "space-between" }}
       >
         <div
-          className="d-flex h-100 flex-column gap-3 text-center text-lg-start"
+          className="d-flex h-100 flex-column gap-3"
           style={{ justifyContent: "space-between" }}
         >
           <div className="d-flex flex-column gap-2 gap-lg-0">
             {image && (
-              <div className="d-block d-lg-none">
+              <div className="d-block d-lg-none align-self-center">
                 <ImageBlok blok={image} />
               </div>
             )}
             {blok.heading && isHeadingH1 && (
-              <h1 className="hero-heading">{blok.heading}</h1>
+              <h1 className="hero-heading text-lg-start text-center">
+                {blok.heading}
+              </h1>
             )}
             {blok.heading && !isHeadingH1 && (
-              <h5 className="hero-heading">{blok.heading}</h5>
+              <h5 className="hero-heading text-lg-start text-center">
+                {blok.heading}
+              </h5>
             )}
           </div>
           {blok.text && (
             <SafeHtmlRenderer
-              className="hero-text mb-0"
+              className="hero-text text-justify mb-0"
               htmlContent={blok.text}
             />
           )}
           {callToAction && (
-            <p className="mb-0">
+            <p className="hero-cta-button-container">
               <ButtonBlok blok={callToAction} />
             </p>
           )}

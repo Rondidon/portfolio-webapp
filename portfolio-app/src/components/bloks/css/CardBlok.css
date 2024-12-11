@@ -33,9 +33,10 @@
   border-radius: 1em;
   display: flex;
   flex-direction: column;
-  min-width: 14em;
+  min-width: 300px;
   min-height: 4rem;
   border: 1px solid lightgray;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-default-variant {
@@ -45,9 +46,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 17em;
+  min-width: 300px;
   min-height: 4rem;
   height: fit-content;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-default-footer {
