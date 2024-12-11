@@ -45,7 +45,7 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
 
   return (
     <div className="card-default-variant">
-      <div className="card-default-body p-5">
+      <div className="card-default-body p-3 p-lg-5">
         <Carousel
           dynamicHeight
           showStatus={false}

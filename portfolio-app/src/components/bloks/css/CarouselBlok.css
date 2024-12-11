@@ -6,3 +6,7 @@
   border: 2px solid lightgrey !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5) !important; /* Dezenter Schatten */
 }
+
+.thumbs-wrapper {
+  margin-bottom: 0px !important;
+}
