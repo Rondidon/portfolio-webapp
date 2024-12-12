@@ -132,7 +132,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-10T21:54:58.901Z",
-      "updated_at": "2024-11-14T20:43:42.766Z",
+      "updated_at": "2024-12-12T12:02:07.906Z",
       "id": 6035609,
       "schema": {
         "title": {
@@ -142,7 +142,7 @@
         },
         "text": {
           "type": "text",
-          "pos": 1,
+          "pos": 2,
           "key": "text"
         },
         "internal_link": {
@@ -201,13 +201,17 @@
         },
         "image": {
           "type": "bloks",
-          "pos": 7,
+          "pos": 8,
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
             "image"
           ]
+        },
+        "subtitle": {
+          "type": "text",
+          "pos": 1
         }
       },
       "image": null,
@@ -550,7 +554,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-11-14T13:18:13.862Z",
-      "updated_at": "2024-11-15T21:25:05.047Z",
+      "updated_at": "2024-12-11T11:16:54.650Z",
       "id": 6560575,
       "schema": {
         "callToAction": {
@@ -566,7 +570,6 @@
         "image": {
           "type": "bloks",
           "pos": 1,
-          "minimum": 1,
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
@@ -975,7 +978,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-23T16:51:25.185Z",
-      "updated_at": "2024-11-29T19:20:39.543Z",
+      "updated_at": "2024-12-11T15:51:18.759Z",
       "id": 6085319,
       "schema": {
         "image": {
@@ -1041,8 +1044,6 @@
           "type": "number",
           "pos": 10,
           "description": "in em",
-          "min_value": 0,
-          "max_value": 8,
           "steps": 0.5,
           "decimals": 1,
           "default_value": ""

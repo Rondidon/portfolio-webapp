@@ -51,6 +51,7 @@ export interface CardStoryblok {
   alternate_design?: boolean;
   height: "" | "fit_content" | "full";
   image?: ImageStoryblok[];
+  subtitle?: string;
   _uid: string;
   component: "card";
   [k: string]: any;

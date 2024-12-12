@@ -6,21 +6,7 @@
   flex-direction: column;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid lightgrey;
-  padding: 0.5em;
-}
-
-.hero-heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-
-.hero-text {
-  color: #555;
-  line-height: 1.6;
-  font-size: 1.1rem;
+  padding: 1em;
 }
 
 .hero-cta-button-container {
@@ -31,9 +17,42 @@
   margin-bottom: 0px;
 }
 
+.hero-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.hero-text {
+  color: #555;
+  line-height: 1.75;
+  font-size: 1.2rem;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-primary,
+  .hero-secondary {
+    padding: 0.5em;
+  }
+}
+
 /* Anpassungen für den Breakpoint "lg" (ab 992px Breite) */
 @media (min-width: 992px) {
   .hero-cta-button-container {
-    justify-content: flex-start; /* Ändert die Ausrichtung der Buttons für größere Bildschirme */
+    justify-content: flex-start;
   }
 }

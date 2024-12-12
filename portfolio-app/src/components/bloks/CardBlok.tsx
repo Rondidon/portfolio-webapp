@@ -34,15 +34,19 @@ const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
       <div className="card-default-body">
         {image && image.image && <ImageBlok blok={image} marginBottom={1} />}
         {blok.title && (
-          <h5>
-            <SafeHtmlRenderer
-              className="card-header"
-              htmlContent={blok.title}
-            />
-          </h5>
+          <h2 className="card-header">
+            <SafeHtmlRenderer htmlContent={blok.title} />
+          </h2>
+        )}
+        {blok.subtitle && (
+          <h3 className="card-subtitle">
+            <SafeHtmlRenderer htmlContent={blok.subtitle} />
+          </h3>
         )}
         {blok.text && (
-          <SafeHtmlRenderer className="card-text" htmlContent={blok.text} />
+          <p className="card-text">
+            <SafeHtmlRenderer htmlContent={blok.text} />
+          </p>
         )}
       </div>
       <div className="card-default-footer">
