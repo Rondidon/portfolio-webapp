@@ -73,7 +73,7 @@
 .card-text {
   color: #555;
   margin-top: 1em;
-  line-height: 1.75;
+  line-height: 1.65;
   font-size: 1.1rem;
 }
 
@@ -91,6 +91,6 @@
   .card-text {
     font-size: 1rem;
     margin-top: 0.75em;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 }
