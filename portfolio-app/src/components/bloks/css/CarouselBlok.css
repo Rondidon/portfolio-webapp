@@ -18,7 +18,6 @@
   padding: 1em 1em 2.5em 1em;
   gap: 1em;
   border-radius: 1em;
-  background: rgba(53, 120, 104, 0.2);
 }
 
 .slider-wrapper {
@@ -59,4 +58,34 @@
   ); /* Optional: Halbtransparenter Hintergrund */
   color: white; /* Textfarbe */
   padding: 0.5em 0;
+}
+
+.carousel .control-prev.control-arrow::before {
+  border-right: 12px solid black;
+}
+
+.carousel .control-next.control-arrow::before {
+  border-left: 12px solid black;
+}
+
+.carousel .control-dots .dot {
+  transition: opacity 0.25s ease-in;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+  background: #000;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.carousel.carousel-slider {
+  border-radius: 1em;
+}
+
+.image-container {
+  background: rgba(53, 120, 104, 0.2);
 }
