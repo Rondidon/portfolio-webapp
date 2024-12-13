@@ -33,6 +33,8 @@ const getThumbWidth = (imageAmount: number, breakpoint: Breakpoint) => {
 const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
   const imageBloks: CarouselImageStoryblok[] = blok.Images;
   const breakpoint: Breakpoint = useBreakpoints();
+  const height = blok.height;
+  const width = blok.width;
 
   const [thumbWidth, setThumbWidth] = useState(
     getThumbWidth(imageBloks.length, breakpoint)
@@ -44,27 +46,22 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
   }, [breakpoint, imageBloks.length]);
 
   return (
-    <div className="card-default-variant">
-      <div className="card-default-body p-3 p-lg-5">
-        <Carousel
-          dynamicHeight
-          showStatus={false}
-          autoPlay
-          infiniteLoop
-          showThumbs
-          thumbWidth={thumbWidth} // Breite der Vorschaubilder
-        >
-          {imageBloks.map((blok: CarouselImageStoryblok) => (
-            <div key={blok.imageFile}>
-              <img src={toAssetLocation(blok.imageFile)} alt={blok.alt} />
-              {blok.label && (
-                <p className="legend legend-custom">{blok.label}</p>
-              )}
-            </div>
-          ))}
-        </Carousel>
-      </div>
-    </div>
+    <Carousel
+      showStatus={false}
+      infiniteLoop
+      showThumbs
+      thumbWidth={thumbWidth}
+      dynamicHeight
+    >
+      {imageBloks.map((blok: CarouselImageStoryblok) => (
+        <div key={blok.imageFile} className="carousel-item-wrapper">
+          <div className="image-container">
+            <img src={toAssetLocation(blok.imageFile)} alt={blok.alt} />
+            {blok.label && <p className="legend">{blok.label}</p>}
+          </div>
+        </div>
+      ))}
+    </Carousel>
   );
 };
 

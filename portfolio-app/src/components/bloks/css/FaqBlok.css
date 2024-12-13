@@ -17,6 +17,7 @@
   position: relative;
   font-size: 20px;
   padding-right: 80px;
+  font-weight: 500;
   transition: all 0.4s ease;
 }
 

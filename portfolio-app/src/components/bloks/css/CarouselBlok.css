@@ -1,12 +1,62 @@
-.legend-custom {
-  background-color: #eee !important;
-  color: black !important;
+.legend {
+  background-color: #fff !important;
+  color: #333 !important;
   font-size: 1em !important;
+  font-weight: 600 !important;
   border-radius: 1em !important;
-  border: 2px solid lightgrey !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5) !important; /* Dezenter Schatten */
+  border: 1px solid #ddd !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
 }
 
 .thumbs-wrapper {
   margin-bottom: 0px !important;
+}
+
+.carousel .slide img {
+  max-height: 700px;
+  object-fit: scale-down;
+  padding: 1em 1em 2.5em 1em;
+  gap: 1em;
+  border-radius: 1em;
+  background: rgba(53, 120, 104, 0.2);
+}
+
+.slider-wrapper {
+  padding-bottom: 1em;
+}
+
+.carousel-item-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto; /* Passt sich dynamisch an */
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto; /* Dynamische Höhe */
+  object-fit: cover; /* Passt das Bild innerhalb des Containers an */
+}
+
+.image-container .legend {
+  position: absolute;
+  bottom: 0; /* Legende bleibt am unteren Rand */
+  width: 100%; /* Breite der Legende */
+  text-align: center;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Optional: Halbtransparenter Hintergrund */
+  color: white; /* Textfarbe */
+  padding: 0.5em 0;
 }
