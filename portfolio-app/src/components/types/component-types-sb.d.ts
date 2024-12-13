@@ -71,8 +71,6 @@ export interface CardContainerStoryblok {
 
 export interface CarouselStoryblok {
   Images: CarouselImageStoryblok[];
-  width?: string;
-  height?: string;
   _uid: string;
   component: "carousel";
   [k: string]: any;

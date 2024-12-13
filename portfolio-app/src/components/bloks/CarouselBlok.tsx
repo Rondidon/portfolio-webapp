@@ -8,7 +8,6 @@ import {
   CarouselStoryblok,
 } from "../types/component-types-sb";
 import "./css/CarouselBlok.css";
-import CardBlok from "./CardBlok";
 
 interface CarouselBlokProps {
   blok: CarouselStoryblok;
@@ -33,9 +32,6 @@ const getThumbWidth = (imageAmount: number, breakpoint: Breakpoint) => {
 const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
   const imageBloks: CarouselImageStoryblok[] = blok.Images;
   const breakpoint: Breakpoint = useBreakpoints();
-  const height = blok.height;
-  const width = blok.width;
-
   const [thumbWidth, setThumbWidth] = useState(
     getThumbWidth(imageBloks.length, breakpoint)
   );
