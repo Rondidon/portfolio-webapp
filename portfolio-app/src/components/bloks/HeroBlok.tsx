@@ -40,12 +40,12 @@ const HeroBlok: React.FC<HeroBlokProps> = ({ blok, isHeadingH1 }) => {
             )}
             {blok.heading && isHeadingH1 && (
               <h1 className="hero-heading text-lg-start text-center">
-                {blok.heading}
+                <SafeHtmlRenderer htmlContent={blok.heading} />
               </h1>
             )}
             {blok.heading && !isHeadingH1 && (
               <h5 className="hero-heading text-lg-start text-center">
-                {blok.heading}
+                <SafeHtmlRenderer htmlContent={blok.heading} />
               </h5>
             )}
           </div>

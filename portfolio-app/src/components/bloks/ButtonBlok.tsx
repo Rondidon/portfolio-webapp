@@ -44,6 +44,7 @@ const ButtonBlok: React.FC<ButtonBlokProps> = ({ blok, isNavButton }) => {
         rel="noopener noreferrer"
         href={blok.slug}
         className={styleClass}
+        title={blok.title}
       >
         {blok.text}
       </a>
@@ -57,6 +58,7 @@ const ButtonBlok: React.FC<ButtonBlokProps> = ({ blok, isNavButton }) => {
         rel="noopener noreferrer"
         href={appPath + blok.slug}
         className={styleClass}
+        title={blok.title}
       >
         {blok.text}
       </a>
