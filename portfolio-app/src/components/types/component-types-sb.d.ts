@@ -168,6 +168,7 @@ export interface GlobalHeaderStoryblok {
 
 export interface HeroStoryblok {
   heading?: string;
+  subHeading?: string;
   text: string;
   cta?: ButtonStoryblok[];
   variant: "" | "primary" | "secondary";
