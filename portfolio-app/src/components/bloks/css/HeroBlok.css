@@ -25,19 +25,12 @@
   margin-top: 1.5rem;
 }
 
-.hero-heading {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #222;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-}
-
 .hero-subheading {
   font-size: 1.25rem;
   color: #555;
   font-style: italic;
   font-weight: 400;
+  align-self: center;
 }
 
 .hero-text {
@@ -69,5 +62,8 @@
 @media (min-width: 992px) {
   .hero-cta-button-container {
     justify-content: flex-start;
+  }
+  .hero-subheading {
+    align-self: flex-start;
   }
 }
