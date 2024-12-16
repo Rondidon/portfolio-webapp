@@ -13,7 +13,7 @@
 }
 
 .carousel .slide img {
-  max-height: 700px;
+  max-height: 360px;
   object-fit: scale-down;
   padding: 1em 1em 2.5em 1em;
   gap: 1em;
@@ -41,8 +41,8 @@
 .image-container img {
   display: block;
   width: 100%;
-  height: auto; /* Dynamische Höhe */
-  object-fit: cover; /* Passt das Bild innerhalb des Containers an */
+  height: auto;
+  object-fit: cover;
 }
 
 .image-container .legend {
@@ -88,4 +88,10 @@
 
 .image-container {
   background: rgba(53, 120, 104, 0.2);
+}
+
+@media (min-width: 992px) {
+  .carousel .slide img {
+    max-height: 680px;
+  }
 }

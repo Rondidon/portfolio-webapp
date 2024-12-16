@@ -18,11 +18,14 @@
 }
 
 .hero-heading {
+  display: online-block;
   font-size: 2.5em;
   font-weight: bold;
   color: #222;
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-subheading {
@@ -31,12 +34,17 @@
   font-style: italic;
   font-weight: 400;
   align-self: center;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-text {
   color: #555;
   line-height: 1.5;
   font-size: 1.2rem;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  text-align: justify;
 }
 
 /* Responsive Anpassungen */

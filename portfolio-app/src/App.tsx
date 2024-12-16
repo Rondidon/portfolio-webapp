@@ -29,7 +29,7 @@ function App() {
 
   if (!story || !story.content) {
     return (
-      <div className="app">
+      <div className="app" lang="de">
         <Loading />
       </div>
     );
@@ -43,7 +43,7 @@ function App() {
     : undefined;
 
   return (
-    <div className="app">
+    <div className="app" lang="de">
       <Suspense fallback={<Loading />}>
         <BrowserRouter basename={basename}>
           <Header blok={header} />

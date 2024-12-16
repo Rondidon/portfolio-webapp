@@ -1,3 +1,4 @@
+import useBreakpoints from "../../hooks/useBreakpoints";
 import { HorizontalLineStoryblok } from "../types/component-types-sb";
 
 interface HorizontalLineBlokProps {
@@ -7,12 +8,22 @@ interface HorizontalLineBlokProps {
 const HorizontalLineBlok: React.FC<HorizontalLineBlokProps> = ({
   blok,
 }): JSX.Element => {
+  const breakpoint = useBreakpoints();
   const isAdjustedRight = blok.isAdjustedToRight
     ? blok.isAdjustedToRight
     : false;
   const my = blok.marginY;
   const thickness = blok.thickness ? blok.thickness + "px" : "2px";
   const width = blok.width ? blok.width + "%" : "100%";
+
+  const calcBackground = (): string => {
+    if (breakpoint === "XXL" || breakpoint === "LG" || breakpoint === "XL") {
+      return isAdjustedRight
+        ? "linear-gradient(to left, #d7e4e1, #ffffff)"
+        : "linear-gradient(to right, #d7e4e1, #ffffff)";
+    }
+    return "radial-gradient(circle, #d7e4e1, #ffffff)";
+  };
 
   return (
     <td
@@ -21,9 +32,7 @@ const HorizontalLineBlok: React.FC<HorizontalLineBlokProps> = ({
         width: width,
         marginTop: my,
         marginBottom: my,
-        background: isAdjustedRight
-          ? "linear-gradient(to left, #ccc, #ffffff)"
-          : "linear-gradient(to right, #ccc, #ffffff)",
+        background: calcBackground(),
       }}
     />
   );
