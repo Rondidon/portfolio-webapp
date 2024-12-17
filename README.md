@@ -1,4 +1,4 @@
-Preview URL for homepage: https://rondidon.github.io/portfolio-webapp/
+Github Pages link: https://rondidon.github.io/portfolio-webapp/
 
 # Portfolio Web App
 
