@@ -12,7 +12,8 @@ const HorizontalLineBlok: React.FC<HorizontalLineBlokProps> = ({
   const isAdjustedRight = blok.isAdjustedToRight
     ? blok.isAdjustedToRight
     : false;
-  const my = blok.marginY;
+  const marginBottom = blok.marginBottom;
+  const marginTop = blok.marginTop;
   const thickness = blok.thickness ? blok.thickness + "px" : "2px";
   const width = blok.width ? blok.width + "%" : "100%";
 
@@ -30,8 +31,8 @@ const HorizontalLineBlok: React.FC<HorizontalLineBlokProps> = ({
       style={{
         height: thickness,
         width: width,
-        marginTop: my,
-        marginBottom: my,
+        marginBottom: marginBottom + "em",
+        marginTop: marginTop + "em",
         background: calcBackground(),
       }}
     />

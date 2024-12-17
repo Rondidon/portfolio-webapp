@@ -74,7 +74,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-22T16:30:41.608Z",
-      "updated_at": "2024-11-18T18:10:36.886Z",
+      "updated_at": "2024-12-17T02:13:17.473Z",
       "id": 6078949,
       "schema": {
         "text": {
@@ -132,13 +132,17 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-10T21:54:58.901Z",
-      "updated_at": "2024-12-12T12:02:07.906Z",
+      "updated_at": "2024-12-15T21:49:24.300Z",
       "id": 6035609,
       "schema": {
         "title": {
           "type": "text",
           "pos": 0,
           "key": "title"
+        },
+        "subtitle": {
+          "type": "text",
+          "pos": 1
         },
         "text": {
           "type": "text",
@@ -208,10 +212,6 @@
           "component_whitelist": [
             "image"
           ]
-        },
-        "subtitle": {
-          "type": "text",
-          "pos": 1
         }
       },
       "image": null,
@@ -234,12 +234,18 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-25T19:14:07.558Z",
-      "updated_at": "2024-11-29T11:15:23.561Z",
+      "updated_at": "2024-12-17T01:15:11.208Z",
       "id": 6095551,
       "schema": {
         "heading": {
-          "type": "text",
-          "pos": 0
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "cardContainerHeading"
+          ],
+          "maximum": 1
         },
         "anchorId": {
           "type": "text",
@@ -296,6 +302,47 @@
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null
+    },
+    {
+      "name": "cardContainerHeading",
+      "display_name": null,
+      "description": null,
+      "created_at": "2024-12-17T00:24:26.895Z",
+      "updated_at": "2024-12-17T00:25:40.728Z",
+      "id": 6699013,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "horizontalLine": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "horizontalLine"
+          ],
+          "maximum": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "cardContainerHeading",
+      "component_group_uuid": "all",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
     },
     {
       "name": "carousel",
@@ -917,7 +964,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-11-14T18:08:09.706Z",
-      "updated_at": "2024-11-18T19:44:46.561Z",
+      "updated_at": "2024-12-17T01:07:14.611Z",
       "id": 6562092,
       "schema": {
         "isAdjustedToRight": {
@@ -934,15 +981,21 @@
           "required": true,
           "default_value": "100"
         },
-        "marginY": {
+        "marginTop": {
           "type": "number",
           "pos": 2,
           "description": "in em",
           "default_value": "1"
         },
-        "thickness": {
+        "marginBottom": {
           "type": "number",
           "pos": 3,
+          "default_value": "1",
+          "description": "in em"
+        },
+        "thickness": {
+          "type": "number",
+          "pos": 4,
           "description": "in pixel",
           "min_value": 0,
           "required": false,

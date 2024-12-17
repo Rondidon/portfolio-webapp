@@ -1,6 +1,14 @@
 .app-header {
-  background-color: #eeeeee;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Downward shadow */
   z-index: 10;
   min-width: 300px;
+  background: #eee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Weichere Schatten für Modernität */
+  border-bottom: 2px solid rgb(215, 228, 225); /* Dezenter, feinerer Rahmen */
+}
+
+.logo-container {
+  display: flex;
+  gap: 0.4em;
+  padding: 1em;
+  padding: 0.5em 0.75em 0.5em 0em;
 }

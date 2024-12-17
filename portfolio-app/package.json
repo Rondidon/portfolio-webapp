@@ -32,7 +32,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cp build/index.html build/404.html",
     "deploy": "gh-pages -d build",
     "storyblok-pull-components": "storyblok pull-components --space=296600",
     "storyblok-generate-types": "storyblok-generate-ts source=./components.296600.json target=./src/components/types/component-types-sb.d.ts"

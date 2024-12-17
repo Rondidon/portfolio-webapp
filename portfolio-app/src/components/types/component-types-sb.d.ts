@@ -44,6 +44,7 @@ export interface ButtonStoryblok {
 
 export interface CardStoryblok {
   title?: string;
+  subtitle?: string;
   text?: string;
   internal_link?: ButtonStoryblok[];
   width?: string;
@@ -51,14 +52,13 @@ export interface CardStoryblok {
   alternate_design?: boolean;
   height: "" | "fit_content" | "full";
   image?: ImageStoryblok[];
-  subtitle?: string;
   _uid: string;
   component: "card";
   [k: string]: any;
 }
 
 export interface CardContainerStoryblok {
-  heading?: string;
+  heading?: CardContainerHeadingStoryblok[];
   anchorId?: string;
   columnAmount: string;
   gap?: string;
@@ -66,6 +66,14 @@ export interface CardContainerStoryblok {
   elements: CardStoryblok[];
   _uid: string;
   component: "cardContainer";
+  [k: string]: any;
+}
+
+export interface CardContainerHeadingStoryblok {
+  heading: string;
+  horizontalLine: HorizontalLineStoryblok[];
+  _uid: string;
+  component: "cardContainerHeading";
   [k: string]: any;
 }
 
@@ -181,7 +189,8 @@ export interface HeroStoryblok {
 export interface HorizontalLineStoryblok {
   isAdjustedToRight?: boolean;
   width: string;
-  marginY?: string;
+  marginTop?: string;
+  marginBottom?: string;
   thickness?: string;
   _uid: string;
   component: "horizontalLine";

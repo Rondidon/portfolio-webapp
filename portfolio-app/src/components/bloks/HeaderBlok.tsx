@@ -1,5 +1,5 @@
 import { storyblokEditable } from "@storyblok/react";
-import React, { useEffect } from "react";
+import React from "react";
 import {
   ButtonStoryblok,
   GlobalHeaderStoryblok,
@@ -9,18 +9,20 @@ import {
   TextLinkStoryblok,
 } from "../types/component-types-sb";
 import ButtonBlok from "./ButtonBlok";
-import ImageBlok from "./ImageBlok";
-import TextLinkBlok from "./TextLinkBlok";
 import "./css/HeaderBlok.css";
+import ImageBlok from "./ImageBlok";
 import LanguageDropdownBlok from "./LangugageDropdownBlok";
 import LinkedInProfileLinkBlok from "./LinkedInProfileLinkBlok";
-import { logStoryblokStoryOrBlock } from "../../utils/logger";
+import TextLinkBlok from "./TextLinkBlok";
+import useBreakpoint from "../../hooks/useBreakpoints";
 
 interface GlobalHeaderStoryblokProps {
   blok: GlobalHeaderStoryblok;
 }
 
 const HeaderBlok: React.FC<GlobalHeaderStoryblokProps> = ({ blok }) => {
+  const breakpoint = useBreakpoint();
+
   const brandLogoBlok = blok.logo.find(
     (blok): blok is ImageStoryblok => blok.component === "image"
   );
@@ -45,14 +47,29 @@ const HeaderBlok: React.FC<GlobalHeaderStoryblokProps> = ({ blok }) => {
     return value.component === "LinkedInProfileLink";
   }
 
+  const getContainerClassName = () => {
+    switch (breakpoint) {
+      case "XS":
+      case "SM":
+      case "MD":
+        return "container-fluid";
+      case "LG":
+      case "XL":
+      case "XXL":
+        return "conainer-fluid container";
+    }
+  };
+
   return (
     <nav
       className="navbar navbar-expand-lg app-header"
       {...storyblokEditable(blok)}
     >
-      <div className="container-fluid">
-        {brandLogoBlok && <ImageBlok blok={brandLogoBlok} />}
-        {brandTextBlok && <TextLinkBlok blok={brandTextBlok} isBrandText />}
+      <div className={getContainerClassName()}>
+        <div className="logo-container">
+          {brandLogoBlok && <ImageBlok blok={brandLogoBlok} />}
+          {brandTextBlok && <TextLinkBlok blok={brandTextBlok} isBrandText />}
+        </div>
         <button
           className="navbar-toggler"
           type="button"
