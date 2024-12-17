@@ -39,3 +39,7 @@ Generates TypeScript types from the Storyblok components JSON file.
 ## Scrum / Documentation
 
 JIRA / Confluence: https://robinkindler.atlassian.net
+
+## Backend
+
+https://github.com/Rondidon/portfolio-backend
