@@ -27,7 +27,7 @@ const HorizontalLineBlok: React.FC<HorizontalLineBlokProps> = ({
   };
 
   return (
-    <td
+    <hr
       style={{
         height: thickness,
         width: width,

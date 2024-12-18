@@ -9,17 +9,10 @@ import "react-phone-number-input/style.css";
 import { ContactFormStoryblok } from "../types/component-types-sb";
 import SafeHtmlRenderer from "../xss/SafeHtmlRenderer";
 import "./css/ContactFormBlok.css";
+import { ContactFormData, requestSendMail } from "../../api/requestSendEmail";
 
 interface ContactFormProps {
   blok: ContactFormStoryblok;
-}
-
-interface FormData {
-  name: string;
-  email: string;
-  phoneNumber: string;
-  subject: string;
-  message: string;
 }
 
 const telInputCountries: Country[] = [
@@ -104,24 +97,8 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
     return placeholderText.concat(" *");
   };
 
-  const resetForm = () => {
-    if (formRef.current) {
-      formRef.current.reset(); // Setzt alle Eingabewerte zurück
-    }
-    setPhoneNumber(undefined);
-    setTextAreaLength(0);
-    setSubjectLength(0);
-    setIsValid(false);
-    setFormStatus(null);
-  };
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); // prevents standard reload og the site
-    if (!isValid) {
-      return;
-    }
-
-    const formData: FormData = {
+  const buildContactFormData = (): ContactFormData => {
+    return {
       name: (
         formRef.current?.elements.namedItem("nameInput") as HTMLInputElement
       ).value,
@@ -137,13 +114,35 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
         ) as HTMLTextAreaElement
       ).value,
     };
+  };
 
-    // Debugging
+  const resetForm = () => {
+    if (formRef.current) {
+      formRef.current.reset(); // Setzt alle Eingabewerte zurück
+    }
+    setPhoneNumber(undefined);
+    setTextAreaLength(0);
+    setSubjectLength(0);
+    setIsValid(false);
+    setFormStatus(null);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // prevents standard reload of the site
+    if (!isValid) {
+      return;
+    }
+    const formData: ContactFormData = buildContactFormData();
     console.log("Form Data:", formData);
 
-    // TODO: send to backend
-    resetForm();
-    setFormStatus("success");
+    requestSendMail(formData).then((result: string) => {
+      if (result.includes("error")) {
+        setFormStatus("error");
+      } else {
+        resetForm();
+        setFormStatus("success");
+      }
+    });
   };
 
   useEffect(() => {
@@ -181,7 +180,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
       subjectInput?.removeEventListener("input", updateSubjectLength);
       form.removeEventListener("input", validateForm);
     };
-  }, [phoneNumber, telInput.isRequired]);
+  }, [phoneNumber, telInput.isRequired, formStatus]);
 
   return (
     <div className="d-flex flex-column">

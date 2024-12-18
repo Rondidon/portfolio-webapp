@@ -1,20 +1,30 @@
 import { apiPlugin } from "@storyblok/react";
-import CardBlok from "./components/bloks/CardBlok";
-import HeroBlok from "./components/bloks/HeroBlok";
-import CardContainerBlok from "./components/bloks/CardContainerBlok";
-import SimpleContainerBlok from "./components/bloks/SimpleContainerBlok";
-import ContentSectionBlok from "./components/bloks/ContentSectionBlok";
-import HorizontalLineBlok from "./components/bloks/HorizontalLineBlok";
-import CarouselBlok from "./components/bloks/CarouselBlok";
-import FaqBlok from "./components/bloks/FaqBlok";
 import ButtonBlok from "./components/bloks/ButtonBlok";
+import CardBlok from "./components/bloks/CardBlok";
+import CardContainerBlok from "./components/bloks/CardContainerBlok";
+import CarouselBlok from "./components/bloks/CarouselBlok";
 import ContactFormBlok from "./components/bloks/ContactFormBlok";
+import ContentSectionBlok from "./components/bloks/ContentSectionBlok";
+import FaqBlok from "./components/bloks/FaqBlok";
+import HeroBlok from "./components/bloks/HeroBlok";
+import HorizontalLineBlok from "./components/bloks/HorizontalLineBlok";
+import SimpleContainerBlok from "./components/bloks/SimpleContainerBlok";
 
-// setup
-const accessToken = "u2OrXZ1MorrJDKZKPTExHwtt";
-const region = "eu";
-const version: "draft" | "published" = "draft";
+// dynamic configuration
+const accessToken =
+  process.env.NODE_ENV === "production"
+    ? process.env.REACT_APP_STORYBLOK_ACCESS_TOKEN_PUBLISHED
+    : process.env.REACT_APP_STORYBLOK_ACCESS_TOKEN_DRAFT;
+
+const region = process.env.REACT_APP_STORYBLOK_REGION || "eu";
+const version = process.env.REACT_APP_STORYBLOK_VERSION || "draft";
 const debugLogs = false;
+
+console.log(
+  `stoyblok mode: ${
+    process.env.NODE_ENV === "production" ? "production" : "draft"
+  }`
+);
 
 // dynamic components
 const componentsWhitelist = {
@@ -31,14 +41,14 @@ const componentsWhitelist = {
 };
 
 const storyblokSetup = {
-  accessToken: accessToken,
+  accessToken,
   use: [apiPlugin],
   apiOptions: {
-    region: region,
+    region,
   },
   components: componentsWhitelist,
-  version: version,
-  debugLogs: debugLogs,
+  version,
+  debugLogs,
 };
 
 export default storyblokSetup;

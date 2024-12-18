@@ -1,8 +1,11 @@
 import { useStoryblok } from "@storyblok/react";
-import storyblokSetup from "../setupStoryblok";
 
 const useStoryblokStory = (slug: string) => {
-  return useStoryblok(slug, { version: storyblokSetup.version });
+  const version: "draft" | "published" =
+    (process.env.REACT_APP_STORYBLOK_VERSION as "draft" | "published") ||
+    "draft";
+
+  return useStoryblok(slug, { version: version });
 };
 
 export default useStoryblokStory;
