@@ -14,7 +14,7 @@ import {
 import useStoryblokStory from "./hooks/useStoryblokStory";
 
 const slug = "global-layout";
-const basename = "/portfolio-webapp";
+const basename = "/";
 export const appPath = `${window.location.origin}${basename}`;
 
 function App() {
