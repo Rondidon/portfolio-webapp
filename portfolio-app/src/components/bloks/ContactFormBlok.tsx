@@ -113,6 +113,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
           "messageArea"
         ) as HTMLTextAreaElement
       ).value,
+      sendToRecipient: true,
     };
   };
 

@@ -5,6 +5,7 @@ export interface ContactFormData {
   phoneNumber: string;
   subject: string;
   message: string;
+  sendToRecipient: boolean;
 }
 
 export const requestSendMail = async (
