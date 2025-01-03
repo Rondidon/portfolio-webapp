@@ -1,5 +1,6 @@
 import { Suspense, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
+import "./GlobalColors.css";
 import "./App.css";
 import Footer from "./components/bloks/FooterBlok";
 import Header from "./components/bloks/HeaderBlok";

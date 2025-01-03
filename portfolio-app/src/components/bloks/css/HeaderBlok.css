@@ -1,14 +1,24 @@
 .app-header {
   z-index: 10;
   min-width: 300px;
-  background: #eee;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Weichere Schatten für Modernität */
-  border-bottom: 2px solid rgb(215, 228, 225); /* Dezenter, feinerer Rahmen */
+  background: var(--background-header);
+  border-bottom: 4px solid var(--primary-color); /* Dezenter, feinerer Rahmen */
 }
 
 .logo-container {
   display: flex;
   gap: 0.4em;
   padding: 1em;
-  padding: 0.5em 0.75em 0.5em 0em;
+  padding: 0.5em 1em 0.5em 0em;
+}
+
+.navbar-toggler {
+  transition: all ease 0.3s;
+  --bs-navbar-toggler-border-radius: 2em;
+  border: 3px solid #fff;
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%233dd2cc' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler:hover {
+  transform: scale(1.04);
 }

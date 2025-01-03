@@ -1,0 +1,16 @@
+.dropdown-fit-content {
+  width: fit-content;
+  min-width: 0;
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: var(--primary-color);
+  --bs-dropdown-border-color: var(--primary-color);
+  --bs-dropdown-link-hover-bg: var(--light-grey-color);
+}
+
+.navbar-nav {
+  --bs-nav-link-hover-color: var(--text-color-almost-white);
+  --bs-navbar-active-color: var(--text-color-white);
+  --bs-nav-link-color: var(--text-color-white);
+}

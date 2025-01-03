@@ -22,8 +22,9 @@
 }
 
 .footer-description-text {
-  color: #ddd;
-  font-size: smaller;
+  color: #ccc;
+  margin-right: 3em;
+  font-size: small;
 }
 
 .footer-copyright-text {

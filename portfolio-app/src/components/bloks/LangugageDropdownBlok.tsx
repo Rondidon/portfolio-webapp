@@ -1,7 +1,7 @@
 import React from "react";
 import toAssetLocation from "../../scripts/imageConverter";
 import { LanguageDropdownStoryblok } from "../types/component-types-sb";
-import "./css/Dropdown.css";
+import "./css/LanguageDropdownBlok.css";
 
 interface LanguageDropdownProps {
   blok: LanguageDropdownStoryblok;
@@ -13,7 +13,7 @@ const LanguageDropdownBlok: React.FC<LanguageDropdownProps> = ({
   return (
     <div className="nav-item dropdown">
       <button
-        className="nav-link dropdown-toggle"
+        className="nav-link dropdown-toggle text-link"
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"

@@ -6,35 +6,30 @@ import "./css/ButtonBlok.css";
 
 interface ButtonBlokProps {
   blok: ButtonStoryblok;
-  isNavButton?: boolean;
 }
 
 const getClassName = (
-  useAlternativeDesign: boolean,
-  disabled: boolean,
-  isNavButton?: boolean
+  variant: "primary" | "secondary" | "header" | "",
+  disabled: boolean
 ) => {
-  if (isNavButton) {
-    if (!useAlternativeDesign) {
-      return disabled
-        ? "btn app-btn-primary disabled w-100 w-lg-0"
-        : "btn app-btn-primary w-100 w-lg-0";
-    }
-    return disabled
-      ? "btn app-btn-secondary disabled w-100 w-lg-0"
-      : "btn app-btn-secondary w-100 w-lg-0";
+  if (disabled) {
+    return "btn btn-disabled";
   }
-  if (!useAlternativeDesign) {
-    return disabled ? "btn app-btn-primary disabled" : "btn app-btn-primary";
+  if (variant === "secondary") {
+    return "btn btn-secondary";
   }
-  return "btn app-btn-secondary";
+  if (variant === "header") {
+    return "btn btn-header";
+  }
+  return "btn btn-primary";
 };
 
-const ButtonBlok: React.FC<ButtonBlokProps> = ({ blok, isNavButton }) => {
+const ButtonBlok: React.FC<ButtonBlokProps> = ({ blok }) => {
+  const variant = blok.variant;
+
   const styleClass = getClassName(
-    blok.useAlternateDesign ? blok.useAlternateDesign : false,
-    blok.disabled ? blok.disabled : false,
-    isNavButton ? isNavButton : false
+    variant,
+    blok.disabled ? blok.disabled : false
   );
 
   if (blok.isExternalLink) {

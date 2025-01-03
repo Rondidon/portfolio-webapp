@@ -74,42 +74,69 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-22T16:30:41.608Z",
-      "updated_at": "2024-12-17T02:13:17.473Z",
+      "updated_at": "2025-01-03T16:24:05.048Z",
       "id": 6078949,
       "schema": {
         "text": {
           "type": "text",
           "pos": 0,
           "required": true,
-          "key": "text"
+          "key": "text",
+          "id": "xv3Ykh3rSg2kN7shH73kSQ"
         },
         "title": {
           "type": "text",
-          "pos": 1
+          "pos": 1,
+          "id": "TDMxB03aTru3_1I9VrnwEQ"
         },
         "slug": {
           "type": "text",
           "pos": 2,
           "required": true,
-          "key": "slug"
+          "key": "slug",
+          "id": "CfRng_hRRqy8VeAUTyc9TQ"
+        },
+        "variant": {
+          "type": "option",
+          "pos": 3,
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "b10175a9-e89f-4989-a5ac-acf594c41a75",
+              "name": "primary",
+              "value": "primary"
+            },
+            {
+              "_uid": "348c8418-0fdf-4569-a052-b44ae8caf484",
+              "value": "secondary",
+              "name": "secondary"
+            },
+            {
+              "_uid": "63e03a07-3064-4fb2-82f8-781c61e46b66",
+              "value": "header",
+              "name": "header"
+            }
+          ],
+          "default_value": "primary",
+          "id": "diCsN0sIQJaSWO-03NgzKw"
         },
         "disabled": {
           "type": "boolean",
-          "pos": 3,
-          "key": "disabled"
-        },
-        "useAlternateDesign": {
-          "type": "boolean",
           "pos": 4,
-          "key": "useGreenDesign"
+          "key": "disabled",
+          "id": "q9RhbYQ0QX26nNl3jIy9vQ"
         },
         "isDownloadLink": {
           "type": "boolean",
-          "pos": 5
+          "pos": 5,
+          "id": "z-49iiibRPKftLdHIMbuSA",
+          "description": "for internal downloads without appPath, i.e. /downloads/iu-certificate.pdf"
         },
         "isExternalLink": {
           "type": "boolean",
-          "pos": 6
+          "pos": 6,
+          "id": "OD85tWwbTzupU_-mDN3rQg"
         }
       },
       "image": null,

@@ -1,5 +1,6 @@
 import toAssetLocation from "../../scripts/imageConverter";
 import { LinkedInProfileLinkStoryblok } from "../types/component-types-sb";
+import "./css/LinkedInProfileLinkBlok.css";
 
 interface LinkedInProfileProps {
   blok: LinkedInProfileLinkStoryblok;
@@ -14,11 +15,12 @@ const LinkedInProfileLinkBlok: React.FC<LinkedInProfileProps> = ({
       href={blok.url}
       target="_blank"
       rel="noopener noreferrer"
+      className="linked-in-container"
     >
       <img
-        src={toAssetLocation("linked-in-logo.webp")}
+        src={toAssetLocation("linked-in-logo.png")}
         alt={blok.alt}
-        style={{ width: "26px", height: "26px" }}
+        className="linked-in-img"
       />
     </a>
   );

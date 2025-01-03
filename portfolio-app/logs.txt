@@ -1,0 +1,152 @@
+
+> portfolio-app@0.1.0 start
+> HTTPS=true SSL_CRT_FILE=./ssl/localhost.pem SSL_KEY_FILE=./ssl/localhost-key.pem react-scripts start
+
+Fri, 03 Jan 2025 00:49:51 GMT detect-port detect free port between [3000, 3010)
+Fri, 03 Jan 2025 00:49:51 GMT detect-port get free 0.0.0.0:3000
+Fri, 03 Jan 2025 00:49:51 GMT detect-port get free null:3000
+Fri, 03 Jan 2025 00:49:51 GMT detect-port get free localhost:3000
+Fri, 03 Jan 2025 00:49:51 GMT detect-port get free 192.168.178.89:3000
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "x-powered-by" to true
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "etag" to 'weak'
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "etag fn" to [Function: generateETag]
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "env" to 'development'
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "query parser" to 'extended'
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "query parser fn" to [Function: parseExtendedQueryString]
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "subdomain offset" to 2
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "trust proxy" to false
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "trust proxy fn" to [Function: trustNone]
+Fri, 03 Jan 2025 00:49:51 GMT express:application booting in development mode
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "view" to [Function: View]
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "views" to '/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/views'
+Fri, 03 Jan 2025 00:49:51 GMT express:application set "jsonp callback name" to 'callback'
+Fri, 03 Jan 2025 00:49:51 GMT express:router use '/' query
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router use '/' expressInit
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route new '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route acl '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route bind '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route checkout '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route connect '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route copy '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route delete '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route get '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route head '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route link '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route lock '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route m-search '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route merge '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route mkactivity '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route mkcalendar '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route mkcol '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route move '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route notify '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route options '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route patch '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route post '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route propfind '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route proppatch '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route purge '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route put '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route rebind '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route report '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route search '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route source '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route subscribe '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route trace '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route unbind '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route unlink '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route unlock '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route unsubscribe '*'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route new '/__webpack_dev_server__/sockjs.bundle.js'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/__webpack_dev_server__/sockjs.bundle.js'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route get '/__webpack_dev_server__/sockjs.bundle.js'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route new '/webpack-dev-server/invalidate'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/webpack-dev-server/invalidate'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route get '/webpack-dev-server/invalidate'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route new '/webpack-dev-server/open-editor'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/webpack-dev-server/open-editor'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route get '/webpack-dev-server/open-editor'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route new '/webpack-dev-server'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/webpack-dev-server'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:route get '/webpack-dev-server'
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Fri, 03 Jan 2025 00:49:51 GMT express:router use '/' handleWebpackInternalMiddleware
+Fri, 03 Jan 2025 00:49:51 GMT express:router:layer new '/'
+Starting the development server...
+
+(node:11448) [DEP_WEBPACK_DEV_SERVER_HTTPS] DeprecationWarning: 'https' option is deprecated. Please use the 'server' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:11448) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:11448) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+2025-01-03T00:49:51.619Z eslintrc:config-array-factory Loading {extends:"/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/eslint-config-react-app/base.js"} relative to 
+2025-01-03T00:49:51.620Z eslintrc:config-array-factory package.json was not found: Cannot find module '/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/eslint-config-react-app/base.js/package.json'
+Require stack:
+- /home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/__placeholder__.js
+2025-01-03T00:49:51.620Z eslintrc:config-array-factory Loaded: /home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/eslint-config-react-app/base.js (/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/eslint-config-react-app/base.js)
+2025-01-03T00:49:51.620Z eslintrc:config-array-factory Loading JS config file: /home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/eslint-config-react-app/base.js
+2025-01-03T00:49:51.621Z eslintrc:config-array-factory Loading parser "@babel/eslint-parser" from /home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/eslint-config-react-app/base.js
+2025-01-03T00:49:51.621Z eslintrc:config-array-factory Loaded: @babel/eslint-parser@7.24.7 (/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/@babel/eslint-parser/lib/index.cjs)
+2025-01-03T00:49:51.629Z eslintrc:config-array-factory Loading plugin "react" from /home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/eslint-config-react-app/base.js
+2025-01-03T00:49:51.630Z eslintrc:config-array-factory Loaded: eslint-plugin-react@7.34.3 (/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/eslint-plugin-react/index.js)
+2025-01-03T00:49:51.718Z eslintrc:config-array-factory Plugin /home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/eslint-plugin-react/index.js loaded in: 88ms
+2025-01-03T00:49:51.719Z eslintrc:config-array-factory Loading JSON config file: /home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/package.json
+2025-01-03T00:49:51.720Z eslintrc:ignore-pattern Create with: [ IgnorePattern { patterns: [ '/**/node_modules/*' ], basePath: '/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app', loose: false } ]
+2025-01-03T00:49:51.721Z eslintrc:ignore-pattern   processed: { basePath: '/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app', patterns: [ '/**/node_modules/*' ] }
+2025-01-03T00:49:51.721Z eslint:lint-result-cache Caching results to /home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app/node_modules/.cache/.eslintcache
+2025-01-03T00:49:51.721Z eslint:lint-result-cache Using "metadata" strategy to detect changes
+2025-01-03T00:49:51.726Z eslintrc:ignore-pattern Create with: [ IgnorePattern { patterns: [ '/**/node_modules/*' ], basePath: '/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app', loose: false } ]
+2025-01-03T00:49:51.726Z eslintrc:ignore-pattern   processed: { basePath: '/home/rondidon/Dokumente/iu-internationale-hochschule/agile-software-engineering/portfolio-webapp/portfolio-app', patterns: [ '/**/node_modules/*' ] }
+Compiled successfully!
+
+You can now view portfolio-app in the browser.
+
+  Local:            https://localhost:3000
+  On Your Network:  https://192.168.178.89:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.

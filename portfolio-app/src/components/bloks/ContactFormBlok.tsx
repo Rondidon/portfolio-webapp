@@ -291,7 +291,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
           <div className="card-default-footer p-3">
             <button
               type="submit"
-              className={"btn app-btn-primary w-100 w-lg-0"}
+              className={"btn btn-primary w-100 w-lg-0"}
               disabled={!isValid}
               title={blok.submitButtonTitle}
             >

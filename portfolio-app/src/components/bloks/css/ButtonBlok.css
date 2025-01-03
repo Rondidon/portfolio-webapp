@@ -1,56 +1,82 @@
-.app-btn-primary {
-  background-color: #63eed2;
-  border: 1px solid darkgray;
+/* Header Button */
+.btn-header {
+  background-color: var(--primary-color);
+  border: 2px solid var(--light-grey-color);
+  border-radius: 2em;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0.75em 2em;
+  cursor: pointer;
+  color: var(--text-color-black);
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-header:hover,
+.btn-header:focus {
+  background-color: var(--light-grey-color) !important;
+  border-color: var(--light-grey-color) !important;
+  color: var(--text-color-black);
+}
+.btn-header:active {
+  color: var(--text-color-white) !important;
+}
+
+@media (max-width: 991px) {
+  .btn-header {
+    width: 100%;
+  }
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--primary-color-bright);
+  border: 1px solid var(--primary-color-dark);
   border-radius: 2em;
   font-size: 14px;
   font-weight: 500;
   padding: 0.75em 2em;
   cursor: pointer;
-  color: #111;
+  color: var(--text-color-black);
   text-align: center;
   transition: background-color 0.2s ease, transform 0.2s ease;
+  --bs-btn-active-bg: var(--primary-color-bright);
+  --bs-btn-active-border-color: var(--primary-color-dark);
+  --bs-btn-active-color: var(--text-color-black);
 }
 
-.app-btn-primary:hover,
-.app-btn-primary:active,
-.app-btn-primary:focus {
-  background-color: #6bffe1;
-  border-color: darkgray;
-  outline: none;
-}
-
-.app-btn-primary:disabled {
-  background-color: #cccccc;
-  border-color: #aaaaaa;
-  color: #666666;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Secondary Button */
-.app-btn-secondary {
-  height: auto;
-  background-color: #ffffff;
+/* Primary Button */
+.btn-secondary {
+  background-color: #fff;
   border: 1px solid lightgray;
   border-radius: 2em;
   font-size: 14px;
   font-weight: 500;
-  padding: 0.8em 2em;
+  padding: 0.75em 2em;
   cursor: pointer;
-  color: #111;
+  color: var(--text-color-black);
   text-align: center;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  --bs-btn-active-bg: var(--primary-color-bright);
+  --bs-btn-active-border-color: var(--primary-color-dark);
+  --bs-btn-active-color: var(--text-color-black);
 }
 
-.app-btn-secondary:hover,
-.app-btn-secondary:active,
-.app-btn-secondary:focus {
-  background-color: #63eed2;
-  border-color: darkgray;
-  outline: none;
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--primary-color-bright-2) !important;
+  border-color: var(--primary-color-dark) !important;
+  color: var(--text-color-black) !important;
 }
 
-.app-btn-secondary:disabled {
+.btn-primary:active,
+.btn-secondary:active {
+  color: var(--text-color-white) !important;
+}
+
+.btn-disabled {
   background-color: #cccccc;
   border-color: #aaaaaa;
   color: #666666;

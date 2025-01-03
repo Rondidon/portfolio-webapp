@@ -33,8 +33,8 @@ export interface ButtonStoryblok {
   text: string;
   title?: string;
   slug: string;
+  variant: "" | "primary" | "secondary" | "header";
   disabled?: boolean;
-  useAlternateDesign?: boolean;
   isDownloadLink?: boolean;
   isExternalLink?: boolean;
   _uid: string;

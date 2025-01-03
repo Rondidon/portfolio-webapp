@@ -1,18 +1,20 @@
 .text-link {
   text-decoration: none;
-  color: #ddd;
+  color: #3dd2cc;
   font-size: medium;
   transition: color 0.3s ease;
+  font-weight: 500;
 }
 
-.text-link:hover {
-  color: #63eed2;
+.text-link:hover,
+.text-link:focus {
+  color: var(--text-color-white) !important;
 }
 
 .text-link-header-brand {
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 1.6em;
-  color: #2b303a; /* Kräftige Markenfarbe */ /* Kräftige Markenfarbe */
+  font-size: 1.5em;
+  color: #fff; /* Kräftige Markenfarbe */ /* Kräftige Markenfarbe */
 }

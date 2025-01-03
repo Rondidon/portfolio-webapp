@@ -83,13 +83,15 @@ const HeaderBlok: React.FC<GlobalHeaderStoryblokProps> = ({ blok }) => {
         </button>
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav me-auto my-lg-0 my-2 mb-lg-0 gap-2 gap-lg-0">
-            {blok.leftContainer.map((value: ButtonStoryblok, index: number) => {
-              return (
-                <li className="nav-item mx-1" key={index + "left"}>
-                  <ButtonBlok blok={value} isNavButton />
-                </li>
-              );
-            })}
+            {blok.leftContainer.map(
+              (buttonBlok: ButtonStoryblok, index: number) => {
+                return (
+                  <li className="nav-item mx-1" key={index + "left"}>
+                    <ButtonBlok blok={buttonBlok} />
+                  </li>
+                );
+              }
+            )}
           </ul>
           {blok.rightContainer && (
             <ul className="navbar-nav my-lg-0 my-2 mb-lg-0 gap-2 gap-lg-0">
@@ -98,9 +100,7 @@ const HeaderBlok: React.FC<GlobalHeaderStoryblokProps> = ({ blok }) => {
                   key={index + "right"}
                   className="nav-item mx-1 d-flex align-items-center"
                 >
-                  {isButtonStoryblok(value) && (
-                    <ButtonBlok blok={value} isNavButton />
-                  )}
+                  {isButtonStoryblok(value) && <ButtonBlok blok={value} />}
                   {isLanguageDropdownStoryblok(value) && (
                     <LanguageDropdownBlok blok={value} />
                   )}

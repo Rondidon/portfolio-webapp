@@ -11,6 +11,9 @@ const toAssetLocation = (assetName: string) => {
         ". Must match the schema 'filename.fileending'."
     );
   }
+  if (assetName.endsWith(".png")) {
+    return `${assetRootLocation}/images/png/${assetName}`;
+  }
   if (assetName.endsWith(".ico")) {
     return `${assetRootLocation}/images/ico/${assetName}`;
   }

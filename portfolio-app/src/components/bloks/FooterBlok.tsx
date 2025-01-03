@@ -23,24 +23,15 @@ const Footer: React.FC<FooterProps> = ({ blok }) => {
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-4 mb-3">
-            <div className="d-flex align-items-center gap-2 mb-3">
+            <div className="d-flex align-items-center gap-3 mb-3">
               <ImageBlok blok={logoBlok} />
-              <Link
-                title={logoBlok.title}
-                to={logoBlok.internal_slug ? logoBlok.internal_slug : "/"}
-                className={"logo-link-container text-decoration-none"}
-              >
-                <span>
-                  <strong>RFA</strong>Kindler
-                </span>
-              </Link>
+              {blok.description && (
+                <SafeHtmlRenderer
+                  htmlContent={blok.description}
+                  className="footer-description-text"
+                />
+              )}
             </div>
-            {blok.description && (
-              <SafeHtmlRenderer
-                htmlContent={blok.description}
-                className="footer-description-text"
-              />
-            )}
             {blok.claim && (
               <p className="footer-copyright-text">&copy; 2024 {blok.claim}</p>
             )}

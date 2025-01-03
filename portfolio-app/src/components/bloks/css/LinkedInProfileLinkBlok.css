@@ -1,0 +1,15 @@
+.linked-in-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  background: var(--light-grey-color);
+  border-radius: 2em;
+  border: 2px solid var(--light-grey-color);
+}
+
+.linked-in-img {
+  height: 27px;
+  width: 32px;
+}
