@@ -74,7 +74,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-22T16:30:41.608Z",
-      "updated_at": "2025-01-03T16:24:05.048Z",
+      "updated_at": "2025-01-04T00:13:21.875Z",
       "id": 6078949,
       "schema": {
         "text": {
@@ -116,6 +116,11 @@
               "_uid": "63e03a07-3064-4fb2-82f8-781c61e46b66",
               "value": "header",
               "name": "header"
+            },
+            {
+              "_uid": "2bfd3ad0-55b5-44c8-bd22-58809a7517fa",
+              "value": "monochrome",
+              "name": "monochrome"
             }
           ],
           "default_value": "primary",
@@ -991,13 +996,9 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-11-14T18:08:09.706Z",
-      "updated_at": "2024-12-17T01:07:14.611Z",
+      "updated_at": "2025-01-04T01:09:47.883Z",
       "id": 6562092,
       "schema": {
-        "isAdjustedToRight": {
-          "type": "boolean",
-          "pos": 0
-        },
         "width": {
           "type": "number",
           "pos": 1,
@@ -1006,19 +1007,22 @@
           "steps": 1,
           "description": "in percent.",
           "required": true,
-          "default_value": "100"
+          "default_value": "100",
+          "id": "eIx_ghOdQnuY8GF6ByfLqA"
         },
         "marginTop": {
           "type": "number",
           "pos": 2,
           "description": "in em",
-          "default_value": "1"
+          "default_value": "1",
+          "id": "j_Z3FFneS1iZKh6_8VnccA"
         },
         "marginBottom": {
           "type": "number",
           "pos": 3,
           "default_value": "1",
-          "description": "in em"
+          "description": "in em",
+          "id": "g7O3Vjy3Qw-ICG6-n77DaA"
         },
         "thickness": {
           "type": "number",
@@ -1026,7 +1030,57 @@
           "description": "in pixel",
           "min_value": 0,
           "required": false,
-          "default_value": "2"
+          "default_value": "2",
+          "id": "hthrtA7HRcOSZFiMTh4XAw"
+        },
+        "color": {
+          "type": "option",
+          "pos": 5,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "3589c046-8f84-4126-8451-c5bb6916e652",
+              "name": "primary",
+              "value": "primary"
+            },
+            {
+              "_uid": "5dbfddfe-922b-4c82-b36a-b2e69d5086a7",
+              "value": "secondary",
+              "name": "secondary"
+            },
+            {
+              "_uid": "9bcd0aab-867e-4ed2-8558-cbbc8ca355fc",
+              "value": "monochrome",
+              "name": "monochrome"
+            }
+          ],
+          "required": true,
+          "default_value": "monochrome",
+          "id": "z-ANNFrzQvygApamhQYvcQ"
+        },
+        "adjustment": {
+          "type": "option",
+          "pos": 5,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "2af22b4c-7b7c-4625-9791-58a7438ea117",
+              "name": "left",
+              "value": "left"
+            },
+            {
+              "_uid": "734c834e-94a8-4d14-98ea-2e15dc6f4f0a",
+              "value": "right",
+              "name": "right"
+            },
+            {
+              "_uid": "46a052ad-5036-4aed-8a85-6d4dafdd2680",
+              "value": "center",
+              "name": "center"
+            }
+          ],
+          "description": "left = Farbverlauf links nach rechts,\ncenter = normale Linie ohne Farbverlauf",
+          "id": "RUJbJF_aS-m6BmKloG6iig"
         }
       },
       "image": null,

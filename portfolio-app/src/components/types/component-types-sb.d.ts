@@ -33,7 +33,7 @@ export interface ButtonStoryblok {
   text: string;
   title?: string;
   slug: string;
-  variant: "" | "primary" | "secondary" | "header";
+  variant: "" | "primary" | "secondary" | "header" | "monochrome";
   disabled?: boolean;
   isDownloadLink?: boolean;
   isExternalLink?: boolean;
@@ -187,11 +187,12 @@ export interface HeroStoryblok {
 }
 
 export interface HorizontalLineStoryblok {
-  isAdjustedToRight?: boolean;
   width: string;
   marginTop?: string;
   marginBottom?: string;
   thickness?: string;
+  color: "" | "primary" | "secondary" | "monochrome";
+  adjustment?: "" | "left" | "right" | "center";
   _uid: string;
   component: "horizontalLine";
   [k: string]: any;

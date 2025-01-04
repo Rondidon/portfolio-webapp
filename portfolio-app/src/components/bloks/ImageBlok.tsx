@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import toAssetLocation from "../../scripts/imageConverter";
 import { ImageStoryblok } from "../types/component-types-sb";
 import "./css/ImageBlok.css";
+import getCSSVariable from "../../scripts/getCSSVariable";
 
 interface ImageBlokProps {
   blok: ImageStoryblok;
@@ -36,6 +37,7 @@ const ImageBlok: React.FC<ImageBlokProps> = ({
 
   const height: string | undefined = blok.height + "px";
   const margin = blok.margin;
+  const borderColor = getCSSVariable("--grey-border");
   const imageComponent: JSX.Element = (
     <img
       src={toAssetLocation(blok.image)}
@@ -48,7 +50,7 @@ const ImageBlok: React.FC<ImageBlokProps> = ({
         height: height,
         width: blok.isSquareImage ? height : undefined,
         borderRadius: blok.borderRadius ? blok.borderRadius + "em" : undefined,
-        border: blok.showBorder ? "1px solid lightgrey" : undefined,
+        border: blok.showBorder ? `1px solid ${borderColor}` : undefined,
       }}
       onClick={maybeTriggerCallback}
     />

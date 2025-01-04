@@ -1,4 +1,5 @@
 import useBreakpoints from "../../hooks/useBreakpoints";
+import getCSSVariable from "../../scripts/getCSSVariable";
 import { HorizontalLineStoryblok } from "../types/component-types-sb";
 
 interface HorizontalLineBlokProps {
@@ -9,25 +10,46 @@ const HorizontalLineBlok: React.FC<HorizontalLineBlokProps> = ({
   blok,
 }): JSX.Element => {
   const breakpoint = useBreakpoints();
-  const isAdjustedRight = blok.isAdjustedToRight
-    ? blok.isAdjustedToRight
-    : false;
   const marginBottom = blok.marginBottom;
   const marginTop = blok.marginTop;
   const thickness = blok.thickness ? blok.thickness + "px" : "2px";
   const width = blok.width ? blok.width + "%" : "100%";
 
-  const calcBackground = (): string => {
-    if (breakpoint === "XXL" || breakpoint === "LG" || breakpoint === "XL") {
-      return isAdjustedRight
-        ? "linear-gradient(to left, #d7e4e1, #ffffff)"
-        : "linear-gradient(to right, #d7e4e1, #ffffff)";
+  const calcFromColor = (
+    color: "" | "primary" | "secondary" | "monochrome"
+  ): string => {
+    switch (color) {
+      case "":
+      case "primary":
+        return getCSSVariable("--primary-color-dark");
+      case "secondary":
+        return getCSSVariable("--secondary-color-dark");
+      case "monochrome":
+        return getCSSVariable("--grey-border");
+      default:
+        return "";
     }
-    return "radial-gradient(circle, #d7e4e1, #ffffff)";
+  };
+
+  const calcBackground = (): string => {
+    const color = blok.color;
+    const fromColor = calcFromColor(color);
+    const toColor = getCSSVariable("--background-page");
+
+    if (blok.adjustment !== "center") {
+      const isAdjustedRight = blok.adjustment === "right";
+      if (breakpoint === "XXL" || breakpoint === "LG" || breakpoint === "XL") {
+        return isAdjustedRight
+          ? `linear-gradient(to left, ${fromColor}, ${toColor})`
+          : `linear-gradient(to right, ${fromColor}, ${toColor})`;
+      }
+    }
+
+    return fromColor;
   };
 
   return (
-    <hr
+    <div
       style={{
         height: thickness,
         width: width,
