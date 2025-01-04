@@ -49,7 +49,13 @@ const CardBlok: React.FC<CardBlokProps> = ({ blok }) => {
           </p>
         )}
       </div>
-      <div className="card-default-footer">
+      <div
+        className={
+          blok.alternate_design
+            ? "card-alternate-footer"
+            : "card-default-footer"
+        }
+      >
         {blok.internal_link && blok.internal_link?.length > 0 && (
           <InternalLinkBlok blok={blok.internal_link[0]} />
         )}

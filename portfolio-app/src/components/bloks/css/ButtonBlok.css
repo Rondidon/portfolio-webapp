@@ -45,10 +45,37 @@
   --bs-btn-active-color: var(--text-color-black);
 }
 
-/* Primary Button */
 .btn-secondary {
+  background-color: var(--secondary-color-bright);
+  border: 1px solid var(--secondary-color-dark);
+  border-radius: 2em;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.75em 2em;
+  cursor: pointer;
+  color: var(--text-color-black);
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  --bs-btn-active-bg: var(--secondary-color-bright);
+  --bs-btn-active-border-color: var(--secondary-color-dark);
+  --bs-btn-active-color: var(--text-color-black);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--secondary-color-bright-2) !important;
+  border-color: var(--secondary-color-dark) !important;
+  color: var(--text-color-black) !important;
+}
+
+.btn-secondary:active {
+  color: var(--text-color-white) !important;
+}
+
+/* Primary Button */
+.btn-monochrome {
   background-color: #fff;
-  border: 1px solid lightgray;
+  border: 1px solid var(--grey-border);
   border-radius: 2em;
   font-size: 14px;
   font-weight: 500;
@@ -64,15 +91,15 @@
 
 .btn-primary:hover,
 .btn-primary:focus,
-.btn-secondary:hover,
-.btn-secondary:focus {
+.btn-monochrome:hover,
+.btn-monochrome:focus {
   background-color: var(--primary-color-bright-2) !important;
   border-color: var(--primary-color-dark) !important;
   color: var(--text-color-black) !important;
 }
 
 .btn-primary:active,
-.btn-secondary:active {
+.btn-monochrome:active {
   color: var(--text-color-white) !important;
 }
 

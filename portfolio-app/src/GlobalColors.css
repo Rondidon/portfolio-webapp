@@ -8,6 +8,9 @@
   --primary-color-dark: #27a5a1;
   --primary-color-bright: #8be4e1;
   --primary-color-bright-2: #cdf3f2;
+  --secondary-color-bright-2: #d0dcf0;
+  --secondary-color-bright: #b1c4e7;
+  --secondary-color-dark: #7395d3;
   --secondary-color: #8faadc;
   --tertiary-color: #f4a261;
   --light-grey-color: #e6e6e6;
@@ -17,4 +20,6 @@
   --text-color-white: #fff;
   --text-color-almost-white: #ddd;
   --default-shadow: 0 4px 6px #2222221a;
+  --default-shadow-reverse: 0 -4px 6px #aaaaaa1a;
+  --grey-border: #aaa;
 }

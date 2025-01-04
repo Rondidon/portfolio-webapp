@@ -24,7 +24,7 @@ const CardContainerBlok: React.FC<CardContainerBlokProps> = ({ blok }) => {
   return (
     <div style={{ minWidth: width, justifyContent: "space-evenly" }} id={id}>
       {headingBlok && (
-        <div className={"d-flex flex-column"}>
+        <div className={"d-flex flex-column gap-0"}>
           <h2 style={{ gridColumn: `span ${columnAmount}` }}>
             {headingBlok.heading}
           </h2>

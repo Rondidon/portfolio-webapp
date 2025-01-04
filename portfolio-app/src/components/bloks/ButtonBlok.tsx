@@ -9,7 +9,7 @@ interface ButtonBlokProps {
 }
 
 const getClassName = (
-  variant: "primary" | "secondary" | "header" | "",
+  variant: "primary" | "secondary" | "monochrome" | "header" | "",
   disabled: boolean
 ) => {
   if (disabled) {
@@ -17,6 +17,9 @@ const getClassName = (
   }
   if (variant === "secondary") {
     return "btn btn-secondary";
+  }
+  if (variant === "monochrome") {
+    return "btn btn-monochrome";
   }
   if (variant === "header") {
     return "btn btn-header";
