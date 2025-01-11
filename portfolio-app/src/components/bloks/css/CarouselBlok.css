@@ -20,10 +20,6 @@
   border-radius: 1em;
 }
 
-.slider-wrapper {
-  padding-bottom: 1em;
-}
-
 .carousel-item-wrapper {
   position: relative;
   display: flex;

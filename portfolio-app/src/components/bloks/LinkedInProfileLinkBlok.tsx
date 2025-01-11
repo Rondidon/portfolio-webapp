@@ -19,6 +19,7 @@ const LinkedInProfileLinkBlok: React.FC<LinkedInProfileProps> = ({
     >
       <img
         src={toAssetLocation("linked-in-logo.png")}
+        loading="lazy"
         alt={blok.alt}
         className="linked-in-img"
       />

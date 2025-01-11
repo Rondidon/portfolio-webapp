@@ -52,7 +52,11 @@ const CarouselBlok: React.FC<CarouselBlokProps> = ({ blok }) => {
       {imageBloks.map((blok: CarouselImageStoryblok) => (
         <div key={blok.imageFile} className="carousel-item-wrapper">
           <div className="image-container">
-            <img src={toAssetLocation(blok.imageFile)} alt={blok.alt} />
+            <img
+              src={toAssetLocation(blok.imageFile)}
+              alt={blok.alt}
+              loading="lazy"
+            />
             {blok.label && <p className="legend">{blok.label}</p>}
           </div>
         </div>

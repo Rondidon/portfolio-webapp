@@ -2,7 +2,7 @@
   z-index: 10;
   min-width: 300px;
   background: var(--background-header);
-  border-bottom: 4px solid var(--primary-color); /* Dezenter, feinerer Rahmen */
+  border-bottom: 4px solid var(--primary-color);
 }
 
 .logo-container {

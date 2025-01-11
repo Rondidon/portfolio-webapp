@@ -103,7 +103,9 @@
   color: var(--text-color-white) !important;
 }
 
-.btn-disabled {
+.btn-primary:disabled,
+.btn-monochrome:disabled,
+.btn-secondary:disabled {
   background-color: #cccccc;
   border-color: #aaaaaa;
   color: #666666;

@@ -30,6 +30,7 @@ const LanguageDropdownBlok: React.FC<LanguageDropdownProps> = ({
             >
               <img
                 src={toAssetLocation(value + ".svg")}
+                loading="lazy"
                 style={{ width: "16px", height: "16px" }}
                 alt={blok.title}
               />

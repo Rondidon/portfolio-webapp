@@ -41,6 +41,7 @@ const ImageBlok: React.FC<ImageBlokProps> = ({
   const imageComponent: JSX.Element = (
     <img
       src={toAssetLocation(blok.image)}
+      loading="lazy"
       alt={blok.alt}
       title={blok.title}
       className={blok.withHoverEffect ? "image-blok-with-hover" : ""}
