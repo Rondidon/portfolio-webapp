@@ -74,7 +74,7 @@
       "display_name": null,
       "description": null,
       "created_at": "2024-07-22T16:30:41.608Z",
-      "updated_at": "2025-01-04T00:13:21.875Z",
+      "updated_at": "2025-01-13T17:59:18.002Z",
       "id": 6078949,
       "schema": {
         "text": {
@@ -123,7 +123,7 @@
               "name": "monochrome"
             }
           ],
-          "default_value": "primary",
+          "default_value": "",
           "id": "diCsN0sIQJaSWO-03NgzKw"
         },
         "disabled": {
@@ -459,13 +459,14 @@
       "display_name": null,
       "description": "Kontaktformular",
       "created_at": "2024-12-06T21:22:07.972Z",
-      "updated_at": "2024-12-10T21:46:40.416Z",
+      "updated_at": "2025-01-13T22:01:13.690Z",
       "id": 6661163,
       "schema": {
         "header": {
           "type": "text",
           "pos": 0,
-          "required": true
+          "required": true,
+          "id": "Z1Q8wAszTnuLdeesZCZdrg"
         },
         "nameInput": {
           "type": "bloks",
@@ -477,7 +478,8 @@
           ],
           "minimum": 1,
           "maximum": 1,
-          "required": true
+          "required": true,
+          "id": "3z6ZLQokTmGMedtsDJfckw"
         },
         "emailAddressInput": {
           "type": "bloks",
@@ -489,7 +491,8 @@
           ],
           "minimum": 1,
           "maximum": 1,
-          "required": true
+          "required": true,
+          "id": "mv7UiibaTNCJS7B9SY_v0g"
         },
         "telInput": {
           "type": "bloks",
@@ -501,7 +504,8 @@
           ],
           "minimum": 1,
           "maximum": 1,
-          "required": true
+          "required": true,
+          "id": "k5eMWM62QiuVnKjVG1MdPg"
         },
         "subjectInput": {
           "type": "bloks",
@@ -511,7 +515,8 @@
           "restrict_components": true,
           "component_whitelist": [
             "ContactFormEntry"
-          ]
+          ],
+          "id": "flNSqBx3QJ-CySI-QJBbPw"
         },
         "messageInput": {
           "type": "bloks",
@@ -524,35 +529,52 @@
           ],
           "minimum": 1,
           "maximum": 1,
-          "required": true
+          "required": true,
+          "id": "vGxGE9VkTEaqEN-c2N01Yw"
         },
         "submitButtonText": {
           "type": "text",
           "pos": 6,
-          "required": true
+          "required": true,
+          "id": "g5BS8cHRS5eYBsbAQTQ8Ag"
         },
         "submitButtonTitle": {
           "type": "text",
           "pos": 7,
-          "required": true
+          "required": true,
+          "id": "iZ4sEEd6SEyC2FBrJplQkA"
         },
         "requiredNotice": {
           "type": "text",
           "pos": 8,
           "required": true,
-          "default_value": "* Pflichtfelder."
+          "default_value": "* Pflichtfelder.",
+          "id": "zdZxJST7SLeD8uyy68sP7w"
         },
         "successMessage": {
           "type": "text",
           "pos": 9,
           "required": true,
-          "default_value": "Nachricht erfolgreich gesendet!"
+          "default_value": "Nachricht erfolgreich gesendet!",
+          "id": "E-_H_PYWQB2TveWB7z2BSw"
         },
         "errorMessage": {
           "type": "text",
           "pos": 10,
           "required": true,
-          "default_value": "Fehler beim Senden der Nachricht."
+          "default_value": "Fehler beim Senden der Nachricht.",
+          "id": "udSASdAZSgWkh7BV04mEmg"
+        },
+        "ccLabel": {
+          "type": "text",
+          "pos": 11,
+          "required": true,
+          "id": "3YpdQS1TRG2mCeTfy2rGJQ"
+        },
+        "showCcOption": {
+          "type": "boolean",
+          "pos": 12,
+          "id": "wFjsIDQsS22QwgDa3eNOtg"
         }
       },
       "image": null,

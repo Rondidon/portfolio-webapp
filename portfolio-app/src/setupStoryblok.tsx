@@ -20,11 +20,11 @@ const region = process.env.REACT_APP_STORYBLOK_REGION || "eu";
 const version = process.env.REACT_APP_STORYBLOK_VERSION || "draft";
 const debugLogs = false;
 
-console.log(
-  `stoyblok mode: ${
-    process.env.NODE_ENV === "production" ? "production" : "draft"
-  }`
-);
+console.log(`NODE ENV: ${process.env.NODE_ENV}\n`);
+console.log(`Frontend URL: ${process.env.REACT_APP_FRONTEND_DOMAIN}\n`);
+console.log(`Backend URL: ${process.env.REACT_APP_BACKEND_DOMAIN}\n`);
+console.log(`Backend URL: ${process.env.REACT_APP_BACKEND_DOMAIN}\n`);
+console.log(`Token: ${accessToken?.substring(0, 5)}...\n`);
 
 // dynamic components
 const componentsWhitelist = {

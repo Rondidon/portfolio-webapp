@@ -83,6 +83,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
   const [formStatus, setFormStatus] = useState<"success" | "error" | null>(
     null
   );
+  const [sendToRecipient, setSendToRecipient] = useState(true);
 
   const formatPlaceholder = (
     placeholderText: string,
@@ -113,7 +114,7 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
           "messageArea"
         ) as HTMLTextAreaElement
       ).value,
-      sendToRecipient: true,
+      sendToRecipient: sendToRecipient,
     };
   };
 
@@ -224,6 +225,27 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
                 required={emailAddressInput.isRequired}
                 title={emailAddressInput.title}
               />
+              {blok.showCcOption && (
+                <div className="d-flex gap-1 form-check form-switch">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="sendToRecipientSwitch"
+                    name="sendToRecipientSwitch"
+                    checked={sendToRecipient}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      setSendToRecipient(e.target.checked);
+                    }}
+                  />
+                  <label
+                    className="form-check-label"
+                    htmlFor="sendToRecipientSwitch"
+                  >
+                    {blok.ccLabel}
+                  </label>
+                </div>
+              )}
               <div className="d-flex flex-column">
                 <input
                   ref={subjectInputRef}

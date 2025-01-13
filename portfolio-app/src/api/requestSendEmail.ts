@@ -12,7 +12,8 @@ export const requestSendMail = async (
   formData: ContactFormData
 ): Promise<string> => {
   try {
-    const backendDomain = process.env.REACT_APP_BACKEND_DOMAIN;
+    const backendDomain =
+      process.env.REACT_APP_BACKEND_DOMAIN || "https://backend.robincodes.io";
     const endpoint = `${backendDomain}/api/send-email`;
     console.log(endpoint);
     const response = await fetch(endpoint, {

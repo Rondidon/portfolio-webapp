@@ -1,131 +1,66 @@
 .contact-form {
-  background-color: #ffffff;
+  background-color: var(--background-card-light);
   border-radius: 1em;
-  border: 1px solid lightgray;
+  border: 1px solid var(--grey-border);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-width: 17em;
   min-height: 4rem;
   height: fit-content;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--default-shadow);
 }
 
 .contact-form-body {
   padding: 1rem;
   overflow-y: auto;
   width: 100%;
-  color: #333;
-}
-
-.contact-form-footer {
-  width: 100%;
 }
 
 .contact-form-header {
   font-weight: 600;
-  color: #111;
+  color: var(--text-color-black);
   margin-bottom: 1em;
 }
 
-.contact-form-input {
-  border-radius: 2em;
-  background-color: #b8e9df4f;
-  border-color: lightgray;
-}
-
-.contact-form-input {
-  border: 1px solid lightgray;
+.contact-form-input,
+.react-phone-number-input {
   border-radius: 20px;
+  border: 1px solid var(--grey-border);
+  background-color: var(--primary-color-bright-2);
   padding: 10px 15px;
-  outline: none;
-  background-color: #f9fdfc;
   font-size: 16px;
   transition: all 0.3s ease;
-  color: #333;
+  color: var(--text-color-black-light);
 }
 
-.contact-form-input:focus {
-  border-color: #63eed2;
-  box-shadow: 0 0 8px rgba(99, 238, 210, 0.8);
-  background-color: #ffffff;
-  transform: scale(1.01);
+.contact-form-input:focus,
+.react-phone-number-input:focus-within {
+  border-color: var(--primary-color-bright);
+  box-shadow: 0 0 8px var(--primary-color-bright);
+  background-color: var(--background-card-light);
+  transform: scale(1.005);
 }
 
-.contact-form-input::placeholder {
-  color: #888;
+.contact-form-input::placeholder,
+.react-phone-number-input__input::placeholder,
+.PhoneInputInput::placeholder {
+  color: var(--text-color-black-lighter);
   font-style: italic;
 }
 
-.contact-form-input:hover {
-  border-color: #89e5c7;
-}
-
-@media (min-width: 1200px) {
-  .contact-form-input:focus {
-    transform: scale(1.005);
-  }
-}
-
-.react-phone-number-input {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
-  border: 1px solid lightgray;
-  background-color: #f9fdfc;
-  padding: 5px 10px;
-  transition: all 0.3s ease;
-  padding: 10px 15px;
+.contact-form-input:hover,
+.react-phone-number-input:hover {
+  border-color: var(--primary-color-bright);
 }
 
 .PhoneInputInput {
   outline: none;
   border: none;
   background: transparent;
+  width: 100%;
 }
 
-.PhoneInputInput::placeholder {
-  color: #888;
-  font-style: italic;
-}
-
-.PhoneInputInput:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.react-phone-number-input:focus-within {
-  border-color: #63eed2;
-  box-shadow: 0 0 8px rgba(99, 238, 210, 0.8);
-  background-color: #ffffff;
-  transform: scale(1.01);
-}
-
-/* Eingabefeld */
-.react-phone-number-input__input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  font-size: 16px;
-  color: #333;
-  padding: 10px;
-  border-radius: 20px;
-}
-
-/* Eingabefeld beim Hover */
-.react-phone-number-input:hover {
-  border-color: #89e5c7;
-}
-
-/* Platzhalter */
-.react-phone-number-input__input::placeholder {
-  color: #888;
-  font-style: italic;
-}
-
-/* Länder-Flagge Dropdown */
 .react-phone-number-input__country {
   margin-right: 10px;
   display: flex;
@@ -142,29 +77,65 @@
 .required-notice,
 .text-length-notice {
   align-self: flex-end;
-  color: #444;
-  font-style: normal;
-  font-size: 0.875rem;
-}
-
-.required-notice {
-  font-style: italic;
-  color: #888;
-  font-size: 0.925rem;
+  color: var(--text-color-black-lighter);
+  font-size: 0.9rem;
 }
 
 .text-length-notice {
   margin-top: 5px;
 }
 
+.required-notice {
+  font-style: italic;
+}
+
 .form-status {
-  font-size: 0.875rem;
+  font-size: 0.975rem;
+  font-weight: 500;
 }
 
 .form-status.success {
-  color: rgb(53, 131, 114);
+  color: var(--primary-color-dark);
 }
 
 .form-status.error {
-  color: red;
+  color: var(--tertiary-color-dark);
+}
+
+.form-switch {
+  height: 1.25em;
+}
+
+.form-check-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid var(--grey-border);
+  border-radius: 1em;
+  background-color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+}
+
+.form-check-input:focus {
+  outline: none;
+  box-shadow: 0 0 4px var(--primary-color-bright); /* Eigener Fokus-Stil */
+}
+
+.form-check-input:hover {
+  border-color: var(--primary-color);
+}
+
+.form-check-input:checked:hover {
+  background-color: var(--primary-color);
+}
+
+.form-check-label {
+  color: var(--text-color-black-lighter);
+  font-style: italic;
 }

@@ -105,6 +105,8 @@ export interface ContactFormStoryblok {
   requiredNotice: string;
   successMessage: string;
   errorMessage: string;
+  ccLabel: string;
+  showCcOption?: boolean;
   _uid: string;
   component: "contactForm";
   [k: string]: any;
