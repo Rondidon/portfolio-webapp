@@ -5,11 +5,10 @@ import {
   ImageStoryblok,
   TextLinkStoryblok,
 } from "../types/component-types-sb";
-import ImageBlok from "./ImageBlok";
-import "./css/FooterBlok.css";
 import SafeHtmlRenderer from "../xss/SafeHtmlRenderer";
+import ImageBlok from "./ImageBlok";
 import TextLinkBlok from "./TextLinkBlok";
-import { Link } from "react-router-dom";
+import "./css/FooterBlok.css";
 
 type FooterProps = {
   blok: GlobalFooterStoryblok;

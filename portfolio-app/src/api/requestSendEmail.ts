@@ -12,7 +12,10 @@ export const requestSendMail = async (
   formData: ContactFormData
 ): Promise<string> => {
   try {
-    const response = await fetch("http://localhost:5000/api/send-email", {
+    const backendDomain = process.env.REACT_APP_BACKEND_DOMAIN;
+    const endpoint = `${backendDomain}/api/send-email`;
+    console.log(endpoint);
+    const response = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
