@@ -135,8 +135,6 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
       return;
     }
     const formData: ContactFormData = buildContactFormData();
-    console.log("Form Data:", formData);
-
     requestSendMail(formData).then((result: string) => {
       if (result.includes("error")) {
         setFormStatus("error");

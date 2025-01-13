@@ -15,7 +15,6 @@ export const requestSendMail = async (
     const backendDomain =
       process.env.REACT_APP_BACKEND_DOMAIN || "https://backend.robincodes.io";
     const endpoint = `${backendDomain}/api/send-email`;
-    console.log(endpoint);
     const response = await fetch(endpoint, {
       method: "POST",
       headers: {
