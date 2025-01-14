@@ -31,8 +31,10 @@ const Footer: React.FC<FooterProps> = ({ blok }) => {
                 />
               )}
             </div>
-            {blok.claim && (
-              <p className="footer-copyright-text">&copy; 2024 {blok.claim}</p>
+            {blok.copyright && (
+              <p className="footer-copyright-text">
+                &copy; {new Date().getFullYear()} {blok.copyright}
+              </p>
             )}
           </div>
 

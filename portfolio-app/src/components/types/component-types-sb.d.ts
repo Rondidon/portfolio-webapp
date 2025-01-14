@@ -151,7 +151,7 @@ export interface FaqElementStoryblok {
 
 export interface GlobalFooterStoryblok {
   logo: ImageStoryblok[];
-  claim?: string;
+  copyright: string;
   description: string;
   columns?: GlobalFooterColumnStoryblok[];
   _uid: string;
