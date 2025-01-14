@@ -1,5 +1,3 @@
-Github Pages link: https://rondidon.github.io/portfolio-webapp/
-
 # Portfolio Web App
 
 The portfolio web app highlights several examples of my work.
@@ -39,6 +37,10 @@ Generates TypeScript types from the Storyblok components JSON file.
 ## Scrum / Documentation
 
 JIRA / Confluence: https://robinkindler.atlassian.net
+
+## Web-Address
+
+Live Version: robincodes.io
 
 ## Backend
 
