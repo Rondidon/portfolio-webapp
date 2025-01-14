@@ -9,9 +9,6 @@ function useInitialSlugs() {
     if (path === "/not-found-404") {
       result.push("not-found-404");
     }
-    if (path === "/") {
-      result.push("home");
-    }
     return result;
   }, [location]);
 }

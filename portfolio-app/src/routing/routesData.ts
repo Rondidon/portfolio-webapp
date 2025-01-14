@@ -1,6 +1,5 @@
 const routesData = [
   { path: "/", slug: "/home" },
-  { path: "/home", slug: "/home" },
   { path: "imprint", slug: "/imprint" },
   { path: "privacy-policy", slug: "/privacy-policy" },
   { path: "contact", slug: "/contact" },
@@ -69,8 +68,8 @@ const routesData = [
     slug: "projects/games/sports-fishing-simulator-2012",
   },
   { path: "projects/games/adrenaline", slug: "projects/games/adrenaline" },
-  { path: "projects/video", slug: "projects/video-projects" },
-  { path: "projects/music", slug: "projects/music" },
+  // { path: "projects/video", slug: "projects/video-projects" },
+  // { path: "projects/music", slug: "projects/music" },
   { path: "*", slug: "not-found-404" },
 ];
 
