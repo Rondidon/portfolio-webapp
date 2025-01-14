@@ -1,6 +1,5 @@
 import { Suspense, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import "./GlobalColors.css";
 import "./App.css";
 import Footer from "./components/bloks/FooterBlok";
 import Header from "./components/bloks/HeaderBlok";
@@ -12,6 +11,7 @@ import {
   ImageStoryblok,
   PageStoryblok,
 } from "./components/types/component-types-sb";
+import "./GlobalColors.css";
 import useStoryblokStory from "./hooks/useStoryblokStory";
 
 const slug = "global-layout";
@@ -31,7 +31,7 @@ function App() {
   if (!story || !story.content) {
     return (
       <div className="app" lang="de">
-        <Loading fullViewport />
+        <Loading height={"100vh"} />
       </div>
     );
   }
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="app" lang="de">
-      <Suspense fallback={<Loading fullViewport />}>
+      <Suspense fallback={<Loading height={"100vh"} />}>
         <BrowserRouter basename={basename}>
           <Header blok={header} />
           <Main scrollToTopBlok={scrollToTopImage} />

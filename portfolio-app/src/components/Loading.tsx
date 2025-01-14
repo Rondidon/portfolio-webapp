@@ -1,16 +1,10 @@
-import React from "react";
-
-interface LoadingProps {
-  fullViewport?: boolean;
+interface LoadingScreenProps {
+  height: number | "100vh";
 }
 
-const Loading = (props: LoadingProps): JSX.Element => {
+const Loading = (props: LoadingScreenProps): JSX.Element => {
   return (
-    <div
-      className={
-        props.fullViewport ? "spinner-container-100vh" : "spinner-container"
-      }
-    >
+    <div className={"spinner-container"} style={{ minHeight: props.height }}>
       <div className="spinner-border spinner" role="status" />
     </div>
   );

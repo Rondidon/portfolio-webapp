@@ -38,7 +38,7 @@
 }
 
 .spinner {
-  color: #111;
+  color: var(--primary-color-bright);
 }
 
 .text-color-white {

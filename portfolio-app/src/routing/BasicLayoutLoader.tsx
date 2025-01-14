@@ -44,7 +44,6 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
 
   useEffect(() => {
     const saveScrollPosition = (event: MouseEvent) => {
-      console.log(locationRef.current.pathname, window.scrollY);
       scrollPositionHistory.current.set(
         locationRef.current.pathname,
         window.scrollY
@@ -64,7 +63,7 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
         const scrollY = scrollPositionHistory.current.get(path);
         window.scrollTo({ top: scrollY, behavior: "auto" });
         locationChangeByPopState.current = false;
-      }, 100);
+      }, 1);
     };
 
     if (story) {
@@ -117,7 +116,7 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
   }, [loading, content, location.hash]);
 
   if (!content || loading) {
-    return <Loading />;
+    return <Loading height={"100vh"} />;
   }
 
   return (
