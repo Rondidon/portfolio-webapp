@@ -223,46 +223,6 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
                 required={emailAddressInput.isRequired}
                 title={emailAddressInput.title}
               />
-              {blok.showCcOption && (
-                <div className="d-flex gap-1 form-check form-switch">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    id="sendToRecipientSwitch"
-                    name="sendToRecipientSwitch"
-                    checked={sendToRecipient}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      setSendToRecipient(e.target.checked);
-                    }}
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="sendToRecipientSwitch"
-                  >
-                    {blok.ccLabel}
-                  </label>
-                </div>
-              )}
-              <div className="d-flex flex-column">
-                <input
-                  ref={subjectInputRef}
-                  type="text"
-                  id="subjectInput"
-                  name="subjectInput"
-                  className="form-control contact-form-input"
-                  placeholder={formatPlaceholder(
-                    subjectInput.placeholder,
-                    subjectInput.isRequired
-                  )}
-                  maxLength={parseInt(subjectInput.maxLength)}
-                  required={subjectInput.isRequired}
-                  title={subjectInput.title}
-                />
-                <p className="text-length-notice">
-                  {subjectLength + "/" + subjectInput.maxLength}
-                </p>
-              </div>
               <PhoneInput
                 placeholder={formatPlaceholder(
                   telInput.placeholder,
@@ -287,6 +247,25 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
                 title={telInput.title}
               />
               <div className="d-flex flex-column">
+                <input
+                  ref={subjectInputRef}
+                  type="text"
+                  id="subjectInput"
+                  name="subjectInput"
+                  className="form-control contact-form-input"
+                  placeholder={formatPlaceholder(
+                    subjectInput.placeholder,
+                    subjectInput.isRequired
+                  )}
+                  maxLength={parseInt(subjectInput.maxLength)}
+                  required={subjectInput.isRequired}
+                  title={subjectInput.title}
+                />
+                <p className="text-length-notice">
+                  {subjectLength + "/" + subjectInput.maxLength}
+                </p>
+              </div>
+              <div className="d-flex flex-column">
                 <textarea
                   ref={textAreaRef}
                   id="-input"
@@ -306,6 +285,27 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
                   {textAreaLength + "/" + messageArea.maxLength}
                 </p>
               </div>
+              {blok.showCcOption && (
+                <div className="d-flex gap-1 form-check form-switch">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="sendToRecipientSwitch"
+                    name="sendToRecipientSwitch"
+                    checked={sendToRecipient}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      setSendToRecipient(e.target.checked);
+                    }}
+                  />
+                  <label
+                    className="form-check-label"
+                    htmlFor="sendToRecipientSwitch"
+                  >
+                    {blok.ccLabel}
+                  </label>
+                </div>
+              )}
             </div>
           </div>
           <div className="card-default-footer p-3">
@@ -329,10 +329,14 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
         }}
       >
         {formStatus === "success" && (
-          <span className="form-status success">{blok.successMessage}</span>
+          <span className="form-status success">
+            <SafeHtmlRenderer htmlContent={blok.successMessage} />
+          </span>
         )}
         {formStatus === "error" && (
-          <span className="form-status error">{blok.errorMessage}</span>
+          <span className="form-status error">
+            <SafeHtmlRenderer htmlContent={blok.errorMessage} />
+          </span>
         )}
         <span className="required-notice">{blok.requiredNotice}</span>
       </div>
