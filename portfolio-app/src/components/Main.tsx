@@ -13,7 +13,7 @@ interface MainProps {
 const Main = (props: MainProps): JSX.Element => {
   return (
     <main className="app-main container">
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading fullViewport />}>
         <Routes>
           {routesConfig.map((route: RouteConfig, index: number) => (
             <Route key={index} path={route.path} element={route.element} />

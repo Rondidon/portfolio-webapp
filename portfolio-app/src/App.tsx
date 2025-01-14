@@ -31,7 +31,7 @@ function App() {
   if (!story || !story.content) {
     return (
       <div className="app" lang="de">
-        <Loading />
+        <Loading fullViewport />
       </div>
     );
   }
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="app" lang="de">
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading fullViewport />}>
         <BrowserRouter basename={basename}>
           <Header blok={header} />
           <Main scrollToTopBlok={scrollToTopImage} />

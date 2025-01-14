@@ -19,17 +19,23 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
-  const prevLocation = useRef(location);
+  const locationRef = useRef(location);
+
+  const scrollPositionHistory = useRef<Map<string, number>>(new Map());
+  const locationChangeByPopState = useRef<boolean>(false);
 
   useEffect(() => {
-    const isSamePath = prevLocation.current.pathname === location.pathname;
+    const isSamePath = locationRef.current.pathname === location.pathname; // locationRef is previous location at this point
 
     if (!isSamePath) {
       setLoading(true);
+      window.scrollTo({ top: 0, behavior: "auto" });
     }
-    window.scrollTo({ top: 0, behavior: "auto" });
+    if (isSamePath) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
 
-    prevLocation.current = location;
+    locationRef.current = location; // update location ref to current location
   }, [location]);
 
   useEffect(() => {
@@ -37,9 +43,36 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
   }, [story, slug]);
 
   useEffect(() => {
+    const saveScrollPosition = (event: MouseEvent) => {
+      console.log(locationRef.current.pathname, window.scrollY);
+      scrollPositionHistory.current.set(
+        locationRef.current.pathname,
+        window.scrollY
+      );
+    };
+
+    window.addEventListener("mousedown", saveScrollPosition);
+    return () => {
+      window.removeEventListener("mousedown", saveScrollPosition);
+    };
+  }, [slug]);
+
+  useEffect(() => {
+    const restoreScrollPositon = () => {
+      setTimeout(() => {
+        const path = locationRef.current.pathname;
+        const scrollY = scrollPositionHistory.current.get(path);
+        window.scrollTo({ top: scrollY, behavior: "auto" });
+        locationChangeByPopState.current = false;
+      }, 100);
+    };
+
     if (story) {
       setContent(story.content as BasicLayoutStoryblok);
       setLoading(false);
+      if (locationChangeByPopState.current === true) {
+        restoreScrollPositon();
+      }
     } else {
       setContent(undefined);
       setLoading(true);
@@ -47,13 +80,33 @@ const BasicLayoutLoader = ({ slug }: BasicLayoutLoaderProps) => {
   }, [story]);
 
   useEffect(() => {
+    const onPopStateEvent = (event: PopStateEvent) => {
+      locationChangeByPopState.current = true;
+    };
+
+    window.addEventListener("popstate", onPopStateEvent);
+    return () => {
+      window.removeEventListener("popstate", onPopStateEvent);
+    };
+  }, []);
+
+  useEffect(() => {
     const maybeScrollToAnchor = () => {
+      if (locationChangeByPopState.current === true) {
+        return;
+      }
+
       const hash = location.hash;
       if (hash) {
         const elementId = hash.replace("#", "");
         const element = document.getElementById(elementId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
+          const elementYPosition = element.getBoundingClientRect().y;
+          scrollPositionHistory.current.set(
+            locationRef.current.pathname,
+            elementYPosition
+          );
         }
       }
     };

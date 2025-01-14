@@ -18,7 +18,7 @@ const accessToken =
 
 const region = process.env.REACT_APP_STORYBLOK_REGION || "eu";
 const version = process.env.REACT_APP_STORYBLOK_VERSION || "draft";
-const debugLogs = process.env.REACT_APP_DEBUG_LOGS || false;
+const debugLogs = process.env.REACT_APP_DEBUG_LOGS === "true" || false;
 
 if (debugLogs) {
   console.log(`NODE ENV: ${process.env.NODE_ENV}\n`);
