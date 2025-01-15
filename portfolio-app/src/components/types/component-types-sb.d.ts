@@ -101,6 +101,7 @@ export interface ContactFormStoryblok {
   subjectInput: ContactFormEntryStoryblok[];
   messageInput: ContactFormEntryStoryblok[];
   submitButtonText: string;
+  submitButtonSpinningText: string;
   submitButtonTitle: string;
   requiredNotice: string;
   successMessage: string;

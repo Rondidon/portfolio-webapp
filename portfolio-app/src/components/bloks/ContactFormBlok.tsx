@@ -10,6 +10,7 @@ import { ContactFormStoryblok } from "../types/component-types-sb";
 import SafeHtmlRenderer from "../xss/SafeHtmlRenderer";
 import "./css/ContactFormBlok.css";
 import { ContactFormData, requestSendMail } from "../../api/requestSendEmail";
+import SpinnerButton from "../SpinnerButton";
 
 interface ContactFormProps {
   blok: ContactFormStoryblok;
@@ -84,6 +85,8 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
     null
   );
   const [sendToRecipient, setSendToRecipient] = useState(true);
+  const [isSubmitButtonSpinning, setIsSubmitButtonSpinning] =
+    useState<boolean>(false);
 
   const formatPlaceholder = (
     placeholderText: string,
@@ -134,13 +137,16 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
     if (!isValid) {
       return;
     }
+    setIsSubmitButtonSpinning(true);
     const formData: ContactFormData = buildContactFormData();
     requestSendMail(formData).then((result: string) => {
       if (result.includes("error")) {
         setFormStatus("error");
+        setIsSubmitButtonSpinning(false);
       } else {
         resetForm();
         setFormStatus("success");
+        setIsSubmitButtonSpinning(false);
       }
     });
   };
@@ -309,14 +315,14 @@ const ContactFormBlok: React.FC<ContactFormProps> = ({ blok }) => {
             </div>
           </div>
           <div className="card-default-footer p-3">
-            <button
-              type="submit"
-              className={"btn btn-primary w-100 w-lg-0"}
-              disabled={!isValid}
+            <SpinnerButton
+              type="formSubmit"
+              disabled={!isValid || isSubmitButtonSpinning}
+              text={blok.submitButtonText}
+              textSpinning={blok.submitButtonSpinningText}
               title={blok.submitButtonTitle}
-            >
-              {blok.submitButtonText}
-            </button>
+              spinning={isSubmitButtonSpinning}
+            />
           </div>
         </form>
       </div>

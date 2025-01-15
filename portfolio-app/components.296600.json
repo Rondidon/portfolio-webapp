@@ -459,7 +459,7 @@
       "display_name": null,
       "description": "Kontaktformular",
       "created_at": "2024-12-06T21:22:07.972Z",
-      "updated_at": "2025-01-13T22:01:13.690Z",
+      "updated_at": "2025-01-15T13:37:01.856Z",
       "id": 6661163,
       "schema": {
         "header": {
@@ -538,42 +538,48 @@
           "required": true,
           "id": "g5BS8cHRS5eYBsbAQTQ8Ag"
         },
-        "submitButtonTitle": {
+        "submitButtonSpinningText": {
           "type": "text",
           "pos": 7,
+          "required": true,
+          "id": "8iyN_WAtShCCS9r6tal6GA"
+        },
+        "submitButtonTitle": {
+          "type": "text",
+          "pos": 8,
           "required": true,
           "id": "iZ4sEEd6SEyC2FBrJplQkA"
         },
         "requiredNotice": {
           "type": "text",
-          "pos": 8,
+          "pos": 9,
           "required": true,
           "default_value": "* Pflichtfelder.",
           "id": "zdZxJST7SLeD8uyy68sP7w"
         },
         "successMessage": {
           "type": "text",
-          "pos": 9,
+          "pos": 10,
           "required": true,
           "default_value": "Nachricht erfolgreich gesendet!",
           "id": "E-_H_PYWQB2TveWB7z2BSw"
         },
         "errorMessage": {
           "type": "text",
-          "pos": 10,
+          "pos": 11,
           "required": true,
           "default_value": "Fehler beim Senden der Nachricht.",
           "id": "udSASdAZSgWkh7BV04mEmg"
         },
         "ccLabel": {
           "type": "text",
-          "pos": 11,
+          "pos": 12,
           "required": true,
           "id": "3YpdQS1TRG2mCeTfy2rGJQ"
         },
         "showCcOption": {
           "type": "boolean",
-          "pos": 12,
+          "pos": 13,
           "id": "wFjsIDQsS22QwgDa3eNOtg"
         }
       },
