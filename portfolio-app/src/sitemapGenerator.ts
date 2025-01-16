@@ -22,6 +22,12 @@ interface SitemapEntry {
 
       const path = route.path.startsWith("/") ? route.path : `/${route.path}`;
 
+      // Nur relative Pfade verwenden
+      if (path.startsWith("http")) {
+        console.warn(`Überspringe ungültige Route: ${route.path}`);
+        return;
+      }
+
       const entry: SitemapEntry = {
         url: path,
         changefreq: "weekly",
